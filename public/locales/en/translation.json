@@ -1,0 +1,385 @@
+{
+  "common": {
+    "ourDairy": "Dairy Konnect",
+    "getStarted": "Get started",
+    "learnMore": "Learn More",
+    "home": "Home",
+    "about": "About",
+    "market": "Market",
+    "feeds": "Feeds",
+    "news": "News",
+    "ourApps": "Our Apps",
+    "farmer": "Farmer",
+    "vendor": "Vendor",
+    "dairy": "Dairy",
+    "ourVet": "Our Vet +",
+    "contactUs": "Contact Us",
+    "company": "Company",
+    "getInTouch": "Get in touch",
+    "copyright": "Copyright {{year}} © Dairy Konnect. All Right Reserved.",
+    "loading": "Loading translations...",
+    "close": "Close",
+    "testimonials": "Testimonials",
+    "trustedFeedSupplier": "Trusted Feed Supplier",
+    "visitWebsite": "Visit Website",
+    "ourTrustedDealers": "Our Trusted Dealers",
+    "qualityFeedSolutions": "Quality feed solutions for your dairy needs.",
+    "letsGetInTouch": "Let's Get In Touch.",
+    "orReachOut": "Or just reach out manually to us at",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "message": "Message",
+    "enterFullName": "Enter your full name",
+    "enterEmailAddress": "Enter your email address",
+    "enterMessage": "Enter your message",
+    "submitForm": "Submit Form",
+    "thankYouMessage": "Thank you for your message! We will get back to you soon.",
+    "ourNews": "Our News",
+    "ourLatestNews": "Our Latest News That Can Help You",
+    "exploreArticles": "Explore insightful articles that can enrich your knowledge and keep you informed about the latest happenings.",
+    "dairyOwner": "Dairy Owner",
+    "milkSeller": "Milk Seller",
+    "dairyManager": "Dairy Manager"
+  },
+  "banner": {
+    "launchingSoon": "We are launching our applications soon!",
+    "stayTuned": "Stay tuned for updates!"
+  },
+  "stats": {
+    "title": "Our Impact in Numbers",
+    "description": "Empowering dairy businesses across India with our comprehensive web and mobile solutions.",
+    "totalDownloads": "Total Downloads",
+    "activeUsers": "Active Users",
+    "mobileApps": "Mobile Apps",
+    "webApps": "Web Platforms",
+    "dairiesConnected": "Dairies Connected",
+    "transactionsProcessed": "Transactions Processed"
+  },
+  "home": {
+    "ctaText": "Start managing your dairy operations efficiently and join the growing Dairy Konnect community."
+  },
+  "videoSection": {
+    "title": "See Dairy Konnect in Action",
+    "description": "Watch how our platform revolutionizes dairy management with seamless integration and real-time tracking.",
+    "feature1Title": "Real-Time Tracking",
+    "feature1Desc": "Monitor milk collection, supply chain, and transactions in real-time across all stakeholders.",
+    "feature2Title": "Instant Processing",
+    "feature2Desc": "Lightning-fast transaction recording and automated billing generation within seconds.",
+    "feature3Title": "Secure & Reliable",
+    "feature3Desc": "Bank-grade security ensures all your data and payments are protected at all times."
+  },
+  "ourAppsSection": {
+    "title": "Download Our Apps",
+    "description": "Get our mobile apps for a seamless dairy management experience on the go. Available on iOS and Android.",
+    "farmerDesc": "Manage your milk production, track transactions, and receive payments easily.",
+    "vendorDesc": "Streamline milk collection routes, manage suppliers, and track deliveries.",
+    "dairyDesc": "Complete dairy operations management with billing, reports, and analytics.",
+    "vetDesc": "Connect with veterinary services for livestock health and emergency care."
+  },
+  "hero": {
+    "title": "Dairy Konnect",
+    "subtitle": "Complete Dairy Management Platform",
+    "description": "An end-to-end platform that digitalizes and streamlines the entire milk supply chain, connecting Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with transparent workflows and efficient operations."
+  },
+  "features": {
+    "title": "Powerful Features",
+    "description": "Everything you need to manage, track, and streamline your dairy operations, securely and efficiently.",
+    "transactionManagement": {
+      "title": "Transaction Management",
+      "description": "Efficiently record and track daily milk transactions between sellers and dairy owners."
+    },
+    "automatedBilling": {
+      "title": "Automated Billing",
+      "description": "Generate accurate 15-day bills automatically with detailed transaction summaries."
+    },
+    "paymentTracking": {
+      "title": "Payment Tracking",
+      "description": "Monitor payment statuses and ensure timely settlements for all transactions."
+    }
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Dairy Konnect",
+    "description1": "Dairy Konnect is an end-to-end platform designed to digitalize and streamline the entire milk supply chain. It connects Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with role-based access and highly transparent workflows.",
+    "description2": "The system ensures efficient milk collection, supply tracking, payment handling, and relationship management between all stakeholders, creating a transparent, error-free, and traceable milk supply chain.",
+    "latestFeatures": "Our Latest Features",
+    "latestFeaturesDescription": "Streamline Dairy Operations Without the Complexity — Customizable, Scalable and User-Friendly Transaction Management Platform.",
+    "lightningFast": {
+      "title": "Lightning-Fast Transaction Recording",
+      "description": "Record daily milk transactions instantly with minimal load times and optimized performance."
+    },
+    "automatedBillingSystem": {
+      "title": "Automated Billing System",
+      "description": "Generate accurate 15-day cycle bills automatically with detailed transaction summaries."
+    },
+    "securePayment": {
+      "title": "Secure Payment Management",
+      "description": "Track payment statuses securely and ensure timely settlements for all stakeholders."
+    }
+  },
+  "userTypeModal": {
+    "title": "Choose Your Role",
+    "description": "Select how you want to access the platform:",
+    "farmer": {
+      "name": "Farmer",
+      "description": "Manage your milk production and track transactions"
+    },
+    "vendor": {
+      "name": "Vendor",
+      "description": "Sell milk and manage your vendor operations"
+    },
+    "dairy": {
+      "name": "Dairy",
+      "description": "Manage dairy operations and milk collection"
+    }
+  },
+  "footer": {
+    "description": "An end-to-end platform that digitalizes and streamlines the entire milk supply chain, connecting Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with transparent workflows and efficient operations."
+  },
+  "testimonials": {
+    "testimonial1": "I've been using Dairy Konnect platform for nearly two years, and it has been incredibly user-friendly, making my daily transaction management much easier and more efficient.",
+    "testimonial2": "The automated billing system has transformed how I track my milk deliveries. Payment transparency and accuracy have improved significantly since using this platform.",
+    "testimonial3": "Dairy Konnect has streamlined our entire operation. The transaction recording and payment tracking features have made our dairy business more profitable and organized."
+  },
+  "farmer": {
+    "title": "Farmer Portal",
+    "subtitle": "Your comprehensive platform for milk supply management and payment tracking",
+    "description": "A specialized platform designed to help farmers supply milk, track daily quantities, view transparent rate calculations, and monitor payment status. Login to access your farmer dashboard and manage your milk supply effectively.",
+    "keyFeatures": "Key Features",
+    "keyFeaturesDesc": "Everything you need to manage your milk supply and track payments transparently",
+    "howItWorks": "How It Works",
+    "whyChoose": "Why Choose Farmer Portal",
+    "whyChooseDesc": "Get fair payments and complete transparency in your milk supply chain",
+    "readyToStart": "Ready to Get Started?",
+    "readyToStartDesc": "Login to access the Farmer Portal and start managing your milk supply today",
+    "loginButton": "Login to Farmer Portal",
+    "features": {
+      "dailySupply": {
+        "title": "Daily Supply Details",
+        "description": "Record and track your daily milk supply with accurate quantity measurements and quality parameters."
+      },
+      "rateCard": {
+        "title": "Rate Card Visibility",
+        "description": "View transparent rate calculations based on fat, SNF, and CLR readings. Know exactly what you're earning per liter."
+      },
+      "paymentHistory": {
+        "title": "Payment History",
+        "description": "Track all your payments with detailed history. Monitor daily, weekly, and monthly payment status."
+      },
+      "notifications": {
+        "title": "Notifications & Announcements",
+        "description": "Stay updated with important announcements, rate changes, and notifications from your vendor and dairy."
+      },
+      "supplyTracking": {
+        "title": "Supply Tracking",
+        "description": "Monitor your milk supply history, quality trends, and performance metrics over time."
+      },
+      "vendorManagement": {
+        "title": "Vendor Management",
+        "description": "View your assigned vendor details, contact information, and maintain clear communication channels."
+      }
+    },
+    "steps": {
+      "step1Title": "Login to Your Account",
+      "step1Desc": "Access your farmer dashboard by logging in with your credentials.",
+      "step2Title": "Supply Milk to Your Vendor",
+      "step2Desc": "Deliver your milk to your assigned vendor. The vendor will record quantity, quality readings (fat, SNF, CLR), and timing.",
+      "step3Title": "View Daily Supply Details",
+      "step3Desc": "Check your daily milk supply records, quality results, and rate per liter calculated based on fat/SNF content.",
+      "step4Title": "Track Payment Status",
+      "step4Desc": "Monitor your payment history and status. View daily, weekly, and monthly payment records for complete transparency."
+    },
+    "benefits": {
+      "transparent": "Transparent payment tracking",
+      "fairRate": "Fair rate calculation based on quality",
+      "realtime": "Real-time supply records",
+      "easyAccess": "Easy access to payment history",
+      "directComm": "Direct communication with vendors"
+    }
+  },
+  "vendor": {
+    "title": "Milk Vendor Portal",
+    "subtitle": "Your operational hub for milk collection and supply management",
+    "description": "A specialized platform designed to help milk vendors collect milk from farmers, verify quality, supply to dairies, and manage farmer payments. Login to access your vendor dashboard and streamline your operations.",
+    "keyFeatures": "Key Features",
+    "keyFeaturesDesc": "Everything you need to efficiently manage milk collection and supply operations",
+    "howItWorks": "How It Works",
+    "responsibilitiesTitle": "Your Key Responsibilities",
+    "responsibilitiesDesc": "As a milk vendor, you are the operational link between farmers and dairies",
+    "readyToStart": "Ready to Get Started?",
+    "readyToStartDesc": "Login to access the Milk Vendor Portal and start managing your operations today",
+    "loginButton": "Login to Vendor Portal",
+    "features": {
+      "farmerManagement": {
+        "title": "Farmer Management",
+        "description": "Manage all farmers assigned to you. View farmer details, contact information, and supply history."
+      },
+      "milkCollection": {
+        "title": "Milk Collection Recording",
+        "description": "Record daily milk collection from farmers with accurate quantity, quality readings (fat, SNF, CLR), and timings."
+      },
+      "dailySupply": {
+        "title": "Daily Supply Summary",
+        "description": "Track and summarize daily milk supply to your dairy. Maintain complete records of all transactions."
+      },
+      "paymentLedger": {
+        "title": "Farmer Payment Ledger",
+        "description": "Manage payment logs for all farmers. Track payments, generate reports, and maintain transparent records."
+      },
+      "routeManagement": {
+        "title": "Route & Timing Management",
+        "description": "Organize collection routes, manage timing schedules, and optimize your milk collection operations."
+      },
+      "qualityVerification": {
+        "title": "Quality Verification",
+        "description": "Verify and record milk quality parameters including fat, SNF, and CLR readings for accurate rate calculation."
+      }
+    },
+    "steps": {
+      "step1Title": "Login to Your Vendor Account",
+      "step1Desc": "Access your vendor dashboard by logging in with your credentials.",
+      "step2Title": "Collect Milk from Farmers",
+      "step2Desc": "Collect milk from your assigned farmers. Verify and record quantity, quality readings (fat, SNF, CLR), and collection timings.",
+      "step3Title": "Supply to Dairy",
+      "step3Desc": "Supply collected milk to your assigned dairy. Maintain daily supply summaries and complete transaction records.",
+      "step4Title": "Manage Farmer Payments",
+      "step4Desc": "Track and manage payment logs for all farmers. Generate payment reports and maintain transparent payment records."
+    },
+    "responsibilities": {
+      "collect": "Collect milk from assigned farmers",
+      "verify": "Verify quality and quantity",
+      "supply": "Supply to dairy",
+      "payments": "Manage farmer payments",
+      "records": "Maintain transparent records"
+    }
+  },
+  "dairy": {
+    "title": "Dairy Portal",
+    "subtitle": "Your central hub for milk processing and supply chain management",
+    "description": "A specialized platform designed to help dairies manage vendors, monitor milk collection, track quality metrics, and handle payment cycles. Login to access your dairy dashboard and optimize your operations.",
+    "keyFeatures": "Key Features",
+    "keyFeaturesDesc": "Everything you need to efficiently manage your dairy operations and supply chain",
+    "howItWorks": "How It Works",
+    "capabilitiesTitle": "Dairy Capabilities",
+    "capabilitiesDesc": "Act as a central processing and monitoring hub for your entire supply chain",
+    "readyToStart": "Ready to Get Started?",
+    "readyToStartDesc": "Login to access the Dairy Portal and start managing your operations today",
+    "loginButton": "Login to Dairy Portal",
+    "features": {
+      "vendorManagement": {
+        "title": "Vendor Management",
+        "description": "Manage all vendors under your dairy. View vendor details, performance metrics, and supply records."
+      },
+      "farmerNetwork": {
+        "title": "Farmer Network Overview",
+        "description": "Get a comprehensive view of all farmers in your network through your vendors. Monitor supply trends and relationships."
+      },
+      "collectionReports": {
+        "title": "Milk Collection Reports",
+        "description": "View detailed milk collection reports with quality metrics (fat, SNF, CLR), quantity, and timings from all vendors."
+      },
+      "paymentManagement": {
+        "title": "Vendor Payment Management",
+        "description": "Handle payment cycles for vendors. Track payments, generate reports, and maintain transparent financial records."
+      },
+      "analytics": {
+        "title": "Supply Analytics Dashboard",
+        "description": "Analyze supply trends, monitor performance metrics, and get insights to improve operational efficiency."
+      },
+      "qualityMonitoring": {
+        "title": "Quality Monitoring",
+        "description": "Monitor milk quality parameters across all vendors. Track fat, SNF, and CLR readings for quality assurance."
+      }
+    },
+    "steps": {
+      "step1Title": "Login to Your Dairy Account",
+      "step1Desc": "Access your dairy dashboard by logging in with your credentials.",
+      "step2Title": "Manage Your Vendors",
+      "step2Desc": "Oversee all vendors assigned to your dairy. Monitor their performance, supply records, and manage vendor relationships.",
+      "step3Title": "Monitor Milk Collection",
+      "step3Desc": "View detailed milk collection reports from all vendors. Track quantity, quality metrics (fat, SNF, CLR), and collection timings.",
+      "step4Title": "Handle Payment Cycles",
+      "step4Desc": "Manage payment cycles for all vendors. Track payments, generate reports, and maintain transparent financial records.",
+      "step5Title": "Analyze Supply Trends",
+      "step5Desc": "Use analytics dashboard to analyze supply trends, monitor performance metrics, and get insights to improve operational efficiency."
+    },
+    "capabilities": {
+      "central": "Central processing hub",
+      "oversight": "Complete vendor oversight",
+      "quality": "Quality assurance",
+      "analytics": "Performance analytics",
+      "payment": "Payment cycle management"
+    }
+  },
+  "vet": {
+    "title": "Our Vet +",
+    "subtitle": "Your comprehensive veterinary medicine app for all farm animals",
+    "description": "A specialized platform designed to help farmers and animal owners find the right medicines, consult with veterinary doctors, and manage animal health effectively. Login to access expert veterinary care for cows, buffaloes, and all your farm animals.",
+    "keyFeatures": "Key Features",
+    "keyFeaturesDesc": "Everything you need to ensure the health and well-being of your farm animals",
+    "howItWorks": "How It Works",
+    "supportedAnimals": "For All Farm Animals",
+    "supportedAnimalsDesc": "Our vet app supports comprehensive care for all types of farm animals",
+    "readyToStart": "Ready to Get Started?",
+    "readyToStartDesc": "Login to access the Our Vet + app and start managing your animals' health today",
+    "loginButton": "Login to Our Vet +",
+    "features": {
+      "symptomFinder": {
+        "title": "Symptom-Based Medicine Finder",
+        "description": "Enter your animal's symptoms and get instant recommendations for appropriate medicines and treatments."
+      },
+      "consult": {
+        "title": "Consult with Vet Doctors",
+        "description": "Connect with certified veterinary doctors for professional consultations and expert advice on animal health."
+      },
+      "medicineDatabase": {
+        "title": "Comprehensive Medicine Database",
+        "description": "Access a vast database of medicines and treatments specifically designed for cows, buffaloes, and all farm animals."
+      },
+      "healthRecords": {
+        "title": "Health Records Management",
+        "description": "Maintain detailed health records for all your animals, track treatments, and monitor recovery progress."
+      },
+      "preventiveCare": {
+        "title": "Preventive Care Guidelines",
+        "description": "Get preventive care recommendations and vaccination schedules to keep your animals healthy and disease-free."
+      },
+      "emergencyCare": {
+        "title": "Emergency Care Support",
+        "description": "Quick access to emergency care protocols and immediate veterinary assistance when your animals need urgent help."
+      }
+    },
+    "steps": {
+      "step1Title": "Login to Access",
+      "step1Desc": "Create an account or login to access the veterinary app and all its features.",
+      "step2Title": "Find Medicine by Symptoms",
+      "step2Desc": "Enter your animal's symptoms and get instant recommendations for appropriate medicines and treatment options from our comprehensive database.",
+      "step3Title": "Consult with Vet Doctors",
+      "step3Desc": "Schedule consultations with certified veterinary doctors for professional diagnosis, treatment plans, and expert advice tailored to your animal's specific needs.",
+      "step4Title": "Manage Animal Health",
+      "step4Desc": "Keep track of all your animals' health records, treatments, and medical history in one convenient place for better care management."
+    },
+    "animals": {
+      "cows": "Cows",
+      "buffaloes": "Buffaloes",
+      "goats": "Goats",
+      "sheep": "Sheep",
+      "poultry": "Poultry"
+    }
+  },
+  "milkPrices": {
+    "title": "Milk Prices",
+    "subtitle": "Compare milk prices from different dairies based on FAT & SNF",
+    "formula": "Price Formula",
+    "allTypes": "All Types",
+    "dairies": "Dairies",
+    "rateCards": "Rate Cards",
+    "activeCards": "active rate cards",
+    "viewChart": "View Full Price Chart",
+    "priceChart": "Complete Price Chart",
+    "noRates": "No Rate Cards Available",
+    "noRatesDesc": "No dairies have published their milk prices yet.",
+    "retry": "Retry"
+  }
+}
+
