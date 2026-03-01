@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ROUTES } from '../routes/config';
+import { brandGradient } from '../theme';
 import LOGO from '../assets/logo.png';
 
 export default function Footer() {
@@ -24,22 +25,33 @@ export default function Footer() {
       {/* Main footer content */}
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:px-10 lg:py-14 xl:px-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12 xl:gap-16">
-          {/* Brand block */}
+          {/* Brand block: logo + company name */}
           <div className="shrink-0 lg:max-w-sm xl:max-w-md">
             <Link
               to="/"
-              className="inline-block focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg"
+              className="inline-flex items-center gap-0 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg"
               aria-label={t('common.ourDairy')}
             >
               <img
                 src={LOGO}
-                alt={t('common.ourDairy')}
-                className="object-contain"
+                alt=""
+                className="object-contain shrink-0 block"
                 style={{
-                  height: 'clamp(56px, 8vw, 72px)',
-                  width: 'clamp(140px, 22vw, 200px)',
+                  height: 'clamp(48px, 6vw, 64px)',
+                  width: 'clamp(120px, 18vw, 170px)',
                 }}
               />
+              <span
+                className="footer-brand-name font-semibold text-xl sm:text-2xl md:text-3xl tracking-tight leading-tight"
+                style={{
+                  background: brandGradient,
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                }}
+              >
+                {t('common.ourDairy')}
+              </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-base">
               {t('footer.description')}

@@ -2,6 +2,11 @@
 
 export type ThemeMode = 'light' | 'dark'
 
+// Logo / brand gradient colors (hexagon DK logo: blue → green)
+export const brandBlue = '#28B0EB'
+export const brandGreen = '#1ACD96'
+export const brandGradient = `linear-gradient(90deg, ${brandBlue}, ${brandGreen})`
+
 export interface Theme {
     primary: string
     secondary: string
@@ -14,6 +19,10 @@ export interface Theme {
     success: string
     darkerBackground: string
     overlay: string
+    /** Logo gradient: blue (#28B0EB) to green (#1ACD96) */
+    brandGradient: string
+    brandBlue: string
+    brandGreen: string
 }
 
 // Light Theme Colors
@@ -29,6 +38,9 @@ export const lightTheme: Theme = {
     success: '#00d684',
     darkerBackground: '#f1f5f9',
     overlay: 'rgba(255, 255, 255, 0.9)',
+    brandGradient,
+    brandBlue,
+    brandGreen,
 }
 
 // Dark Theme Colors
@@ -44,6 +56,9 @@ export const darkTheme: Theme = {
     success: '#4ade80',
     darkerBackground: '#0f172a',
     overlay: 'rgba(255, 255, 255, 0.1)',
+    brandGradient,
+    brandBlue,
+    brandGreen,
 }
 
 // Theme map
@@ -74,5 +89,8 @@ export const generateCSSVariables = (theme: Theme) => {
         '--color-success': theme.success,
         '--color-darker-background': theme.darkerBackground,
         '--color-overlay': theme.overlay,
+        '--brand-blue': theme.brandBlue,
+        '--brand-green': theme.brandGreen,
+        '--brand-gradient': theme.brandGradient,
     }
 }
