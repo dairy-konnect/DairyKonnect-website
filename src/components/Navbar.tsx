@@ -4,7 +4,6 @@ import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ROUTES } from '../routes/config';
 import UserTypeModal from './UserTypeModal';
-import AnnouncementBanner from './home/AnnouncementBanner';
 import LanguageSwitcher from './ui/LanguageSwitcher';
 
 import LOGO from '../assets/logo.png';

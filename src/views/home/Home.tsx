@@ -5,7 +5,8 @@ import Hero from '../../components/home/Hero'
 import Features from '../../components/home/Features'
 import VideoSection from '../../components/home/VideoSection'
 import OurAppsSection from '../../components/home/OurAppsSection'
-import TestimonialSlider from '../../components/home/TestimonialSlider'
+// TestimonialSlider import commented out because testimonials are disabled
+// import TestimonialSlider from '../../components/home/TestimonialSlider'
 import UserTypeModal from '../../components/UserTypeModal'
 
 export default function Home() {
