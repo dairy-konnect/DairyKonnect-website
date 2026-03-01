@@ -13,13 +13,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow-x: hidden;
   background: linear-gradient(to bottom, #f7f9ff, #f0fdf4, #f7f9ff);
 }
 
 #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
