@@ -57,7 +57,7 @@ export default function Navbar() {
 
   return (
     <>
-      <AnnouncementBanner />
+      {/* <AnnouncementBanner /> */}
       <nav className="sticky top-0 z-20 h-[70px] flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 bg-white text-gray-900 transition-all border-b border-black">
         {/* Logo */}
         <Link to="/" className="flex items-center">

@@ -90,8 +90,8 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <a href="mailto:our.dairy.official@gmail.com" className="hover:text-green-600 transition break-all">
-                  our.dairy.official@gmail.com
+                <a href="mailto:dairykonnect@gmail.com" className="hover:text-green-600 transition break-all">
+                  dairykonnect@gmail.com
                 </a>
               </p>
             </div>

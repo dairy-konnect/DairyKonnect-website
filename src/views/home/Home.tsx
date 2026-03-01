@@ -22,12 +22,12 @@ export default function Home() {
 
         <VideoSection />
 
-        <section aria-labelledby="testimonial-heading" className="mb-16">
+        {/* <section aria-labelledby="testimonial-heading" className="mb-16">
           <h2 id="testimonial-heading" className="text-3xl font-semibold text-center text-gray-900 mb-8">
             {t('common.testimonials')}
           </h2>
           <TestimonialSlider />
-        </section>
+        </section> */}
 
 
         <OurAppsSection />
