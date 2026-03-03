@@ -160,10 +160,10 @@ export default function Footer() {
                 </p>
                 <p>
                   <a
-                    href="mailto:dairykonnect@gmail.com"
+                    href="mailto:info@dairykonnect.com"
                     className="text-sm text-gray-600 transition hover:text-green-500 break-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
                   >
-                    dairykonnect@gmail.com
+                    info@dairykonnect.com
                   </a>
                 </p>
               </div>

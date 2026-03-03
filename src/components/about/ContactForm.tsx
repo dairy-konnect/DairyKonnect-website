@@ -33,8 +33,8 @@ export default function ContactForm() {
 
       <p className="max-md:text-sm text-gray-500 pb-10 text-center">
         {t('common.orReachOut')}{' '}
-        <a href="mailto:our.dairy.official@gmail.com" className="text-green-500 hover:underline">
-          our.dairy.official@gmail.com
+        <a href="mailto:info@dairykonnect.com" className="text-green-500 hover:underline">
+          info@dairykonnect.com
         </a>
       </p>
 
