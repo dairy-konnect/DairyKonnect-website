@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 interface UserTypeModalProps {
@@ -7,24 +8,22 @@ interface UserTypeModalProps {
 
 export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
   const { t } = useTranslation()
+  const [showComingSoon, setShowComingSoon] = useState(false)
   if (!isOpen) return null
 
   const userTypes = [
     {
       name: t('userTypeModal.farmer.name'),
-      url: 'http://localhost:5174/',
       description: t('userTypeModal.farmer.description'),
       icon: '🐄'
     },
     {
       name: t('userTypeModal.vendor.name'),
-      url: 'http://localhost:5175/',
       description: t('userTypeModal.vendor.description'),
       icon: '🚚'
     },
     {
       name: t('userTypeModal.dairy.name'),
-      url: 'http://localhost:5176/',
       description: t('userTypeModal.dairy.description'),
       icon: '🏭'
     }
@@ -56,22 +55,27 @@ export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {userTypes.map((type) => (
-            <a
-              key={type.url}
-              href={type.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className="flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all group"
+            <button
+              key={type.name}
+              type="button"
+              onClick={() => setShowComingSoon(true)}
+              className="flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all group w-full"
             >
               <span className="text-4xl mb-3">{type.icon}</span>
               <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition">
                 {type.name}
               </h3>
               <p className="text-sm text-gray-600 text-center">{type.description}</p>
-            </a>
+            </button>
           ))}
         </div>
+
+        {showComingSoon && (
+          <div className="mt-6 rounded-lg border border-yellow-200 bg-yellow-50 px-4 py-3 text-sm text-yellow-800">
+            <p className="font-medium">{t('banner.launchingSoon')}</p>
+            <p className="mt-1">{t('banner.stayTuned')}</p>
+          </div>
+        )}
       </div>
     </div>
   )
