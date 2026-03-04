@@ -56,6 +56,7 @@ export default function Navbar() {
   const getRouteTranslation = (path: string, name?: string) => {
     const translationMap: Record<string, string> = {
       '/about': 'common.about',
+      '/privacy-policy': 'common.privacyPolicy',
       '/market': 'common.market',
       '/milk-prices': 'milkPrices.title',
       '/feeds': 'common.feeds',
@@ -73,7 +74,7 @@ export default function Navbar() {
   ];
 
   // Nav order: Our Apps first, then Feeds, About, News
-  const mainNavOrder = ['/feeds', '/about', '/news'];
+  const mainNavOrder = ['/feeds', '/about', '/privacy-policy', '/news'];
   const orderedNavRoutes = mainNavOrder
     .map((path) => NAVIGATION_ROUTES.find((r) => r.path === path))
     .filter(Boolean) as typeof NAVIGATION_ROUTES;

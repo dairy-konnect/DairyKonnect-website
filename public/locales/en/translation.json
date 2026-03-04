@@ -40,7 +40,9 @@
     "exploreArticles": "Explore insightful articles that can enrich your knowledge and keep you informed about the latest happenings.",
     "dairyOwner": "Dairy Owner",
     "milkSeller": "Milk Seller",
-    "dairyManager": "Dairy Manager"
+    "dairyManager": "Dairy Manager",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions"
   },
   "banner": {
     "launchingSoon": "We are launching our applications soon!",

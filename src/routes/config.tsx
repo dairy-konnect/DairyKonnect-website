@@ -8,6 +8,9 @@ const MarketPrice = lazy(() => import('../views/market/MarketPrice'));
 const MilkPrices = lazy(() => import('../views/prices/MilkPrices'));
 const Feeds = lazy(() => import('../views/feeds/Feeds'));
 const News = lazy(() => import('../views/news/News'));
+const PrivacyPolicy = lazy(() => import('../views/legal/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('../views/legal/TermsAndConditions'));
+const Contact = lazy(() => import('../views/contact/Contact'));
 const Vet = lazy(() => import('../views/vet/Vet'));
 const Farmer = lazy(() => import('../views/farmer/Farmer'));
 const Vendor = lazy(() => import('../views/vendor/Vendor'));
@@ -31,11 +34,14 @@ export interface AppRoute {
 export const APP_ROUTES: AppRoute[] = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About />, nav: true, name: 'About' },
+  { path: '/privacy-policy', element: <PrivacyPolicy />, nav: true, name: 'Privacy Policy' },
   // Market and Milk Prices – hidden from nav for now (routes still work)
   { path: '/market', element: <MarketPrice />, nav: false, name: 'Market' },
   { path: '/milk-prices', element: <MilkPrices />, nav: false, name: 'Milk Prices' },
   { path: '/feeds', element: <Feeds />, nav: true, name: 'Feeds' },
   { path: '/news', element: <News />, nav: true, name: 'News' },
+  { path: '/terms', element: <TermsAndConditions />, nav: false, name: 'Terms & Conditions' },
+  { path: '/contact', element: <Contact />, nav: false, name: 'Contact' },
   { path: '/vet', element: <Vet /> },
   { path: '/farmer', element: <Farmer /> },
   { path: '/vendor', element: <Vendor /> },

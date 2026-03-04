@@ -11,6 +11,7 @@ export default function Footer() {
   const getRouteTranslation = (path: string, name?: string) => {
     const translationMap: Record<string, string> = {
       '/about': 'common.about',
+      '/privacy-policy': 'common.privacyPolicy',
       '/market': 'common.market',
       '/milk-prices': 'milkPrices.title',
       '/feeds': 'common.feeds',
@@ -82,8 +83,16 @@ export default function Footer() {
                     {t('common.about')}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/privacy-policy"
+                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
+                  >
+                    {t('common.privacyPolicy')}
+                  </Link>
+                </li>
                 {NAVIGATION_ROUTES.filter(
-                  (r) => r.path !== '/' && r.path !== '/about'
+                  (r) => r.path !== '/' && r.path !== '/about' && r.path !== '/privacy-policy'
                 ).map((route) => (
                   <li key={route.path}>
                     <Link
@@ -94,6 +103,22 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
+                  >
+                    {t('common.termsConditions')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
+                  >
+                    {t('common.contactUs')}
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -168,7 +193,7 @@ export default function Footer() {
                 </p>
               </div>
               <Link
-                to="/about#contact"
+                to="/contact"
                 className="relative mt-5 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-green-400 px-5 py-2.5 text-sm font-medium text-white transition active:scale-[0.98] hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 group sm:mt-6 sm:px-6 sm:py-3"
               >
                 <span className="relative z-10 flex items-center gap-2">
