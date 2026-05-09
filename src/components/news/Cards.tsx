@@ -224,7 +224,8 @@ export default function Cards() {
         <div className="flex justify-center mt-8">
           <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 max-w-md">
             <p className="text-sm text-yellow-800 text-center">
-              <strong>Maximum articles reached.</strong> You've viewed all available articles (up to 100).
+              <strong>Maximum articles reached.</strong>{' '}
+              {"You've viewed all available articles (up to 100). "}
               Please upgrade to a paid plan for more results.
             </p>
           </div>

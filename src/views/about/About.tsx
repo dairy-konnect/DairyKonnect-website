@@ -55,7 +55,7 @@ export default function About() {
     <div className="min-h-full">
       <AboutHero />
       
-      <main className="max-w-7xl mx-auto px-6 sm:px-10 py-12">
+      <main className="dk-page-inner py-12">
         <StatsSection />
 
         <section aria-labelledby="modules-heading" className="mb-16">

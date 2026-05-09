@@ -15,21 +15,16 @@ export default function Hero({ onGetStarted, onWatchDemo }: HeroProps) {
     <section className="home-hero w-full" aria-labelledby="hero-heading">
       <div className="home-section-inner relative pb-14 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-28">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14 xl:gap-16">
-          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex max-w-[560px] flex-col items-center text-center md:items-start md:text-left">
             <div className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-xs font-semibold text-dk-green-800 shadow-dk-sm sm:text-[13px]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-dk-green-500 shadow-[0_0_0_4px_var(--green-200)]" aria-hidden />
               {t('hero.eyebrow')}
             </div>
 
-            <h1
-              id="hero-heading"
-              className="font-serif mt-4 max-w-xl text-4xl font-bold leading-[1.02] tracking-tight text-dk-green-900 sm:text-5xl md:max-w-2xl lg:text-[clamp(2.5rem,4vw+1rem,3.75rem)] xl:text-6xl"
-            >
-              {t('hero.headlineBefore')}
-              <em className="not-italic font-medium text-dk-green-700 underline decoration-dk-green-300 decoration-[0.35em] underline-offset-[0.15em] [text-decoration-skip-ink:none]">
-                {t('hero.headlineEm')}
-              </em>
-              {t('hero.headlineAfter')}
+            <h1 id="hero-heading" className="feeds-hero-title mb-5 mt-4">
+              <span className="text-dk-green-900">{t('hero.headlineBefore')}</span>
+              <em className="feeds-hero-em">{t('hero.headlineEm')}</em>
+              <span className="text-dk-green-900">{t('hero.headlineAfter')}</span>
             </h1>
 
             <p className="mt-5 max-w-lg text-base text-dk-ink-2 sm:text-lg">{t('hero.description')}</p>

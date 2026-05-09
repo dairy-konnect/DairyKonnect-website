@@ -53,8 +53,9 @@ export default function Vendor() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7f9ff] via-green-50 to-[#f7f9ff]">
       {/* Hero Section */}
-      <section className="px-4 md:px-16 lg:px-24 xl:px-32 pt-20 pb-16">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="pt-20 pb-16">
+        <div className="dk-page-inner">
+          <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('vendor.title')}
           </h1>
@@ -65,11 +66,12 @@ export default function Vendor() {
             {t('vendor.description')}
           </p>
         </div>
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12">
+        <div className="dk-page-inner">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
             {t('vendor.keyFeatures')}
           </h2>
@@ -102,8 +104,9 @@ export default function Vendor() {
       </section>
 
       {/* How It Works Section */}
-      <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-12 bg-white">
+        <div className="dk-page-inner">
+          <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
             {t('vendor.howItWorks')}
           </h2>
@@ -157,11 +160,13 @@ export default function Vendor() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Responsibilities Section */}
-      <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-12">
+        <div className="dk-page-inner">
+          <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
             {t('vendor.responsibilitiesTitle')}
           </h2>
@@ -179,11 +184,13 @@ export default function Vendor() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-16">
-        <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+      <section className="py-16">
+        <div className="dk-page-inner">
+          <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
             {t('vendor.readyToStart')}
           </h2>
@@ -197,6 +204,7 @@ export default function Vendor() {
             </span>
             <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
           </button>
+        </div>
         </div>
       </section>
     </div>

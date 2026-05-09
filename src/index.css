@@ -33,9 +33,13 @@
 }
 
 @layer components {
-  /* Full-bleed <section> backgrounds + max-width content (matches former Home wrapper) */
+  /**
+   * App-wide content column (navbar, footer, feeds, pricing, marketing home).
+   * 1320px max width + px-4 / sm:px-6 / md:px-8 — same gutter everywhere.
+   */
+  .dk-page-inner,
   .home-section-inner {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16;
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 md:px-8;
   }
 }
 
@@ -83,8 +87,8 @@ body {
 }
 
 /*
- * Feeds hero — mock/dairykonnect.html #page-feed .pp-hero h1 (+ em)
- * Reference layout: Fraunces 700 for title; em is italic (true Fraunces italic axis) with accent green.
+ * Feeds + home hero headline — mock/dairykonnect.html #page-feed .pp-hero h1 (+ em)
+ * Shared classes: Fraunces 700 title; em is italic (Fraunces italic axis) with accent green (no underline).
  */
 .feeds-hero-title {
   font-family: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;

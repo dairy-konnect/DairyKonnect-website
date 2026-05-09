@@ -39,8 +39,8 @@ export default function FeedShowcaseGrid({ onOpenProduct }: Props) {
   }, [category])
 
   return (
-    <section className="bg-dk-cream px-4 py-[60px] font-sans sm:px-6 md:px-8">
-      <div className="mx-auto max-w-[1320px]">
+    <section className="bg-dk-cream py-[60px] font-sans">
+      <div className="dk-page-inner">
         {/* Mock: category row mb 40px, .btn 14px / 600 */}
         <div className="mb-10 flex flex-wrap justify-center gap-2.5">
           {CATEGORY_KEYS.map(({ id, labelKey }) => (

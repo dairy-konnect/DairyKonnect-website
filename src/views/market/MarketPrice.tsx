@@ -180,7 +180,7 @@ export default function MarketPrice() {
   return (
     <div className="min-h-full bg-dk-cream text-dk-ink">
       {/* Hero — mock marketplace-hero: cream + warm radial washes */}
-      <section className="relative overflow-hidden border-b border-dk-line/80 px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-14 md:px-8">
+      <section className="relative overflow-hidden border-b border-dk-line/80 pb-14 pt-12 sm:pb-16 sm:pt-14">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.97]"
           style={{
@@ -188,7 +188,7 @@ export default function MarketPrice() {
               'radial-gradient(800px 500px at 80% 0%, #fef0d4, transparent 60%), radial-gradient(600px 400px at 0% 70%, var(--green-200), transparent 60%), var(--cream)',
           }}
         />
-        <div className="relative mx-auto max-w-[1320px]">
+        <div className="dk-page-inner relative">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-dk-line bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-dk-green-800 shadow-dk-sm dark:bg-dk-cream-2/90">
             <span className="h-2 w-2 rounded-full bg-dk-green-500 shadow-[0_0_0_3px_var(--green-200)]" aria-hidden />
             {t('marketPage.eyebrow')}
@@ -203,7 +203,7 @@ export default function MarketPrice() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-[1320px] px-4 py-8 sm:px-6 md:px-8 md:py-10">
+      <div className="dk-page-inner py-8 md:py-10">
         {/* Filters — mock .ls-filters */}
         <div className="mb-8 flex flex-wrap items-end gap-4 rounded-[18px] border border-dk-line bg-white p-5 shadow-dk-sm dark:bg-dk-cream-2 md:gap-5 md:p-6">
           <div className="min-w-[min(100%,220px)] flex-1">

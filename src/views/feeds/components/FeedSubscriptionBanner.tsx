@@ -5,8 +5,8 @@ export default function FeedSubscriptionBanner() {
   const { t } = useTranslation()
 
   return (
-    <section className="bg-dk-cream px-4 pb-[60px] pt-0 font-sans sm:px-6 md:px-8 lg:pb-[80px]">
-      <div className="mx-auto max-w-[1320px]">
+    <section className="bg-dk-cream pb-[60px] pt-0 font-sans lg:pb-[80px]">
+      <div className="dk-page-inner">
         <div className="relative grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[30px] bg-gradient-to-br from-dk-green-900 to-dk-green-700 p-8 text-white shadow-[0_30px_80px_rgba(15,58,46,0.2)] md:grid-cols-[1.4fr_1fr] md:gap-10 md:p-12 lg:p-[50px]">
           <div
             className="pointer-events-none absolute -right-24 -top-20 h-[300px] w-[300px] rounded-full"

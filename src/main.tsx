@@ -7,7 +7,13 @@ import './i18n'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Suspense fallback={<div>Loading translations...</div>}>
+    <Suspense
+      fallback={
+        <div role="status" aria-live="polite" className="p-6 text-center text-dk-ink">
+          Loading translations…
+        </div>
+      }
+    >
       <App />
       <Toaster position="top-right" />
     </Suspense>

@@ -11,8 +11,8 @@ export default function FeedsHero({ onBrowseCatalog, onSubscribeScroll }: Props)
   const { t } = useTranslation()
 
   return (
-    <section className="border-b border-dk-line/80 bg-dk-cream px-4 py-[60px] font-sans sm:px-6 md:px-8 lg:py-[80px]">
-      <div className="mx-auto mb-[60px] grid max-w-[1320px] grid-cols-1 items-center gap-[30px] lg:mb-[80px] lg:grid-cols-2 lg:gap-[60px]">
+    <section className="border-b border-dk-line/80 bg-dk-cream py-[60px] font-sans lg:py-[80px]">
+      <div className="dk-page-inner mb-[60px] grid grid-cols-1 items-center gap-[30px] lg:mb-[80px] lg:grid-cols-2 lg:gap-[60px]">
         <div className="max-w-[560px] font-sans">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-[14px] py-1.5 font-sans text-[12.5px] font-semibold leading-none text-[#a8761c] shadow-dk-sm">
             <span

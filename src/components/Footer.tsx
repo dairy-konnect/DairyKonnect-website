@@ -43,7 +43,7 @@ export default function Footer() {
       className="w-full text-white/75"
       style={{ backgroundColor: FOOTER_BG }}
     >
-      <div className="mx-auto max-w-[1320px] px-4 pb-8 pt-14 sm:px-6 md:px-8 md:pb-10">
+      <div className="dk-page-inner pb-8 pt-14 md:pb-10">
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_repeat(5,minmax(0,1fr))] lg:gap-x-10 lg:gap-y-6">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link

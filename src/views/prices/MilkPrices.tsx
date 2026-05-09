@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -54,11 +54,7 @@ export default function MilkPrices() {
 
   const { card: refCard, base, fatR, snfR } = useRefRates(dairyRates)
 
-  useEffect(() => {
-    fetchRates()
-  }, [selectedMilkType])
-
-  const fetchRates = async () => {
+  const fetchRates = useCallback(async () => {
     try {
       setLoading(true)
       const milkType = selectedMilkType === 'all' ? undefined : selectedMilkType
@@ -71,7 +67,11 @@ export default function MilkPrices() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [selectedMilkType])
+
+  useEffect(() => {
+    void fetchRates()
+  }, [fetchRates])
 
   const viewPriceChart = (card: RateCard, dairy: DairyRates) => {
     setSelectedCard(card)
@@ -111,7 +111,7 @@ export default function MilkPrices() {
             var(--cream)`,
         }}
       >
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 md:px-8">
+        <div className="dk-page-inner">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-[60px]">
             <div>
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-[12.5px] font-semibold text-dk-green-800 shadow-dk-sm">
@@ -220,7 +220,7 @@ export default function MilkPrices() {
 
       {/* Calculator + factors */}
       <section id="how-pricing" className="py-14 md:py-[60px]">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 md:px-8">
+        <div className="dk-page-inner">
           <div className="mx-auto mb-12 max-w-[720px] text-center md:mb-[60px]">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-dk-muted">
               {t('pricingPage.calcSectionEyebrow')}
@@ -364,7 +364,7 @@ export default function MilkPrices() {
 
       {/* Chart strip — mock green-100 section */}
       <section className="bg-dk-green-100 py-14 md:py-[60px]">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 md:px-8">
+        <div className="dk-page-inner">
           <div className="rounded-3xl border border-dk-line bg-white p-6 shadow-dk-sm md:p-8">
             <div className="mb-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
               <div>
@@ -466,7 +466,7 @@ export default function MilkPrices() {
 
       {/* Published cards */}
       <section id="published-cards" className="py-14 md:py-16">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6 md:px-8">
+        <div className="dk-page-inner">
           <div className="mx-auto mb-10 max-w-[720px] text-center">
             <h2 className="font-serif text-3xl font-bold text-dk-green-900 md:text-4xl">
               {t('pricingPage.publishedTitle')}

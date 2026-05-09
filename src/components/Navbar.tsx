@@ -205,7 +205,7 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-[100] border-b border-dk-line bg-[rgba(251,249,243,0.85)] backdrop-blur-[20px]">
-        <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-5 px-4 py-[14px] sm:px-6 md:px-8 md:py-[15px]">
+        <div className="dk-page-inner flex items-center justify-between gap-5 py-[14px] md:py-[15px]">
           <Link
             to="/"
             className="flex shrink-0 items-center gap-2.5"
