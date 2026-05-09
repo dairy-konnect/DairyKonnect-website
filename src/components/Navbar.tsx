@@ -1,27 +1,166 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+import {
+  FaTractor,
+  FaStethoscope,
+  FaBuilding,
+  FaWarehouse,
+  FaMobileScreenButton,
+} from 'react-icons/fa6';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAVIGATION_ROUTES } from '../routes/config';
 import UserTypeModal from './UserTypeModal';
 import LanguageSwitcher from './ui/LanguageSwitcher';
-
 import LOGO from '../assets/logo.png';
 
-const NAV_HEIGHT = 72;
+const navLinkBase =
+  'inline-flex items-center rounded-[11px] px-[16px] py-[11px] text-[15px] font-medium leading-none text-dk-ink-2 transition-all duration-200 hover:bg-dk-green-100 hover:text-dk-green-800';
+const navLinkActive =
+  'bg-dk-green-800 text-white shadow-dk-sm hover:bg-dk-green-800 hover:text-white';
+
+type MegaLink = {
+  path: string;
+  titleKey: string;
+  descKey: string;
+  icon: IconType;
+  iconShell: string;
+};
+
+const dashboardLinks: MegaLink[] = [
+  {
+    path: '/dairy',
+    titleKey: 'nav.dairyDashTitle',
+    descKey: 'nav.dairyDashDesc',
+    icon: FaBuilding,
+    iconShell: 'bg-[#e0eef9] text-[#345d80]',
+  },
+  {
+    path: '/vendor',
+    titleKey: 'nav.vendorDashTitle',
+    descKey: 'nav.vendorDashDesc',
+    icon: FaWarehouse,
+    iconShell: 'bg-dk-green-100 text-dk-green-800',
+  },
+  {
+    path: '/farmer',
+    titleKey: 'nav.farmerDashTitle',
+    descKey: 'nav.farmerDashDesc',
+    icon: FaTractor,
+    iconShell: 'bg-[#fef0d4] text-[#a8761c]',
+  },
+];
+
+const mobileAppLinks: MegaLink[] = [
+  {
+    path: '/farmer',
+    titleKey: 'nav.farmerAppTitle',
+    descKey: 'nav.farmerAppDesc',
+    icon: FaMobileScreenButton,
+    iconShell: 'bg-[#fef0d4] text-[#a8761c]',
+  },
+  {
+    path: '/vet',
+    titleKey: 'nav.vetAppTitle',
+    descKey: 'nav.vetAppDesc',
+    icon: FaStethoscope,
+    iconShell: 'bg-[#fee9d6] text-[#c4521a]',
+  },
+];
+
+const dashboardPaths = dashboardLinks.map((l) => l.path);
+const mobilePaths = mobileAppLinks.map((l) => l.path);
+
+function MegaMenuPanel({
+  links,
+  isActive,
+  onNavigate,
+}: {
+  links: MegaLink[];
+  isActive: (path: string) => boolean;
+  onNavigate?: () => void;
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className="min-w-[280px] rounded-[14px] border border-dk-line bg-white p-2 shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:bg-dk-cream-2">
+      {links.map((link) => {
+        const active = isActive(link.path);
+        const Icon = link.icon;
+        return (
+          <Link
+            key={`${link.path}-${link.titleKey}`}
+            to={link.path}
+            onClick={() => onNavigate?.()}
+            className={`flex cursor-pointer gap-3 rounded-[10px] p-3 transition-colors hover:bg-dk-green-100 ${
+              active ? 'bg-dk-green-100/80' : ''
+            }`}
+          >
+            <span
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] ${link.iconShell}`}
+            >
+              <Icon className="h-[18px] w-[18px]" aria-hidden />
+            </span>
+            <span className="min-w-0 text-left">
+              <span className="block text-sm font-semibold text-dk-green-900">
+                {t(link.titleKey)}
+              </span>
+              <span className="mt-0.5 block text-xs leading-snug text-dk-muted">
+                {t(link.descKey)}
+              </span>
+            </span>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
+function NavDropdown({
+  labelKey,
+  links,
+  pathname,
+}: {
+  labelKey: string;
+  links: MegaLink[];
+  pathname: string;
+}) {
+  const { t } = useTranslation();
+  const isActivePath = (path: string) => pathname === path;
+  const sectionActive = links.some((l) => isActivePath(l.path));
+
+  return (
+    <li className="group relative">
+      <button
+        type="button"
+        className={`inline-flex items-center gap-1 ${navLinkBase} ${sectionActive ? navLinkActive : ''}`}
+        aria-haspopup="true"
+      >
+        {t(labelKey)}
+        <FaChevronDown className="h-3 w-3 shrink-0 opacity-60 transition-transform duration-200 group-hover:rotate-180" />
+      </button>
+      <div className="pointer-events-none invisible absolute left-0 top-full z-40 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
+        <MegaMenuPanel links={links} isActive={isActivePath} />
+      </div>
+    </li>
+  );
+}
+
+type MobileDrawerSection = null | 'dashboards' | 'mobileApps';
 
 export default function Navbar() {
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isUserTypeModalOpen, setIsUserTypeModalOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
+  const [mobileOpenSection, setMobileOpenSection] =
+    useState<MobileDrawerSection>(null);
 
   useEffect(() => {
     setIsDrawerOpen(false);
+    setMobileOpenSection(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -38,27 +177,12 @@ export default function Navbar() {
     };
   }, [isDrawerOpen]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const isActive = (path: string) => pathname === path;
+  const isActivePath = (path: string) => pathname === path;
 
   const getRouteTranslation = (path: string, name?: string) => {
     const translationMap: Record<string, string> = {
-      '/about': 'common.about',
-      '/privacy-policy': 'common.privacyPolicy',
-      '/market': 'common.market',
-      '/milk-prices': 'milkPrices.title',
+      '/market': 'nav.marketplace',
+      '/milk-prices': 'nav.pricing',
       '/feeds': 'common.feeds',
       '/news': 'common.news',
     };
@@ -66,150 +190,112 @@ export default function Navbar() {
     return key ? t(key) : (name || '');
   };
 
-  const portalLinks = [
-    { path: '/farmer', name: t('common.farmer') },
-    { path: '/vendor', name: t('common.vendor') },
-    { path: '/dairy', name: t('common.dairy') },
-    { path: '/vet', name: t('common.ourVet') },
-  ];
-
-  // Nav order: Our Apps first, then Feeds, About, News
-  const mainNavOrder = ['/feeds', '/about', '/privacy-policy', '/news'];
+  const mainNavOrder = ['/market', '/milk-prices', '/feeds', '/news'];
   const orderedNavRoutes = mainNavOrder
     .map((path) => NAVIGATION_ROUTES.find((r) => r.path === path))
     .filter(Boolean) as typeof NAVIGATION_ROUTES;
 
+  const dashboardsActive = dashboardPaths.some((p) => isActivePath(p));
+  const mobileAppsActive = mobilePaths.some((p) => isActivePath(p));
+
+  const toggleMobileSection = (section: Exclude<MobileDrawerSection, null>) => {
+    setMobileOpenSection((prev) => (prev === section ? null : section));
+  };
+
   return (
     <>
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b border-black bg-white text-gray-900 transition-all"
-        style={{ height: `${NAV_HEIGHT}px` }}
-      >
-        {/* Logo - responsive sizing */}
-        <Link
-          to="/"
-          className="flex shrink-0 items-center pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:pl-12 2xl:pl-16"
-          aria-label={t('common.ourDairy')}
-        >
-          <img
-            src={LOGO}
-            alt={t('common.ourDairy')}
-            className="object-contain transition-all duration-200"
-            style={{
-              height: 'clamp(40px, 5vw, 52px)',
-              width: 'clamp(100px, 18vw, 130px)',
-            }}
-          />
-        </Link>
+      <header className="fixed inset-x-0 top-0 z-[100] border-b border-dk-line bg-[rgba(251,249,243,0.85)] backdrop-blur-[20px]">
+        <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-5 px-4 py-[14px] sm:px-6 md:px-8 md:py-[15px]">
+          <Link
+            to="/"
+            className="flex shrink-0 items-center gap-2.5"
+            aria-label={t('common.ourDairy')}
+          >
+            <img
+              src={LOGO}
+              alt=""
+              width={38}
+              height={38}
+              className="h-[38px] w-[38px] shrink-0 rounded-xl object-contain"
+            />
+            <span className="font-serif text-[22px] font-bold leading-none tracking-tight text-dk-green-900">
+              {t('common.ourDairy')}
+            </span>
+          </Link>
 
-        {/* Desktop Navigation - Our Apps first, then Feeds, About, News */}
-        <ul className="hidden items-center md:flex md:gap-4 lg:gap-6 xl:gap-8 2xl:gap-10 md:pl-8 lg:pl-12 xl:pl-16">
-          {/* Our Apps Dropdown - first */}
-          <li className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition hover:text-gray-500/80 lg:text-base ${
-                portalLinks.some((link) => isActive(link.path))
-                  ? 'text-green-500 font-medium'
-                  : ''
-              }`}
-              aria-expanded={isDropdownOpen}
-              aria-haspopup="true"
-            >
-              {t('common.ourApps')}
-              <FaChevronDown
-                className={`h-3 w-3 transition-transform duration-200 ${
-                  isDropdownOpen ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
-
-            <AnimatePresence>
-              {isDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full z-30 mt-2 w-48 rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
-                >
-                  {portalLinks.map((link) => {
-                    const active = isActive(link.path);
-                    return (
-                      <Link
-                        key={link.path}
-                        to={link.path}
-                        onClick={() => setIsDropdownOpen(false)}
-                        className={`block px-4 py-2.5 text-sm transition hover:bg-green-50 ${
-                          active
-                            ? 'bg-green-50 font-medium text-green-500'
-                            : 'text-gray-700'
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                    );
-                  })}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </li>
-
-          {orderedNavRoutes.map((route) => {
-            const active = isActive(route.path);
-            return (
-              <li key={route.path}>
+          <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex">
+            <ul className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-1.5">
+              <li>
                 <Link
-                  to={route.path}
-                  className={`whitespace-nowrap text-sm font-medium transition hover:text-gray-500/80 lg:text-base ${
-                    active ? 'text-green-500 font-medium' : ''
-                  }`}
+                  to="/"
+                  className={`inline-flex ${navLinkBase} ${isActivePath('/') ? navLinkActive : ''}`}
                 >
-                  {getRouteTranslation(route.path, route.name)}
+                  {t('common.home')}
                 </Link>
               </li>
-            );
-          })}
-        </ul>
 
-        {/* Desktop: Language + CTA */}
-        <div className="hidden items-center gap-3 md:flex md:pr-6 lg:gap-4 lg:pr-8 xl:pr-10 2xl:pr-16">
-          <LanguageSwitcher />
-          <button
-            onClick={() => setIsUserTypeModalOpen(true)}
-            className="relative bg-green-400 text-white px-6 py-2.5 rounded-full active:scale-95 transition-all overflow-hidden group lg:px-8 lg:py-3 lg:text-base"
-          >
-            <span className="relative z-10 flex items-center gap-2">
+              <NavDropdown
+                labelKey="nav.dashboards"
+                links={dashboardLinks}
+                pathname={pathname}
+              />
+              <NavDropdown
+                labelKey="nav.mobileApps"
+                links={mobileAppLinks}
+                pathname={pathname}
+              />
+
+              {orderedNavRoutes.map((route) => {
+                const active = isActivePath(route.path);
+                return (
+                  <li key={route.path}>
+                    <Link
+                      to={route.path}
+                      className={`inline-flex ${navLinkBase} ${active ? navLinkActive : ''}`}
+                    >
+                      {getRouteTranslation(route.path, route.name)}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div className="hidden shrink-0 items-center gap-2.5 md:flex">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => setIsUserTypeModalOpen(true)}
+              className="inline-flex h-10 items-center gap-2 rounded-xl border border-transparent bg-dk-green-800 px-[18px] text-sm font-semibold leading-none text-white shadow-dk-sm transition-all duration-200 hover:-translate-y-px hover:bg-dk-green-900 hover:shadow-dk-md active:translate-y-0"
+            >
               {t('common.getStarted')}
-              <FaArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </span>
-            <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-          </button>
-        </div>
+              <FaArrowRight className="h-4 w-4" aria-hidden />
+            </button>
+          </div>
 
-        {/* Mobile: Menu button */}
-        <div className="flex items-center pr-4 sm:pr-6 md:hidden">
-          <button
-            type="button"
-            aria-label={isDrawerOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isDrawerOpen}
-            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-900 transition hover:bg-gray-100 active:scale-95"
-          >
-            {isDrawerOpen ? (
-              <HiX className="h-6 w-6" />
-            ) : (
-              <HiMenuAlt3 className="h-6 w-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              type="button"
+              aria-label={isDrawerOpen ? t('common.close') : t('common.menu')}
+              aria-expanded={isDrawerOpen}
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-[10px] text-dk-ink transition hover:bg-dk-green-100 active:scale-95"
+            >
+              {isDrawerOpen ? (
+                <HiX className="h-6 w-6" />
+              ) : (
+                <HiMenuAlt3 className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
-      </nav>
+      </header>
+      {/* Reserve space so content does not sit under the fixed bar */}
+      <div className="h-[68px] shrink-0 md:h-[70px]" aria-hidden />
 
-      {/* Mobile Drawer: overlay + panel */}
       <AnimatePresence>
         {isDrawerOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -220,104 +306,116 @@ export default function Navbar() {
               aria-hidden="true"
             />
 
-            {/* Drawer panel - slides from right */}
             <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-              className="fixed right-0 top-0 z-[70] flex h-full w-[min(320px,88vw)] flex-col border-l border-black bg-white shadow-2xl"
+              className="fixed right-0 top-0 z-[70] flex h-full w-[min(340px,92vw)] flex-col border-l border-dk-line bg-dk-cream shadow-dk-lg md:hidden"
               role="dialog"
               aria-modal="true"
-              aria-label="Navigation menu"
+              aria-label={t('common.menu')}
             >
-              {/* Drawer header */}
-              <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
-                <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  {t('common.menu', 'Menu')}
+              <div className="flex items-center justify-between border-b border-dk-line px-5 py-4">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-dk-muted">
+                  {t('common.menu')}
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsDrawerOpen(false)}
-                  aria-label="Close menu"
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition hover:bg-gray-100 hover:text-gray-700"
+                  aria-label={t('common.close')}
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-dk-muted transition hover:bg-dk-green-100 hover:text-dk-ink"
                 >
                   <HiX className="h-5 w-5" />
                 </button>
               </div>
 
-              {/* Scrollable content - Our Apps first, then Feeds, About, News */}
-              <div className="flex flex-1 flex-col overflow-y-auto py-4">
-                {/* Our Apps section in drawer - first */}
-                <div className="px-3 pb-4">
-                  <div className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    {t('common.ourApps')}
-                  </div>
-                  <ul className="flex flex-col gap-0.5">
-                    {portalLinks.map((link) => {
-                      const active = isActive(link.path);
-                      return (
-                        <li key={link.path}>
-                          <Link
-                            to={link.path}
-                            onClick={() => setIsDrawerOpen(false)}
-                            className={`flex items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
-                              active
-                                ? 'bg-green-50 text-green-500 font-medium'
-                                : 'text-gray-600 hover:bg-gray-50'
-                            }`}
-                          >
-                            {link.name}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+              <div className="flex flex-1 flex-col overflow-y-auto px-4 py-4">
+                <Link
+                  to="/"
+                  onClick={() => setIsDrawerOpen(false)}
+                  className={`mb-1 rounded-[10px] px-4 py-3 text-base font-medium ${isActivePath('/') ? navLinkActive : `${navLinkBase} text-dk-ink-2`}`}
+                >
+                  {t('common.home')}
+                </Link>
 
-                <div className="mt-2 border-t border-gray-200 px-3 pt-4">
-                  <ul className="flex flex-col px-0">
-                    {orderedNavRoutes.map((route) => {
-                      const active = isActive(route.path);
-                      return (
-                        <li key={route.path}>
-                          <Link
-                            to={route.path}
-                            onClick={() => setIsDrawerOpen(false)}
-                            className={`block rounded-xl px-4 py-3.5 text-base font-medium transition ${
-                              active
-                                ? 'bg-green-50 text-green-500 font-medium'
-                                : 'text-gray-700 hover:bg-gray-50'
-                            }`}
-                          >
-                            {getRouteTranslation(route.path, route.name)}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                {/* Drawer footer: language + CTA */}
-                <div className="mt-auto border-t border-gray-200 px-4 py-5">
-                  <div className="mb-4">
-                    <LanguageSwitcher />
-                  </div>
+                <div className="mt-1 border-t border-dk-line pt-3">
                   <button
                     type="button"
-                    onClick={() => {
-                      setIsDrawerOpen(false);
-                      setIsUserTypeModalOpen(true);
-                    }}
-                    className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-green-400 py-3.5 text-base font-medium text-white transition-all active:scale-[0.98]"
+                    onClick={() => toggleMobileSection('dashboards')}
+                    className={`flex w-full items-center justify-between rounded-[10px] px-4 py-3 text-left text-base font-medium ${dashboardsActive ? navLinkActive : 'text-dk-ink-2 hover:bg-dk-green-100'}`}
                   >
-                    <span className="relative z-10">
-                      {t('common.getStarted')}
-                    </span>
-                    <FaArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                    <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+                    {t('nav.dashboards')}
+                    <FaChevronDown
+                      className={`h-3 w-3 shrink-0 transition-transform ${mobileOpenSection === 'dashboards' ? 'rotate-180' : ''}`}
+                    />
                   </button>
+                  {mobileOpenSection === 'dashboards' && (
+                    <div className="mt-2">
+                      <MegaMenuPanel
+                        links={dashboardLinks}
+                        isActive={isActivePath}
+                        onNavigate={() => setIsDrawerOpen(false)}
+                      />
+                    </div>
+                  )}
                 </div>
+
+                <div className="mt-3 border-t border-dk-line pt-3">
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileSection('mobileApps')}
+                    className={`flex w-full items-center justify-between rounded-[10px] px-4 py-3 text-left text-base font-medium ${mobileAppsActive ? navLinkActive : 'text-dk-ink-2 hover:bg-dk-green-100'}`}
+                  >
+                    {t('nav.mobileApps')}
+                    <FaChevronDown
+                      className={`h-3 w-3 shrink-0 transition-transform ${mobileOpenSection === 'mobileApps' ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {mobileOpenSection === 'mobileApps' && (
+                    <div className="mt-2">
+                      <MegaMenuPanel
+                        links={mobileAppLinks}
+                        isActive={isActivePath}
+                        onNavigate={() => setIsDrawerOpen(false)}
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <ul className="mt-4 flex flex-col border-t border-dk-line pt-3">
+                  {orderedNavRoutes.map((route) => {
+                    const active = isActivePath(route.path);
+                    return (
+                      <li key={route.path}>
+                        <Link
+                          to={route.path}
+                          onClick={() => setIsDrawerOpen(false)}
+                          className={`mb-1 block rounded-[10px] px-4 py-3 text-base font-medium ${active ? navLinkActive : `${navLinkBase} text-dk-ink-2`}`}
+                        >
+                          {getRouteTranslation(route.path, route.name)}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div className="border-t border-dk-line px-4 py-5">
+                <div className="mb-4">
+                  <LanguageSwitcher />
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsDrawerOpen(false);
+                    setIsUserTypeModalOpen(true);
+                  }}
+                  className="flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-dk-green-800 text-sm font-semibold leading-none text-white shadow-dk-sm transition hover:-translate-y-px hover:brightness-110 active:translate-y-0"
+                >
+                  {t('common.getStarted')}
+                  <FaArrowRight className="h-4 w-4" />
+                </button>
               </div>
             </motion.aside>
           </>

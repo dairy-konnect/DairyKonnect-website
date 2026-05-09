@@ -1,218 +1,134 @@
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { NAVIGATION_ROUTES } from '../routes/config';
-import { brandGradient } from '../theme';
 import LOGO from '../assets/logo.png';
+
+const FOOTER_BG = '#0f3a2e';
+
+function FootLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <Link
+      to={to}
+      className="block py-1.5 text-sm text-white/70 transition hover:text-[#7ce0a8]"
+    >
+      {children}
+    </Link>
+  );
+}
+
+function FootCol({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h5 className="mb-[18px] text-[13px] font-semibold uppercase tracking-[0.1em] text-white">
+        {title}
+      </h5>
+      <nav className="flex flex-col">{children}</nav>
+    </div>
+  );
+}
+
+const socialLinks = [
+  { Icon: FaTwitter, href: 'https://x.com', label: 'X' },
+  { Icon: FaInstagram, href: 'https://www.instagram.com', label: 'Instagram' },
+  { Icon: FaYoutube, href: 'https://www.youtube.com', label: 'YouTube' },
+  { Icon: FaLinkedinIn, href: 'https://www.linkedin.com', label: 'LinkedIn' },
+] as const;
 
 export default function Footer() {
   const { t } = useTranslation();
-
-  const getRouteTranslation = (path: string, name?: string) => {
-    const translationMap: Record<string, string> = {
-      '/about': 'common.about',
-      '/privacy-policy': 'common.privacyPolicy',
-      '/market': 'common.market',
-      '/milk-prices': 'milkPrices.title',
-      '/feeds': 'common.feeds',
-      '/news': 'common.news',
-    };
-    const key = translationMap[path];
-    return key ? t(key) : (name || '');
-  };
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-black bg-white text-gray-700">
-      {/* Main footer content */}
-      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:px-10 lg:py-14 xl:px-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-12 xl:gap-16">
-          {/* Brand block: logo + company name */}
-          <div className="shrink-0 lg:max-w-sm xl:max-w-md">
+    <footer
+      className="w-full text-white/75"
+      style={{ backgroundColor: FOOTER_BG }}
+    >
+      <div className="mx-auto max-w-[1320px] px-4 pb-8 pt-14 sm:px-6 md:px-8 md:pb-10">
+        <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_repeat(5,minmax(0,1fr))] lg:gap-x-10 lg:gap-y-6">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link
               to="/"
-              className="inline-flex items-center gap-0 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg"
+              className="inline-block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               aria-label={t('common.ourDairy')}
             >
               <img
                 src={LOGO}
-                alt=""
-                className="object-contain shrink-0 block"
-                style={{
-                  height: 'clamp(48px, 6vw, 64px)',
-                  width: 'clamp(120px, 18vw, 170px)',
-                }}
+                alt={t('common.ourDairy')}
+                className="h-10 w-auto max-w-[220px] object-contain object-left sm:h-11"
               />
-              <span
-                className="footer-brand-name font-semibold text-xl sm:text-2xl md:text-3xl tracking-tight leading-tight"
-                style={{
-                  background: brandGradient,
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                {t('common.ourDairy')}
-              </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-600 sm:mt-5 sm:text-base">
+            <h4 className="mt-3.5 font-semibold text-[22px] leading-snug text-white sm:text-xl">
+              {t('footer.tagline')}
+            </h4>
+            <p className="mt-2 max-w-[280px] text-sm leading-relaxed text-white/75">
               {t('footer.description')}
             </p>
-          </div>
-
-          {/* Links grid */}
-          <div className="grid flex-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-14">
-            {/* Company */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900">
-                {t('common.company')}
-              </h3>
-              <ul className="mt-4 space-y-3 sm:mt-5">
-                <li>
-                  <Link
-                    to="/"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.home')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.about')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/privacy-policy"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.privacyPolicy')}
-                  </Link>
-                </li>
-                {NAVIGATION_ROUTES.filter(
-                  (r) => r.path !== '/' && r.path !== '/about' && r.path !== '/privacy-policy'
-                ).map((route) => (
-                  <li key={route.path}>
-                    <Link
-                      to={route.path}
-                      className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                    >
-                      {getRouteTranslation(route.path, route.name)}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link
-                    to="/terms"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.termsConditions')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.contactUs')}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Our Apps */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900">
-                {t('common.ourApps')}
-              </h3>
-              <ul className="mt-4 space-y-3 sm:mt-5">
-                <li>
-                  <a
-                    href="http://localhost:5174/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
-                  >
-                    {t('common.farmer')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="http://localhost:5175/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
-                  >
-                    {t('common.vendor')}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="http://localhost:5176/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
-                  >
-                    {t('common.dairy')}
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    to="/vet"
-                    className="text-sm text-gray-600 transition hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5"
-                  >
-                    {t('common.ourVet')}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Get in touch */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900">
-                {t('common.getInTouch')}
-              </h3>
-              <div className="mt-4 space-y-2 sm:mt-5">
-                <p>
-                  <a
-                    href="tel:+917981474788"
-                    className="text-sm text-gray-600 transition hover:text-green-500 break-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
-                  >
-                    +91 7981474788
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href="mailto:info@dairykonnect.com"
-                    className="text-sm text-gray-600 transition hover:text-green-500 break-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-1 py-0.5 -mx-1 -my-0.5 inline-block"
-                  >
-                    info@dairykonnect.com
-                  </a>
-                </p>
-              </div>
-              <Link
-                to="/contact"
-                className="relative mt-5 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-green-400 px-5 py-2.5 text-sm font-medium text-white transition active:scale-[0.98] hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 group sm:mt-6 sm:px-6 sm:py-3"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  {t('common.contactUs')}
-                  <FaArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-                <span className="absolute inset-0 -translate-x-full bg-black transition-transform duration-300 ease-in-out group-hover:translate-x-0" />
-              </Link>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid h-9 w-9 place-items-center rounded-full bg-white/[0.08] text-white/90 transition hover:bg-[#1f7a4d]"
+                  aria-label={label}
+                >
+                  <Icon className="h-4 w-4" aria-hidden />
+                </a>
+              ))}
             </div>
           </div>
+
+          <FootCol title={t('nav.dashboards')}>
+            <FootLink to="/dairy">{t('nav.dairyDashTitle')}</FootLink>
+            <FootLink to="/vendor">{t('nav.vendorDashTitle')}</FootLink>
+            <FootLink to="/farmer">{t('nav.farmerDashTitle')}</FootLink>
+          </FootCol>
+
+          <FootCol title={t('footer.appsAndTools')}>
+            <FootLink to="/farmer">{t('nav.farmerAppTitle')}</FootLink>
+            <FootLink to="/vet">{t('nav.vetAppTitle')}</FootLink>
+            <FootLink to="/market">{t('footer.marketplace')}</FootLink>
+            <FootLink to="/milk-prices">{t('footer.milkPrices')}</FootLink>
+            <FootLink to="/feeds">{t('common.feeds')}</FootLink>
+          </FootCol>
+
+          <FootCol title={t('footer.byRole')}>
+            <FootLink to="/dairy">{t('footer.forDairies')}</FootLink>
+            <FootLink to="/vendor">{t('footer.forVendors')}</FootLink>
+            <FootLink to="/farmer">{t('footer.forFarmers')}</FootLink>
+            <FootLink to="/vet">{t('footer.forVets')}</FootLink>
+          </FootCol>
+
+          <FootCol title={t('common.company')}>
+            <FootLink to="/about">{t('footer.aboutUs')}</FootLink>
+            <FootLink to="/news">{t('footer.newsArticles')}</FootLink>
+            <FootLink to="/contact?topic=careers">{t('footer.careers')}</FootLink>
+            <FootLink to="/contact?topic=press">{t('footer.press')}</FootLink>
+            <FootLink to="/contact">{t('common.contactUs')}</FootLink>
+          </FootCol>
+
+          <FootCol title={t('footer.legal')}>
+            <FootLink to="/privacy-policy">{t('footer.privacy')}</FootLink>
+            <FootLink to="/terms">{t('footer.termsShort')}</FootLink>
+            <FootLink to="/privacy-policy">{t('footer.cookies')}</FootLink>
+            <FootLink to="/privacy-policy">{t('footer.security')}</FootLink>
+          </FootCol>
         </div>
-      </div>
 
-      {/* Copyright bar */}
-      <div className="border-t border-gray-200">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-5 md:px-8 lg:px-10 xl:px-12">
-          <p className="text-center text-xs text-gray-500 sm:text-sm">
-            {t('common.copyright', { year: new Date().getFullYear() })}
-          </p>
+        <div className="flex flex-col gap-4 pt-6 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
+          <span>
+            {t('common.copyright', { year })}{' '}
+            <span className="text-white/50">·</span>{' '}
+            {t('footer.madeInIndia')}
+          </span>
+          <span className="inline-flex flex-wrap items-center gap-2">
+            <span>{t('footer.statusLabel')}</span>
+            <span className="text-[#7ce0a8]" aria-hidden>
+              ●
+            </span>
+            <span>{t('footer.statusOperational')}</span>
+          </span>
         </div>
       </div>
     </footer>

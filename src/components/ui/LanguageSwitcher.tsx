@@ -38,8 +38,9 @@ export default function LanguageSwitcher() {
   return (
     <div className="relative" ref={dropdownRef}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 px-3 py-1.5 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition"
+        className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-dk-line bg-dk-cream px-3 text-sm font-medium leading-none text-dk-ink transition hover:border-dk-green-700 hover:text-dk-green-800"
         aria-label="Change language"
       >
         <span>{currentLanguage.nativeName}</span>
@@ -47,20 +48,20 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-30">
+        <div className="absolute top-full right-0 z-30 mt-2 w-44 rounded-[14px] border border-dk-line bg-white py-2 shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:bg-dk-cream-2">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-green-50 transition ${
+              className={`w-full px-4 py-2 text-left text-sm transition hover:bg-dk-green-100 ${
                 i18n.language === lang.code
-                  ? 'text-green-500 font-medium bg-green-50'
-                  : 'text-gray-700'
+                  ? 'bg-dk-green-100 font-medium text-dk-green-800'
+                  : 'text-dk-ink-2'
               }`}
             >
               <div className="flex flex-col">
                 <span>{lang.nativeName}</span>
-                <span className="text-xs text-gray-500">{lang.name}</span>
+                <span className="text-xs text-dk-muted">{lang.name}</span>
               </div>
             </button>
           ))}

@@ -1,63 +1,66 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import UserTypeModal from '../UserTypeModal';
+import HeroStats from './HeroStats';
+import HeroVisual from './HeroVisual';
 
-export default function Hero() {
+export type HeroProps = {
+  onGetStarted: () => void;
+  onWatchDemo: () => void;
+};
+
+export default function Hero({ onGetStarted, onWatchDemo }: HeroProps) {
   const { t } = useTranslation();
-  const [isUserTypeModalOpen, setIsUserTypeModalOpen] = useState(false);
 
   return (
-    <section className="w-full overflow-hidden">
-      <main className="flex flex-col max-md:gap-12 md:flex-row md:gap-8 lg:gap-12 xl:gap-16 pb-12 sm:pb-16 md:pb-20 items-center justify-between mt-14 sm:mt-16 md:mt-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 max-w-7xl mx-auto">
-        <div className="flex flex-col items-center md:items-start w-full max-w-xl">
-          <h1 className="text-center md:text-left text-3xl leading-tight sm:text-4xl sm:leading-[2.75rem] md:text-5xl md:leading-[3.25rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-[4rem] font-semibold text-slate-900">
-            {t('hero.title')}{' '}
-            <span className="text-green-500">{t('hero.subtitle')}</span>
-          </h1>
+    <section className="home-hero w-full" aria-labelledby="hero-heading">
+      <div className="home-section-inner relative pb-14 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-28">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14 xl:gap-16">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-xs font-semibold text-dk-green-800 shadow-dk-sm sm:text-[13px]">
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-dk-green-500 shadow-[0_0_0_4px_var(--green-200)]" aria-hidden />
+              {t('hero.eyebrow')}
+            </div>
 
-          <p className="text-center md:text-left text-sm sm:text-base text-slate-700 max-w-lg mt-3 sm:mt-4">
-            {t('hero.description')}
-          </p>
+            <h1
+              id="hero-heading"
+              className="font-serif mt-4 max-w-xl text-4xl font-bold leading-[1.02] tracking-tight text-dk-green-900 sm:text-5xl md:max-w-2xl lg:text-[clamp(2.5rem,4vw+1rem,3.75rem)] xl:text-6xl"
+            >
+              {t('hero.headlineBefore')}
+              <em className="not-italic font-medium text-dk-green-700 underline decoration-dk-green-300 decoration-[0.35em] underline-offset-[0.15em] [text-decoration-skip-ink:none]">
+                {t('hero.headlineEm')}
+              </em>
+              {t('hero.headlineAfter')}
+            </h1>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto justify-center md:justify-start">
-            <button
-              className="relative bg-green-400 text-white active:scale-95 transition rounded-full px-6 sm:px-7 h-10 sm:h-11 overflow-hidden group w-full sm:w-auto text-sm sm:text-base"
-              onClick={() => setIsUserTypeModalOpen(true)}
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                {t('common.getStarted')}
-                <FaArrowRight className="w-4 h-4" />
-              </span>
-              <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-            </button>
-            <Link
-              to="/about"
-              className="flex items-center justify-center gap-2 border border-slate-600 active:scale-95 hover:bg-slate-50 transition text-slate-600 rounded-full px-5 sm:px-6 h-10 sm:h-11 w-full sm:w-auto text-sm sm:text-base"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-                <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
-                <rect x="2" y="6" width="14" height="12" rx="2" />
-              </svg>
-              <span>{t('common.learnMore')}</span>
-            </Link>
+            <p className="mt-5 max-w-lg text-base text-dk-ink-2 sm:text-lg">{t('hero.description')}</p>
+
+            <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:justify-start">
+              <button
+                type="button"
+                onClick={onGetStarted}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-dk-green-800 px-5 text-sm font-semibold text-white shadow-dk-sm transition hover:brightness-110 active:scale-[0.98] sm:h-12 sm:px-6 sm:text-base"
+              >
+                {t('hero.explorePlatform')}
+                <FaArrowRight className="h-4 w-4 shrink-0" aria-hidden />
+              </button>
+              <button
+                type="button"
+                onClick={onWatchDemo}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-dk-line bg-white px-5 text-sm font-semibold text-dk-ink transition hover:border-dk-green-700 hover:text-dk-green-800 active:scale-[0.98] sm:h-12 sm:px-6 sm:text-base"
+              >
+                <FaPlay className="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden />
+                {t('hero.watchDemo')}
+              </button>
+            </div>
+
+            <HeroStats />
+          </div>
+
+          <div className="relative w-full shrink-0 lg:max-w-none">
+            <HeroVisual />
           </div>
         </div>
-
-        <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl shrink-0">
-          <img
-            src="/hero.png"
-            alt={t('common.ourDairy')}
-            className="w-full h-auto object-contain rounded-tl-[4rem] rounded-br-[4rem] sm:rounded-tl-[5rem] sm:rounded-br-[5rem] md:rounded-tl-[6rem] md:rounded-br-[6rem] transition-all duration-300"
-          />
-        </div>
-      </main>
-
-      <UserTypeModal
-        isOpen={isUserTypeModalOpen}
-        onClose={() => setIsUserTypeModalOpen(false)}
-      />
+      </div>
     </section>
   );
 }

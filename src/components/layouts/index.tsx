@@ -8,7 +8,7 @@ export function MainLayout() {
     <div>
       <ScrollToTop />
       <Navbar />
-      <main className="pt-[72px]">
+      <main>
         <Outlet />
       </main>
       <Footer />

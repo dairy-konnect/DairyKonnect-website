@@ -33,7 +33,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Apply CSS custom properties to document root
   useEffect(() => {
     const root = document.documentElement
-    const cssVariables = generateCSSVariables(theme)
+    const cssVariables = generateCSSVariables(theme, themeConfig.mode)
 
     Object.entries(cssVariables).forEach(([property, value]) => {
       root.style.setProperty(property, value)

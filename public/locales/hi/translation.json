@@ -42,19 +42,89 @@
     "milkSeller": "दूध विक्रेता",
     "dairyManager": "डेयरी प्रबंधक"
   },
+  "nav": {
+    "dashboards": "डैशबोर्ड",
+    "mobileApps": "मोबाइल ऐप्स",
+    "adminTitle": "एडमिन कंसोल",
+    "adminDesc": "पूरे नेटवर्क को चलाएँ · मल्टी-रीजन",
+    "dairyDashTitle": "डेयरी डैशबोर्ड",
+    "dairyDashDesc": "प्लांट संचालन, प्रोसेसिंग, डिस्पैच",
+    "vendorDashTitle": "विक्रेता डैशबोर्ड",
+    "vendorDashDesc": "रूट, गुणवत्ता, भुगतान",
+    "farmerDashTitle": "किसान डैशबोर्ड",
+    "farmerDashDesc": "पशु, दूध उत्पादन और कमाई का वेब दृश्य",
+    "farmerAppTitle": "किसान ऐप",
+    "farmerAppDesc": "किसान डैशबोर्ड जैसा, आपकी जेब में",
+    "vetAppTitle": "VetKonnect ऐप",
+    "vetAppDesc": "डुअल लॉगिन: पशु चिकित्सक और किसान · मार्केटप्लेस",
+    "marketplace": "मार्केटप्लेस",
+    "pricing": "मूल्य निर्धारण"
+  },
   "banner": {
     "launchingSoon": "हम जल्द ही अपने एप्लिकेशन लॉन्च कर रहे हैं!",
     "stayTuned": "अपडेट के लिए बने रहें!"
   },
   "home": {
-    "ctaText": "अपने डेयरी संचालन को कुशलता से प्रबंधित करना शुरू करें और बढ़ते हमारा डेयरी समुदाय में शामिल हों।"
+    "ctaHeading": "क्या आप अपना पूरा डेयरी नेटवर्क जोड़ने के लिए तैयार हैं?",
+    "ctaLead": "संग्रह, बिलिंग, विक्रेताओं और किसानों को एक प्लेटफॉर्म पर लाएँ — वेब और मोबाइल पर समान वर्कफ़्लो।"
+  },
+  "videoSection": {
+    "title": "डेयरी कनेक्ट को काम करते देखें",
+    "description": "एक संक्षिप्त वॉकथ्रू: संग्रह, बिलिंग और निपटान को एक ही प्रवाह में कैसे समन्वयित किया जाता है।"
+  },
+  "ourAppsSection": {
+    "title": "हमारे ऐप्स डाउनलोड करें",
+    "description": "चलते-फिरते डेयरी प्रबंधन के लिए मोबाइल ऐप्स — iOS और Android पर उपलब्ध।",
+    "farmerDesc": "दूध उत्पादन प्रबंधित करें, लेनदेन ट्रैक करें और भुगतान आसानी से प्राप्त करें।",
+    "vendorDesc": "दूध संग्रह मार्ग सुव्यवस्थित करें, आपूर्तिकर्ताओं और डिलीवरी को ट्रैक करें।",
+    "dairyDesc": "बिलिंग, रिपोर्ट और विश्लेषण के साथ संपूर्ण डेयरी संचालन।",
+    "vetDesc": "पशुधन स्वास्थ्य और आपात देखभाल के लिए पशु चिकित्सा सेवाओं से जुड़ें।"
   },
   "hero": {
-    "title": "हमारा डेयरी",
-    "subtitle": "संपूर्ण डेयरी प्रबंधन प्लेटफॉर्म",
-    "description": "एक अंत-से-अंत प्लेटफॉर्म जो पूरे दूध आपूर्ति श्रृंखला को डिजिटलाइज करता है और सुव्यवस्थित करता है, एडमिन, डेयरी, दूध विक्रेताओं और किसानों को पारदर्शी वर्कफ़्लो और कुशल संचालन के साथ एक एकीकृत पारिस्थितिकी तंत्र में जोड़ता है।"
+    "eyebrow": "भारत का जुड़ा हुआ डेयरी इकोसिस्टम",
+    "headlineBefore": "उन लोगों के लिए जो ",
+    "headlineEm": "हर सुबह दूध का चक्र",
+    "headlineAfter": " चलाते हैं, न कि केवल बाज़ार।",
+    "description": "डेयरीकनेक्ट किसानों, पशु चिकित्सकों, विक्रेताओं और एडमिन को एक ही मंच पर लाता है — डैशबोर्ड, मोबाइल ऐप्स और पारदर्शी संचालन एक छत के नीचे।",
+    "explorePlatform": "प्लेटफॉर्म देखें",
+    "watchDemo": "डेमो देखें",
+    "stat1Value": "12K+",
+    "stat1Label": "किसान",
+    "stat2Value": "340+",
+    "stat2Label": "विक्रेता",
+    "stat3Value": "98.7%",
+    "stat3Label": "अपटाइम",
+    "stat4Value": "4.8★",
+    "stat4Label": "ऐप रेटिंग",
+    "statsAriaLabel": "प्लेटफॉर्म मुख्य आँकड़े",
+    "visual": {
+      "ariaLabel": "किसान ऐप का चित्रण: दैनिक उत्पादन, साप्ताहिक कमाई चार्ट, और पशु चिकित्सक विज़िट अनुस्मारक।",
+      "badgeQuality": "गुणवत्ता A+ सत्यापित",
+      "badgeAi": "AI मूल्य पूर्वानुमान",
+      "yieldTitle": "आज की उपज",
+      "yieldUp": "▲ 8.4%",
+      "yieldAmount": "14.6",
+      "yieldUnit": "ली",
+      "morning": "सुबह",
+      "evening": "शाम",
+      "morningVol": "8.2L",
+      "eveningVol": "6.4L",
+      "animalName": "लक्ष्मी",
+      "snf": "SNF",
+      "fat": "वसा %",
+      "weekLabel": "इस सप्ताह",
+      "earningsTitle": "कमाई",
+      "earningsAmount": "₹ 4,824",
+      "drInitials": "DR",
+      "drName": "डॉ. रमेश",
+      "drRole": "पशु विशेषज्ञ",
+      "visitTitle": "भेंट निर्धारित",
+      "visitTime": "कल, 9:30 AM",
+      "reschedule": "पुनर्निर्धारण"
+    }
   },
   "features": {
+    "eyebrow": "टीमें हमें क्यों चुनती हैं",
     "title": "शक्तिशाली सुविधाएं",
     "description": "आपको अपने डेयरी संचालन को प्रबंधित करने, ट्रैक करने और सुव्यवस्थित करने के लिए आवश्यक सब कुछ, सुरक्षित और कुशलता से।",
     "transactionManagement": {
@@ -107,7 +177,30 @@
     }
   },
   "footer": {
-    "description": "एक अंत-से-अंत प्लेटफॉर्म जो पूरे दूध आपूर्ति श्रृंखला को डिजिटलाइज करता है और सुव्यवस्थित करता है, एडमिन, डेयरी, दूध विक्रेताओं और किसानों को पारदर्शी वर्कफ़्लो और कुशल संचालन के साथ एक एकीकृत पारिस्थितिकी तंत्र में जोड़ता है।"
+    "tagline": "उन लोगों के लिए जो सुबह का दूध देते हैं।",
+    "description": "भारत का जुड़ा हुआ डेयरी इकोसिस्टम — ऐप, डैशबोर्ड और फीड, एक साथ।",
+    "appsAndTools": "ऐप और उपकरण",
+    "byRole": "भूमिका अनुसार",
+    "legal": "कानूनी",
+    "marketplace": "बाज़ार",
+    "milkPrices": "दूध की कीमतें",
+    "animalFeed": "पशु आहार",
+    "forAdmins": "एडमिन के लिए",
+    "forDairies": "डेयरी के लिए",
+    "forVendors": "विक्रेताओं के लिए",
+    "forFarmers": "किसानों के लिए",
+    "forVets": "पशु चिकित्सकों के लिए",
+    "aboutUs": "हमारे बारे में",
+    "newsArticles": "समाचार और लेख",
+    "careers": "करियर",
+    "press": "प्रेस",
+    "privacy": "गोपनीयता",
+    "termsShort": "नियम",
+    "cookies": "कुकीज़",
+    "security": "सुरक्षा",
+    "statusLabel": "स्थिति:",
+    "statusOperational": "सभी प्रणालियाँ सामान्य",
+    "madeInIndia": "भारत में 🌱 के साथ निर्मित"
   },
   "testimonials": {
     "testimonial1": "मैं लगभग दो साल से हमारा डेयरी प्लेटफॉर्म उपयोग कर रहा हूं, और यह अविश्वसनीय रूप से उपयोगकर्ता-अनुकूल रहा है, जिससे मेरे दैनिक लेनदेन प्रबंधन में बहुत आसानी और दक्षता आई है।",
@@ -338,6 +431,342 @@
       "goats": "बकरियां",
       "sheep": "भेड़ें",
       "poultry": "मुर्गी पालन"
+    }
+  },
+  "homePage": {
+    "ecosystem": {
+      "eyebrow": "4 user roles · 3 dashboards · 2 apps",
+      "titleBefore": "One platform. ",
+      "titleEm": "Every role in your dairy chain.",
+      "description": "From the farmer with one cow to the cooperative running twelve routes — DairyKonnect gives every user the exact interface they need, on the device they actually use.",
+      "dashboardEyebrow": "3 Web Dashboards",
+      "dashboardTitle": "Built for desks, browsers & big screens",
+      "appsEyebrow": "2 Mobile Apps",
+      "appsTitle": "Designed for the people in the field"
+    },
+    "roles": [
+      {
+        "id": "dairy",
+        "title": "Dairies",
+        "desc": "Processors · cooperatives · plants"
+      },
+      {
+        "id": "vendor",
+        "title": "Vendors",
+        "desc": "Collection agents · route owners"
+      },
+      {
+        "id": "farmer",
+        "title": "Farmers",
+        "desc": "The heart of the network"
+      },
+      {
+        "id": "vet",
+        "title": "Veterinaries",
+        "desc": "On-call doctors · clinics"
+      }
+    ],
+    "dashboards": [
+      {
+        "id": "dairy",
+        "path": "/dairy",
+        "title": "Dairy Dashboard",
+        "desc": "For processing plants and cooperatives — track inbound milk, lab tests, processing batches, packaging and dispatch in one flow.",
+        "chips": [
+          "Inbound",
+          "Lab QC",
+          "Batches",
+          "Dispatch"
+        ],
+        "link": "Open Dairy →"
+      },
+      {
+        "id": "vendor",
+        "path": "/vendor",
+        "title": "Vendor Dashboard",
+        "desc": "For collection agents — manage routes, scan farmer QRs, log volumes with auto-quality, calculate payments instantly.",
+        "chips": [
+          "QR collection",
+          "Routes",
+          "Auto-pricing"
+        ],
+        "link": "Open Vendor →"
+      },
+      {
+        "id": "farmer",
+        "path": "/farmer",
+        "title": "Farmer Dashboard",
+        "desc": "The web counterpart to the Farmer App. Same data, larger screen — perfect for reviewing earnings, cattle records and reports.",
+        "chips": [
+          "Cattle records",
+          "Yield trends",
+          "Earnings",
+          "Reports"
+        ],
+        "link": "Open Farmer Web →"
+      }
+    ],
+    "mobileApps": [
+      {
+        "id": "farmerApp",
+        "path": "/farmer",
+        "featured": true,
+        "title": "Farmer App",
+        "desc": "The mobile mirror of the Farmer Dashboard. Track every cow, log every drop, get vet help, order feed — all from your phone, even offline.",
+        "chips": [
+          "Cattle profiles",
+          "Daily yield",
+          "Earnings",
+          "Vet booking",
+          "Feed orders",
+          "Offline-first"
+        ],
+        "link": "Explore Farmer App →",
+        "visualLine1": "One login, two surfaces",
+        "visualLine2": "Mobile-first for farmers in the field. Web for review and reporting at home."
+      },
+      {
+        "id": "vetApp",
+        "path": "/vet",
+        "featured": false,
+        "title": "VetKonnect App",
+        "desc": "One app, two sign-in modes — farmers get vet consults, vaccination calendars, symptom AI & livestock marketplace; vets get appointments, case history, prescriptions.",
+        "chips": [
+          "Dual login",
+          "Tele-consults",
+          "Symptom AI",
+          "Vaccinations",
+          "Marketplace",
+          "SOS"
+        ],
+        "link": "Explore VetKonnect →",
+        "visualLine1": "Farmer sign-in — Tele-consult, vaccines, marketplace",
+        "visualLine2": "Doctor sign-in — Appointments, prescriptions, history"
+      }
+    ],
+    "why": {
+      "eyebrow": "Why DairyKonnect",
+      "titleBefore": "Made for ",
+      "titleEm": "real farms",
+      "titleAfter": ", not just slide decks.",
+      "features": [
+        {
+          "title": "Speaks 11 Indian languages",
+          "desc": "Hindi, Tamil, Telugu, Kannada, Marathi, Bengali — voice-first interfaces for low-literacy users."
+        },
+        {
+          "title": "Works offline first",
+          "desc": "Every entry queues locally and syncs when the network returns. Built for rural connectivity."
+        },
+        {
+          "title": "Secure payments, instant",
+          "desc": "UPI auto-payouts every cycle. No middlemen, no delays. Farmers see earnings in real time."
+        },
+        {
+          "title": "AI quality, every collection",
+          "desc": "Computer-vision SNF & fat estimation, plus price prediction for the next 7 days."
+        }
+      ]
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "titleBefore": "From ",
+      "titleEm": "shed to spreadsheet",
+      "titleAfter": " in four steps.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Farmer logs milk",
+          "desc": "Two taps in the app. Yield, session, cow — all captured in seconds."
+        },
+        {
+          "num": "02",
+          "title": "Vendor verifies",
+          "desc": "QR scan at collection point auto-fills SNF, fat and weight."
+        },
+        {
+          "num": "03",
+          "title": "AI prices it",
+          "desc": "Quality grade computed instantly, payment calculated by today's rate."
+        },
+        {
+          "num": "04",
+          "title": "Money arrives",
+          "desc": "UPI payout hits the farmer's account before the next milking."
+        }
+      ]
+    },
+    "ai": {
+      "eyebrow": "AI Quality Check + Price Predictor",
+      "titleBefore": "Quality you can ",
+      "titleEm1": "trust",
+      "titleMid": ", prices you can ",
+      "titleEm2": "plan",
+      "titleAfter": ".",
+      "lead": "DairyKonnect's vision-AI grades every milk collection in under 2 seconds. Combined with our 7-day market price forecast, farmers and vendors finally get pricing power that big buyers have always had.",
+      "f1Title": "Vision-based SNF + Fat",
+      "f1Desc": "One photo. No reagents, no lab. 96% accuracy vs. lactometer.",
+      "f2Title": "7-day price forecast",
+      "f2Desc": "ML model trained on 4 years of mandi data, weather and demand cycles.",
+      "f3Title": "Adulteration alerts",
+      "f3Desc": "Flags water, urea, starch and detergent. Vendor sees it before payment.",
+      "cardTitle": "Live sample · #DK-2849",
+      "liveLabel": "Analyzing",
+      "gaugeVal": "87",
+      "gaugeSub": "quality",
+      "gaugeCaption": "Grade A+ · Premium tier · ₹46.20 / L",
+      "metricSnf": "SNF",
+      "metricFat": "Fat",
+      "metricVol": "Volume",
+      "forecastLabel": "7-day forecast",
+      "forecastHint": "↗ +₹1.80 expected"
+    },
+    "testimonials": {
+      "eyebrow": "Stories from the field",
+      "titleBefore": "Real farms. ",
+      "titleEm": "Real outcomes.",
+      "items": [
+        {
+          "quote": "\"My cousin used to keep milk records in a notebook. Now we just open the app. Last month our earnings went up by ₹3,200 because we caught a low-yield cow early.\"",
+          "initials": "SK",
+          "name": "Sunita Kale",
+          "role": "Dairy farmer · Kolhapur, Maharashtra"
+        },
+        {
+          "quote": "\"VetKonnect saved a calf last winter. The vet did the consult on video at 11 PM and walked us through it. That's not a feature, that's a lifeline.\"",
+          "initials": "RV",
+          "name": "Rajan Vora",
+          "role": "Cattle owner · Anand, Gujarat"
+        },
+        {
+          "quote": "\"As a vendor, I used to lose 2 hours a day on paperwork. The QR collection workflow cut that to 20 minutes — and farmers trust the price now because the AI shows them.\"",
+          "initials": "MR",
+          "name": "Mahesh Reddy",
+          "role": "Collection vendor · Hyderabad"
+        }
+      ]
+    },
+    "rewards": {
+      "eyebrow": "Konnect Rewards · NEW",
+      "titleBefore": "Loyalty that ",
+      "titleEm": "actually shows up",
+      "titleAfter": " in your account.",
+      "lead": "Earn points on every litre delivered, every vet visit booked, every feed bag purchased. Refer another farmer or customer — both of you get bonus credits.",
+      "tiers": [
+        {
+          "badge": "B",
+          "title": "Bronze",
+          "desc": "0 – 5,000 points · 1% cashback on feed"
+        },
+        {
+          "badge": "S",
+          "title": "Silver",
+          "desc": "5K – 20K · Free vet consultations every month"
+        },
+        {
+          "badge": "G",
+          "title": "Gold",
+          "desc": "20K – 50K · 5% feed discount + priority delivery"
+        },
+        {
+          "badge": "P",
+          "title": "Platinum",
+          "desc": "50K+ · Insurance subsidy + dedicated farm advisor"
+        }
+      ],
+      "walletTitle": "Sunita's Konnect Wallet",
+      "walletSubtitle": "Silver tier · 1,420 to Gold",
+      "pointsValue": "18,580",
+      "pointsLabel": "points",
+      "progressFrom": "Silver",
+      "progressTo": "Gold at 20,000",
+      "r1Title": "Free vet consult",
+      "r1Pts": "500 pts",
+      "r1Cta": "Claim",
+      "r2Title": "10% off cattle feed",
+      "r2Pts": "1,200 pts",
+      "r2Cta": "Claim",
+      "r3Title": "Refer a farmer · earn 1,000",
+      "r3Pts": "Both get rewards",
+      "r3Cta": "Share"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "titleBefore": "Simple plans, ",
+      "titleEm": "built for every farm.",
+      "titleAfter": "",
+      "lead": "Start free. Upgrade when you scale. No setup fees, no lock-ins, cancel anytime.",
+      "starterName": "Starter",
+      "starterDesc": "For individual farmers with up to 5 cattle.",
+      "starterPrice": "0",
+      "starterPriceNote": "/ forever",
+      "starterFeats": [
+        "Farmer App for up to 5 cattle",
+        "Daily yield logging",
+        "2 free vet consultations/yr",
+        "Basic earnings reports"
+      ],
+      "starterCta": "Start free",
+      "vendorName": "Vendor Pro",
+      "vendorDesc": "For collection vendors and cooperatives.",
+      "vendorPrice": "1,499",
+      "vendorPriceNote": "/ month",
+      "vendorTag": "Most popular",
+      "vendorFeats": [
+        "Unlimited farmers + collections",
+        "AI quality check (every sample)",
+        "Auto-payouts via UPI",
+        "Live route + GPS tracking",
+        "Daily MIS reports"
+      ],
+      "vendorCta": "Start 14-day trial",
+      "enterpriseName": "Enterprise",
+      "enterpriseDesc": "For dairy unions & multi-state operators.",
+      "enterprisePrice": "Talk to us",
+      "enterpriseFeats": [
+        "Multi-region operations console",
+        "White-label apps + branding",
+        "Dedicated success manager",
+        "Custom integrations & API",
+        "24/7 priority support"
+      ],
+      "enterpriseCta": "Contact sales"
+    },
+    "faq": {
+      "eyebrow": "Frequently asked",
+      "titleBefore": "Questions, ",
+      "titleEm": "answered.",
+      "titleAfter": "",
+      "sidebarLead": "Still curious? Reach out to our team — we typically respond within an hour during business days.",
+      "talkCta": "Talk to us",
+      "items": [
+        {
+          "q": "Does the farmer app work without internet?",
+          "a": "Yes. Every entry — milk yield, vet booking, feed order — is saved offline first. The moment you reconnect, everything syncs in the background. We've built it for villages where 4G is a courtesy, not a guarantee."
+        },
+        {
+          "q": "How accurate is the AI quality check?",
+          "a": "Our vision model achieves 96% agreement with traditional lactometer readings on SNF and fat. We re-train monthly on regional samples so accuracy improves as we expand."
+        },
+        {
+          "q": "Can I get my own branded app for my cooperative?",
+          "a": "Absolutely. Our Enterprise plan includes white-label apps, your logo, brand colors and even your domain. Most cooperatives go live in 2-3 weeks."
+        },
+        {
+          "q": "How are farmers paid?",
+          "a": "UPI auto-payouts based on your billing cycle (daily, weekly, or fortnightly). Payments are calculated against AI-graded quality and current market rates, then sent directly to the farmer's bank."
+        },
+        {
+          "q": "Is my data private?",
+          "a": "Yes. We're SOC 2 aligned, host data in India, and never sell anonymized or identified data to third parties. You own your data. Full export available anytime."
+        }
+      ]
+    },
+    "finalCta": {
+      "titleLine1": "Ready to bring your dairy",
+      "titleLine2": "into the connected era?",
+      "description": "Onboard your first 50 farmers free. Setup in under 24 hours. We'll even import your existing records.",
+      "button": "Start your free trial"
     }
   }
 }

@@ -36,8 +36,8 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/about', element: <About />, nav: true, name: 'About' },
   { path: '/privacy-policy', element: <PrivacyPolicy />, nav: true, name: 'Privacy Policy' },
   // Market and Milk Prices – hidden from nav for now (routes still work)
-  { path: '/market', element: <MarketPrice />, nav: false, name: 'Market' },
-  { path: '/milk-prices', element: <MilkPrices />, nav: false, name: 'Milk Prices' },
+  { path: '/market', element: <MarketPrice />, nav: true, name: 'Marketplace' },
+  { path: '/milk-prices', element: <MilkPrices />, nav: true, name: 'Pricing' },
   { path: '/feeds', element: <Feeds />, nav: true, name: 'Feeds' },
   { path: '/news', element: <News />, nav: true, name: 'News' },
   { path: '/terms', element: <TermsAndConditions />, nav: false, name: 'Terms & Conditions' },

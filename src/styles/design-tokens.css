@@ -1,0 +1,82 @@
+/**
+ * Global design tokens (same names as mock/dairykonnect.html :root).
+ * Keep hex values in sync with lightDesignTokens / darkDesignTokens in src/theme.ts.
+ */
+
+:root {
+  --green-900: #0f3a2e;
+  --green-800: #155e3f;
+  --green-700: #1f7a4d;
+  --green-600: #2a9d62;
+  --green-500: #43c47e;
+  --green-400: #7ce0a8;
+  --green-300: #b8f0cd;
+  --green-200: #dff7e7;
+  --green-100: #eefbf2;
+  --cream: #fbf9f3;
+  --cream-2: #f5f1e6;
+  --ink: #0c1f17;
+  --ink-2: #234334;
+  --muted: #5a6b62;
+  --line: #e3e9e2;
+  --gold: #c89b3a;
+  --coral: #ff7a59;
+  --sky: #76b7e0;
+  --shadow-sm: 0 1px 2px rgba(15, 58, 46, 0.06), 0 2px 6px rgba(15, 58, 46, 0.04);
+  --shadow-md: 0 6px 18px rgba(15, 58, 46, 0.08), 0 2px 6px rgba(15, 58, 46, 0.05);
+  --shadow-lg: 0 24px 60px rgba(15, 58, 46, 0.14), 0 6px 16px rgba(15, 58, 46, 0.06);
+  --radius: 18px;
+  --color-primary: #155e3f;
+  --color-secondary: #1f7a4d;
+  --color-background: #fbf9f3;
+  --color-text: #0c1f17;
+  --color-input-background: rgba(12, 31, 23, 0.06);
+  --color-placeholder: rgba(12, 31, 23, 0.45);
+  --color-border: #e3e9e2;
+  --color-error: #ef4444;
+  --color-success: #2a9d62;
+  --color-darker-background: #f5f1e6;
+  --color-overlay: rgba(251, 249, 243, 0.92);
+  --brand-blue: #28b0eb;
+  --brand-green: #1acd96;
+  --brand-gradient: linear-gradient(90deg, #28b0eb, #1acd96);
+}
+
+html.dark {
+  --green-900: #e8f4ee;
+  --green-800: #43c47e;
+  --green-700: #5ed396;
+  --green-600: #2a9d62;
+  --green-500: #1f7a4d;
+  --green-400: #1a6540;
+  --green-300: #164f33;
+  --green-200: #123d29;
+  --green-100: #0f2e20;
+  --cream: #0f1614;
+  --cream-2: #15211c;
+  --ink: #ecf6f0;
+  --ink-2: #bcd4c8;
+  --muted: #8aa395;
+  --line: rgba(255, 255, 255, 0.12);
+  --gold: #d4b060;
+  --coral: #ff9578;
+  --sky: #8cc8ed;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+  --color-primary: #43c47e;
+  --color-secondary: #5ed396;
+  --color-background: #0f1614;
+  --color-text: #ecf6f0;
+  --color-input-background: rgba(255, 255, 255, 0.08);
+  --color-placeholder: rgba(236, 246, 240, 0.45);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-error: #f87171;
+  --color-success: #2a9d62;
+  --color-darker-background: #15211c;
+  --color-overlay: rgba(15, 22, 20, 0.88);
+  --brand-blue: #28b0eb;
+  --brand-green: #1acd96;
+  --brand-gradient: linear-gradient(90deg, #28b0eb, #1acd96);
+}
