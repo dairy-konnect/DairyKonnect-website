@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FaArrowRight, FaDownload, FaMicrophone, FaPlay, FaQrcode, FaBell, FaUsers } from 'react-icons/fa';
 import AppStoreBadges from './AppStoreBadges';
 import FeatureHighlightGrid from './FeatureHighlightGrid';
+import { FARMER_DASHBOARD_DEMO } from '../../constants/farmerDashboardDemo';
 
 const featureIcons: IconType[] = [FaMicrophone, FaQrcode, FaBell, FaUsers];
 
@@ -75,6 +76,7 @@ function FarmerHeroBento({
 
 export default function FarmerAppProductPage() {
   const { t } = useTranslation();
+  const demo = { ...FARMER_DASHBOARD_DEMO };
   const raw = t('farmerAppPage.features', { returnObjects: true }) as { title: string; body: string }[];
   const featureItems = raw.map((item, i) => ({
     ...item,
@@ -123,6 +125,9 @@ export default function FarmerAppProductPage() {
               googleLabel={t('farmerAppPage.storeGoogleLabel')}
               googleTitle={t('farmerAppPage.storeGoogleTitle')}
             />
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-dk-muted">
+              {t('farmerAppPage.demoRecordNote', { ...demo })}
+            </p>
           </div>
 
           <FarmerHeroBento items={featureItems} />

@@ -11,9 +11,11 @@ import {
   FaTint,
 } from 'react-icons/fa';
 import FeatureHighlightGrid from './FeatureHighlightGrid';
+import { FARMER_DASHBOARD_DEMO } from '../../constants/farmerDashboardDemo';
 
 export default function FarmerWebProductPage() {
   const { t } = useTranslation();
+  const demoI = { ...FARMER_DASHBOARD_DEMO };
   const raw = t('farmerWebPage.features', { returnObjects: true }) as { title: string; body: string }[];
   const featureItems: { title: string; body: string; Icon: IconType }[] = [
     { ...raw[0], Icon: FaTable },
@@ -82,6 +84,9 @@ export default function FarmerWebProductPage() {
                   SK
                 </div>
               </div>
+              <p className="mb-4 text-[12px] leading-snug text-white/75">
+                {t('farmerWebPage.previewLinkedDairy', { dairyName: demoI.dairyName })}
+              </p>
               <div className="mb-3 grid grid-cols-2 gap-2.5">
                 <div className="rounded-xl bg-white/10 px-3.5 py-3">
                   <div className="text-[11px] text-white/70">{t('farmerWebPage.previewCattle')}</div>
@@ -94,7 +99,9 @@ export default function FarmerWebProductPage() {
               </div>
               <div className="rounded-xl bg-white/10 px-3.5 py-3">
                 <div className="text-[11px] font-medium uppercase tracking-wide text-white/70">{t('farmerWebPage.previewToday')}</div>
-                <div className="font-serif mt-1 text-2xl font-semibold">{t('farmerWebPage.previewTodayVal')}</div>
+                <div className="font-serif mt-1 text-2xl font-semibold">
+                  {t('farmerWebPage.previewTodayVal', { ...demoI })}
+                </div>
                 <div className="mt-2 flex h-8 items-end gap-0.5">
                   {[50, 60, 55, 75, 65, 85, 100].map((h, i) => (
                     <div

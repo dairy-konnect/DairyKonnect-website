@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FARMER_DASHBOARD_DEMO } from '../../constants/farmerDashboardDemo';
 
 interface Transaction {
   id: string;
@@ -14,7 +15,10 @@ interface UserContextLike {
   id: string;
 }
 
-const currentUser: UserContextLike = { role: 'dairyOwner', id: 'owner-1' };
+/** Demo: farmer / supplier view (matches farmer web & app marketing copy). Toggle to dairyOwner to preview co-op table. */
+const currentUser: UserContextLike = { role: 'milkSeller', id: 'farmer-demo-1' };
+
+const DEMO_DATE = FARMER_DASHBOARD_DEMO.dateIso;
 
 export default function Dashboard() {
   const [data, setData] = useState<Transaction[]>([]);
@@ -27,18 +31,18 @@ export default function Dashboard() {
 
         if (currentUser.role === 'dairyOwner') {
           setData([
-            { id: 't1', seller: 'Ravi', quantity: 22, milkType: 'Cow', date: '2025-10-04' },
-            { id: 't2', seller: 'Sita', quantity: 18, milkType: 'Buffalo', date: '2025-10-04' },
+            { id: 't1', seller: 'Ravi', quantity: 22, milkType: 'Cow', date: DEMO_DATE },
+            { id: 't2', seller: 'Sita', quantity: 18, milkType: 'Buffalo', date: DEMO_DATE },
           ]);
         } else {
           setData([
             {
               id: 't3',
               seller: 'You',
-              dairyOwner: 'Sunrise Dairy',
-              quantity: 15,
-              milkType: 'Cow',
-              date: '2025-10-04',
+              dairyOwner: FARMER_DASHBOARD_DEMO.dairyName,
+              quantity: FARMER_DASHBOARD_DEMO.quantityLiters,
+              milkType: FARMER_DASHBOARD_DEMO.milkType,
+              date: DEMO_DATE,
             },
           ]);
         }
@@ -51,6 +55,10 @@ export default function Dashboard() {
   }, []);
 
   const ownerView = currentUser.role === 'dairyOwner';
+  const heading = ownerView ? 'Dashboard' : 'Farmer dashboard';
+  const subheading = ownerView
+    ? 'Demo dairy view — sample collections from two suppliers.'
+    : 'Demo supplier view — same sample row as the Farmer web preview (quantity, milk type, linked dairy).';
 
   return (
     <div className="min-h-full bg-dk-cream pb-20 pt-[72px] md:pt-[76px]">
@@ -63,8 +71,9 @@ export default function Dashboard() {
           />
           <div className="relative">
             <h1 className="font-serif text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl md:text-[2.35rem]">
-              Dashboard
+              {heading}
             </h1>
+            <p className="mt-2 max-w-2xl text-sm text-dk-ink-2 md:text-base">{subheading}</p>
           </div>
         </div>
 

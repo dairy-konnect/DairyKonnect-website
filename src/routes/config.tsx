@@ -36,7 +36,7 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About />, nav: true, name: 'About' },
   { path: '/privacy-policy', element: <PrivacyPolicy />, nav: true, name: 'Privacy Policy' },
-  // Market and Milk Prices – hidden from nav for now (routes still work)
+  // Livestock marketplace (VetKonnect) vs regional milk reference prices
   { path: '/market', element: <MarketPrice />, nav: true, name: 'Marketplace' },
   { path: '/milk-prices', element: <MilkPrices />, nav: true, name: 'Pricing' },
   { path: '/feeds', element: <Feeds />, nav: true, name: 'Feeds' },
