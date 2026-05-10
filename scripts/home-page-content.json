@@ -11,7 +11,7 @@
   },
   "roles": [
     { "id": "dairy", "title": "Dairies", "desc": "Processors · cooperatives · plants" },
-    { "id": "vendor", "title": "Vendors", "desc": "Collection agents · route owners" },
+    { "id": "vendor", "title": "Collection vendors", "desc": "Agents & route owners · between farmer and dairy" },
     { "id": "farmer", "title": "Farmers", "desc": "The heart of the network" },
     { "id": "vet", "title": "Veterinaries", "desc": "On-call doctors · clinics" }
   ],
@@ -28,25 +28,25 @@
       "id": "vendor",
       "path": "/vendor",
       "title": "Vendor Dashboard",
-      "desc": "For collection agents — manage routes, scan farmer QRs, log volumes with auto-quality, calculate payments instantly.",
-      "chips": ["QR collection", "Routes", "Auto-pricing"],
-      "link": "Open Vendor"
+      "desc": "For milk-collection agents and route owners — same tools as the Milk Vendor Portal: farmer roster, route timings, pour logging (fat, SNF, CLR), daily supply to the dairy, and transparent farmer payment ledgers.",
+      "chips": ["QR & collection", "Routes & timing", "Quality & rates", "Farmer payouts"],
+      "link": "Open vendor portal"
     },
     {
       "id": "farmer",
       "path": "/farmer",
       "title": "Farmer Dashboard",
-      "desc": "The web counterpart to the Farmer App. Same data, larger screen — perfect for reviewing earnings, cattle records and reports.",
-      "chips": ["Cattle records", "Yield trends", "Earnings", "Reports"],
+      "desc": "The Farmer web portal — same login as the app, wider tables: vendor-recorded pours, fat/SNF, earnings, rate card, collection vendors and payout periods.",
+      "chips": ["Pour history", "Rate card", "Earnings", "Payout periods"],
       "link": "Open Farmer Web"
     },
     {
       "id": "vetWeb",
       "path": "/vet",
-      "title": "Vet App",
-      "desc": "Explore VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics.",
+      "title": "VetKonnect (web)",
+      "desc": "Browser overview of VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics. Day-to-day vet work lives in the VetKonnect app.",
       "chips": ["Health records", "Vaccinations", "Appointments", "Tele-consults"],
-      "link": "Open Vet App"
+      "link": "Open VetKonnect"
     }
   ],
   "mobileApps": [
@@ -104,7 +104,7 @@
     "titleAfter": " in four steps.",
     "steps": [
       { "num": "01", "title": "Farmer logs milk", "desc": "Two taps in the app. Yield, session, cow — all captured in seconds." },
-      { "num": "02", "title": "Vendor verifies", "desc": "QR scan at collection point auto-fills SNF, fat and weight." },
+      { "num": "02", "title": "Collection vendor verifies", "desc": "At the collection point your milk vendor scans the farmer, then SNF, fat and weight are logged for pricing." },
       { "num": "03", "title": "AI prices it", "desc": "Quality grade computed instantly, payment calculated by today's rate." },
       { "num": "04", "title": "Money arrives", "desc": "UPI payout hits the farmer's account before the next milking." }
     ]
@@ -116,13 +116,13 @@
     "titleMid": ", prices you can ",
     "titleEm2": "plan",
     "titleAfter": ".",
-    "lead": "DairyKonnect's vision-AI grades every milk collection in under 2 seconds. Combined with our 7-day market price forecast, farmers and vendors finally get pricing power that big buyers have always had.",
+    "lead": "DairyKonnect's vision-AI grades every milk collection in under 2 seconds. Combined with our 7-day market price forecast, farmers and collection vendors finally get pricing power that big buyers have always had.",
     "f1Title": "Vision-based SNF + Fat",
     "f1Desc": "One photo. No reagents, no lab. 96% accuracy vs. lactometer.",
     "f2Title": "7-day price forecast",
     "f2Desc": "ML model trained on 4 years of mandi data, weather and demand cycles.",
     "f3Title": "Adulteration alerts",
-    "f3Desc": "Flags water, urea, starch and detergent. Vendor sees it before payment.",
+    "f3Desc": "Flags water, urea, starch and detergent. The collection vendor sees it before locking the pour or payout.",
     "cardTitle": "Live sample · #DK-2849",
     "liveLabel": "Analyzing",
     "gaugeVal": "87",
@@ -152,7 +152,7 @@
         "role": "Cattle owner · Anand, Gujarat"
       },
       {
-        "quote": "\"As a vendor, I used to lose 2 hours a day on paperwork. The QR collection workflow cut that to 20 minutes — and farmers trust the price now because the AI shows them.\"",
+        "quote": "\"As a milk-collection vendor, I used to lose 2 hours a day on paperwork. The QR collection workflow cut that to 20 minutes — and farmers trust the price now because the AI shows them.\"",
         "initials": "MR",
         "name": "Mahesh Reddy",
         "role": "Collection vendor · Hyderabad"
@@ -205,7 +205,7 @@
     ],
     "starterCta": "Start free",
     "vendorName": "Vendor Pro",
-    "vendorDesc": "For collection vendors and cooperatives.",
+    "vendorDesc": "For milk-collection vendors, agents and cooperatives running routes.",
     "vendorPrice": "1,499",
     "vendorPriceNote": "/ month",
     "vendorTag": "Most popular",

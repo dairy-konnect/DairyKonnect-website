@@ -52,11 +52,11 @@
     "adminTitle": "Admin Console",
     "adminDesc": "Run the entire network · multi-region",
     "dairyDashTitle": "Dairy Dashboard",
-    "dairyDashDesc": "Plant operations, processing, dispatch",
+    "dairyDashDesc": "Vendor roster, rate cards & market pricing",
     "vendorDashTitle": "Vendor Dashboard",
-    "vendorDashDesc": "Collection routes, quality, payouts",
+    "vendorDashDesc": "Milk collection routes, QC at the can, farmer payouts",
     "farmerDashTitle": "Farmer Dashboard",
-    "farmerDashDesc": "Web view of cattle, yield & earnings",
+    "farmerDashDesc": "Read vendor pours, shifts, rate card & payouts",
     "farmerAppTitle": "Farmer App",
     "farmerAppDesc": "Same as Farmer Dashboard, in your pocket",
     "vetAppTitle": "VetKonnect App",
@@ -78,27 +78,27 @@
   },
   "home": {
     "ctaHeading": "Ready to connect your entire dairy network?",
-    "ctaLead": "Bring collections, billing, vendors and farmers onto one platform — consistent workflows on web and mobile."
+    "ctaLead": "Milk ledgers, dairy rates, vet care and marketplace — one stack for farmers, vendors, dairies and doctors."
   },
   "videoSection": {
     "title": "See Dairy Konnect in Action",
-    "description": "A quick walkthrough of how teams coordinate collection, billing and settlements in one flow."
+    "description": "Vendors log pours; dairies set rate cards; farmers see the same numbers on web or phone."
   },
   "ourAppsSection": {
     "title": "Download Our Apps",
     "description": "Get our mobile apps for a seamless dairy management experience on the go. Available on iOS and Android.",
     "farmerDesc": "Manage your milk production, track transactions, and receive payments easily.",
-    "vendorDesc": "Streamline milk collection routes, manage suppliers, and track deliveries.",
-    "dairyDesc": "Complete dairy operations management with billing, reports, and analytics.",
+    "vendorDesc": "Log routes, pours and payouts — hand milk to the dairy with clean books.",
+    "dairyDesc": "Onboard vendors, publish rate cards, track market references.",
     "vetDesc": "Connect with veterinary services for livestock health and emergency care."
   },
   "hero": {
-    "eyebrow": "India's connected dairy ecosystem",
-    "headlineBefore": "Built for the people who ",
-    "headlineEm": "move milk every morning",
-    "headlineAfter": ", not just the markets.",
-    "description": "DairyKonnect brings together farmers, veterinarians, vendors and admins into one fluent platform — dashboards, mobile apps and transparent operations under one roof.",
-    "explorePlatform": "Explore the platform",
+    "eyebrow": "Farmers · vendors · dairies · vets",
+    "headlineBefore": "Built for people who ",
+    "headlineEm": "move milk daily",
+    "headlineAfter": " — not just the markets.",
+    "description": "Daily pours with fat/SNF and clear totals. Dairy rate cards, vet & herd, feed & market — Razorpay when you enable it.",
+    "explorePlatform": "Explore platform",
     "watchDemo": "Watch demo",
     "stat1Value": "12K+",
     "stat1Label": "Farmers",
@@ -110,10 +110,10 @@
     "stat4Label": "App rating",
     "statsAriaLabel": "Platform highlights",
     "visual": {
-      "ariaLabel": "Illustration of the farmer app with daily yield, weekly earnings chart, and a vet visit reminder.",
-      "badgeQuality": "Quality A+ verified",
-      "badgeAi": "AI price predicted",
-      "yieldTitle": "Today's Yield",
+      "ariaLabel": "Sample farmer view: yield, earnings and a vet reminder.",
+      "badgeQuality": "A+ verified",
+      "badgeAi": "Dairy card rate",
+      "yieldTitle": "Today's yield",
       "yieldUp": "▲ 8.4%",
       "yieldAmount": "14.6",
       "yieldUnit": "L",
@@ -124,14 +124,14 @@
       "animalName": "Lakshmi",
       "snf": "SNF",
       "fat": "Fat %",
-      "weekLabel": "This Week",
+      "weekLabel": "This week",
       "earningsTitle": "Earnings",
       "earningsAmount": "₹ 4,824",
       "drInitials": "DR",
       "drName": "Dr. Ramesh",
-      "drRole": "Cattle specialist",
-      "visitTitle": "Visit scheduled",
-      "visitTime": "Tomorrow, 9:30 AM",
+      "drRole": "Cattle vet",
+      "visitTitle": "Visit",
+      "visitTime": "Tomorrow 9:30",
       "reschedule": "Reschedule"
     }
   },
@@ -181,8 +181,8 @@
       "description": "Manage your milk production and track transactions"
     },
     "vendor": {
-      "name": "Vendor",
-      "description": "Sell milk and manage your vendor operations"
+      "name": "Milk collection vendor",
+      "description": "Run routes between farmers and the dairy: log pours, capture fat/SNF, hand off bulk milk, and keep farmer payout ledgers transparent."
     },
     "dairy": {
       "name": "Dairy",
@@ -190,8 +190,8 @@
     }
   },
   "footer": {
-    "tagline": "Built for the people who milk the morning.",
-    "description": "India's connected dairy ecosystem — apps, dashboards and feed, beautifully tied together.",
+    "tagline": "Built for people who move milk daily — not just the markets.",
+    "description": "Apps, dashboards and feed — tied to the milk your route logs every day.",
     "appsAndTools": "Apps & tools",
     "byRole": "By role",
     "legal": "Legal",
@@ -200,7 +200,7 @@
     "animalFeed": "Animal feed",
     "forAdmins": "For admins",
     "forDairies": "For dairies",
-    "forVendors": "For vendors",
+    "forVendors": "For milk-collection vendors",
     "forFarmers": "For farmers",
     "forVets": "For veterinarians",
     "aboutUs": "About us",
@@ -809,10 +809,10 @@
   },
   "homePage": {
     "ecosystem": {
-      "eyebrow": "4 user roles · 4 browser surfaces · 2 mobile apps",
+      "eyebrow": "5 roles · one backend · web & apps",
       "titleBefore": "One platform. ",
       "titleEm": "Every role in your dairy chain.",
-      "description": "From the farmer with one cow to the cooperative running twelve routes — DairyKonnect gives every user the exact interface they need, on the device they actually use.",
+      "description": "Admins, dairies, vendors, farmers and doctors share one system — milk lines, rate cards, herd care, feed and marketplace stay in sync.",
       "dashboardEyebrow": "4 browser surfaces",
       "dashboardTitle": "Built for desks, browsers & big screens",
       "appsEyebrow": "2 Mobile Apps",
@@ -826,8 +826,8 @@
       },
       {
         "id": "vendor",
-        "title": "Vendors",
-        "desc": "Collection agents · route owners"
+        "title": "Collection vendors",
+        "desc": "Agents & route owners · between farmer and dairy"
       },
       {
         "id": "farmer",
@@ -845,12 +845,12 @@
         "id": "dairy",
         "path": "/dairy",
         "title": "Dairy Dashboard",
-        "desc": "For processing plants and cooperatives — track inbound milk, lab tests, processing batches, packaging and dispatch in one flow.",
+        "desc": "Onboard vendors, approve routes, publish fat/SNF rate cards and market lists.",
         "chips": [
-          "Inbound",
-          "Lab QC",
-          "Batches",
-          "Dispatch"
+          "Vendors",
+          "Rate cards",
+          "Market",
+          "Assignments"
         ],
         "link": "Open Dairy"
       },
@@ -858,39 +858,40 @@
         "id": "vendor",
         "path": "/vendor",
         "title": "Vendor Dashboard",
-        "desc": "For collection agents — manage routes, scan farmer QRs, log volumes with auto-quality, calculate payments instantly.",
+        "desc": "Log morning & evening pours — litres, fat, SNF, type and status. Farmers see the same lines.",
         "chips": [
-          "QR collection",
+          "Collection",
           "Routes",
-          "Auto-pricing"
+          "Rates",
+          "Payouts"
         ],
-        "link": "Open Vendor"
+        "link": "Open vendor portal"
       },
       {
         "id": "farmer",
         "path": "/farmer",
         "title": "Farmer Dashboard",
-        "desc": "The web counterpart to the Farmer App. Same data, larger screen — perfect for reviewing earnings, cattle records and reports.",
+        "desc": "Same login as the app — wider tables for pours, rate card, vendors and payouts.",
         "chips": [
-          "Cattle records",
-          "Yield trends",
+          "Pour history",
+          "Rate card",
           "Earnings",
-          "Reports"
+          "Payout periods"
         ],
         "link": "Open Farmer Web"
       },
       {
         "id": "vetWeb",
         "path": "/vet",
-        "title": "Vet App",
-        "desc": "Explore VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics.",
+        "title": "VetKonnect (web)",
+        "desc": "VetKonnect on the web — consults, vaccines, appointments and herd records. Heavy daily use is in the app.",
         "chips": [
           "Health records",
           "Vaccinations",
           "Appointments",
           "Tele-consults"
         ],
-        "link": "Open Vet App"
+        "link": "Open VetKonnect"
       }
     ],
     "mobileApps": [
@@ -899,7 +900,7 @@
         "path": "/farmer/app",
         "featured": true,
         "title": "Farmer App",
-        "desc": "Your pocket copy of the farmer website: check today’s litres and rupees, scroll what your vendor logged, open your rate card, browse collection centres, and follow payout periods on the bus home.",
+        "desc": "Litres, rupees, vendor lines, rate card, centres and payouts — in your pocket.",
         "chips": [
           "Today's milk",
           "Pour history",
@@ -910,14 +911,14 @@
         ],
         "link": "Explore Farmer App",
         "visualLine1": "One login, two surfaces",
-        "visualLine2": "Mobile-first for farmers in the field. Web for review and reporting at home."
+        "visualLine2": "Phone in the field. Web at home."
       },
       {
         "id": "vetApp",
         "path": "/vet",
         "featured": false,
         "title": "VetKonnect App",
-        "desc": "One app, two sign-in modes — farmers get vet consults, vaccination calendars, symptom AI & livestock marketplace; vets get appointments, case history, prescriptions.",
+        "desc": "Farmers: consults, symptoms, animals, feed, marketplace. Doctors: appointments, notes, herd view. Razorpay where enabled.",
         "chips": [
           "Dual login",
           "Tele-consults",
@@ -938,20 +939,20 @@
       "titleAfter": ", not just slide decks.",
       "features": [
         {
-          "title": "Speaks 11 Indian languages",
-          "desc": "Hindi, Tamil, Telugu, Kannada, Marathi, Bengali — voice-first interfaces for low-literacy users."
+          "title": "Five roles, one ruleset",
+          "desc": "Admin, dairy, vendor, farmer and doctor — same auth and APIs for milk, pricing, animals and marketplace."
         },
         {
-          "title": "Works offline first",
-          "desc": "Every entry queues locally and syncs when the network returns. Built for rural connectivity."
+          "title": "Two shifts on every can",
+          "desc": "Morning and evening pours with litres, fat, SNF and status — how India actually collects."
         },
         {
-          "title": "Secure payments, instant",
-          "desc": "UPI auto-payouts every cycle. No middlemen, no delays. Farmers see earnings in real time."
+          "title": "Dairy owns the ladder",
+          "desc": "Rate cards plus market lists so the desk and the route never argue from different sheets."
         },
         {
-          "title": "AI quality, every collection",
-          "desc": "Computer-vision SNF & fat estimation, plus price prediction for the next 7 days."
+          "title": "Razorpay when you need it",
+          "desc": "Vets, subscriptions and marketplace checkout — turn on when your policy is ready."
         }
       ]
     },
@@ -963,50 +964,50 @@
       "steps": [
         {
           "num": "01",
-          "title": "Farmer logs milk",
-          "desc": "Two taps in the app. Yield, session, cow — all captured in seconds."
+          "title": "Farmer pours",
+          "desc": "Morning or evening, cow or buffalo — the pour your society already knows."
         },
         {
           "num": "02",
-          "title": "Vendor verifies",
-          "desc": "QR scan at collection point auto-fills SNF, fat and weight."
+          "title": "Vendor logs it",
+          "desc": "Litres, fat, SNF, shift, status — farmers read the same rows."
         },
         {
           "num": "03",
-          "title": "AI prices it",
-          "desc": "Quality grade computed instantly, payment calculated by today's rate."
+          "title": "Dairy sets rates",
+          "desc": "Slabs or fat/SNF cards, plus market context — one source for rupees."
         },
         {
           "num": "04",
-          "title": "Money arrives",
-          "desc": "UPI payout hits the farmer's account before the next milking."
+          "title": "Herd & vet in one login",
+          "desc": "Animals, vaccines, visits, feed, listings — Razorpay only where you switch it on."
         }
       ]
     },
     "ai": {
-      "eyebrow": "AI Quality Check + Price Predictor",
-      "titleBefore": "Quality you can ",
-      "titleEm1": "trust",
-      "titleMid": ", prices you can ",
-      "titleEm2": "plan",
+      "eyebrow": "Clear pricing",
+      "titleBefore": "Numbers you can ",
+      "titleEm1": "audit",
+      "titleMid": ", rupees you can ",
+      "titleEm2": "explain",
       "titleAfter": ".",
-      "lead": "DairyKonnect's vision-AI grades every milk collection in under 2 seconds. Combined with our 7-day market price forecast, farmers and vendors finally get pricing power that big buyers have always had.",
-      "f1Title": "Vision-based SNF + Fat",
-      "f1Desc": "One photo. No reagents, no lab. 96% accuracy vs. lactometer.",
-      "f2Title": "7-day price forecast",
-      "f2Desc": "ML model trained on 4 years of mandi data, weather and demand cycles.",
-      "f3Title": "Adulteration alerts",
-      "f3Desc": "Flags water, urea, starch and detergent. Vendor sees it before payment.",
-      "cardTitle": "Live sample · #DK-2849",
-      "liveLabel": "Analyzing",
+      "lead": "Every pour stores fat, SNF, litres and shift. Dairy cards and market rows sit on top — no mystery scores.",
+      "f1Title": "Fat & SNF on each line",
+      "f1Desc": "What the vendor enters is what the farmer sees — edits stay visible.",
+      "f2Title": "Dairy rate cards",
+      "f2Desc": "Slab or formula pricing from the cooperative, not a guess on the route.",
+      "f3Title": "Market reference",
+      "f3Desc": "Regional lists for context; your board still sets the final rupee.",
+      "cardTitle": "Sample pour",
+      "liveLabel": "Active card",
       "gaugeVal": "87",
-      "gaugeSub": "quality",
-      "gaugeCaption": "Grade A+ · Premium tier · ₹46.20 / L",
+      "gaugeSub": "match",
+      "gaugeCaption": "Cow · Active ladder · ₹46.20 / L",
       "metricSnf": "SNF",
       "metricFat": "Fat",
       "metricVol": "Volume",
-      "forecastLabel": "7-day forecast",
-      "forecastHint": "↗ +₹1.80 expected"
+      "forecastLabel": "Market (sample)",
+      "forecastHint": "↗ vs last week"
     },
     "testimonials": {
       "eyebrow": "Stories from the field",
@@ -1026,7 +1027,7 @@
           "role": "Cattle owner · Anand, Gujarat"
         },
         {
-          "quote": "\"As a vendor, I used to lose 2 hours a day on paperwork. The QR collection workflow cut that to 20 minutes — and farmers trust the price now because the AI shows them.\"",
+          "quote": "\"Paperwork used to eat two hours a day. One ledger for morning and evening cuts it to twenty minutes — farmers trust it because their screen matches mine.\"",
           "initials": "MR",
           "name": "Mahesh Reddy",
           "role": "Collection vendor · Hyderabad"
@@ -1038,7 +1039,7 @@
       "titleBefore": "Loyalty that ",
       "titleEm": "actually shows up",
       "titleAfter": " in your account.",
-      "lead": "Earn points on every litre delivered, every vet visit booked, every feed bag purchased. Refer another farmer or customer — both of you get bonus credits.",
+      "lead": "Points on milk, vet visits and feed. Referrals reward both sides.",
       "tiers": [
         {
           "badge": "B",
@@ -1095,16 +1096,16 @@
       ],
       "starterCta": "Start free",
       "vendorName": "Vendor Pro",
-      "vendorDesc": "For collection vendors and cooperatives.",
+      "vendorDesc": "For milk-collection vendors, agents and cooperatives running routes.",
       "vendorPrice": "1,499",
       "vendorPriceNote": "/ month",
       "vendorTag": "Most popular",
       "vendorFeats": [
-        "Unlimited farmers + collections",
-        "AI quality check (every sample)",
-        "Auto-payouts via UPI",
-        "Live route + GPS tracking",
-        "Daily MIS reports"
+        "Linked farmers · two shifts",
+        "Litres, fat, SNF, status",
+        "Matches dairy rate cards",
+        "Farmers see the same data",
+        "Exports for your desk"
       ],
       "vendorCta": "Start 14-day trial",
       "enterpriseName": "Enterprise",
@@ -1124,35 +1125,35 @@
       "titleBefore": "Questions, ",
       "titleEm": "answered.",
       "titleAfter": "",
-      "sidebarLead": "Still curious? Reach out to our team — we typically respond within an hour during business days.",
+      "sidebarLead": "Still curious? We usually reply within an hour on business days.",
       "talkCta": "Talk to us",
       "items": [
         {
-          "q": "Does the farmer app work without internet?",
-          "a": "Yes. Every entry — milk yield, vet booking, feed order — is saved offline first. The moment you reconnect, everything syncs in the background. We've built it for villages where 4G is a courtesy, not a guarantee."
+          "q": "Morning and evening milk?",
+          "a": "Yes — each line has shift, litres, fat, SNF, type and status. Farmers see the same fields read-only."
         },
         {
-          "q": "How accurate is the AI quality check?",
-          "a": "Our vision model achieves 96% agreement with traditional lactometer readings on SNF and fat. We re-train monthly on regional samples so accuracy improves as we expand."
+          "q": "How do fat and SNF become rupees?",
+          "a": "Dairies publish rate cards (slabs or formula), usually by pincode and milk type. Vendors apply them per pour."
         },
         {
-          "q": "Can I get my own branded app for my cooperative?",
-          "a": "Absolutely. Our Enterprise plan includes white-label apps, your logo, brand colors and even your domain. Most cooperatives go live in 2-3 weeks."
+          "q": "Own hosting?",
+          "a": "Deployable backend + MongoDB. Enterprise: your infra and branding — ask us for a timeline."
         },
         {
-          "q": "How are farmers paid?",
-          "a": "UPI auto-payouts based on your billing cycle (daily, weekly, or fortnightly). Payments are calculated against AI-graded quality and current market rates, then sent directly to the farmer's bank."
+          "q": "In-app payments?",
+          "a": "Razorpay for vet visits, subscriptions and marketplace. Milk cash still follows your society rules — the ledger stays honest."
         },
         {
-          "q": "Is my data private?",
-          "a": "Yes. We're SOC 2 aligned, host data in India, and never sell anonymized or identified data to third parties. You own your data. Full export available anytime."
+          "q": "Data privacy?",
+          "a": "Role-based access per farmer, vendor, dairy, doctor and admin. We don't sell your milk or vet rows."
         }
       ]
     },
     "finalCta": {
       "titleLine1": "Ready to bring your dairy",
       "titleLine2": "into the connected era?",
-      "description": "Onboard your first 50 farmers free. Setup in under 24 hours. We'll even import your existing records.",
+      "description": "Start with your first farmers free. Fast setup — we can help import old books.",
       "button": "Start your free trial"
     }
   }

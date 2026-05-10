@@ -1,6 +1,5 @@
 import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import HeroStats from './HeroStats';
 import HeroVisual from './HeroVisual';
 
 export type HeroProps = {
@@ -48,7 +47,7 @@ export default function Hero({ onGetStarted, onWatchDemo }: HeroProps) {
               </button>
             </div>
 
-            <HeroStats />
+            {/* <HeroStats /> */}
           </div>
 
           <div className="relative w-full shrink-0 lg:max-w-none">

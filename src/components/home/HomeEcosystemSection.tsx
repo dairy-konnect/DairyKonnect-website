@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
 import {
-  FaArrowDown,
   FaBuilding,
   FaCalendarAlt,
   FaCalendarCheck,
@@ -12,10 +11,7 @@ import {
   FaCoins,
   FaDesktop,
   FaExclamationCircle,
-  FaFileAlt,
-  FaFlask,
   FaFolderOpen,
-  FaLayerGroup,
   FaLaptop,
   FaMobileAlt,
   FaPlus,
@@ -30,7 +26,6 @@ import {
   FaTags,
   FaTint,
   FaTractor,
-  FaTruck,
   FaUserMd,
   FaUsers,
   FaVideo,
@@ -89,9 +84,9 @@ const dashIconStyle: Record<string, string> = {
 
 /** Chip icons by dashboard id, same order as translation `chips` */
 const dashChipIcons: Record<string, IconType[]> = {
-  dairy: [FaArrowDown, FaFlask, FaLayerGroup, FaTruck],
-  vendor: [FaQrcode, FaRoute, FaTags],
-  farmer: [FaClipboardList, FaChartLine, FaCoins, FaFileAlt],
+  dairy: [FaUsers, FaTags, FaChartLine, FaClipboardList],
+  vendor: [FaQrcode, FaRoute, FaTags, FaCoins],
+  farmer: [FaClipboardList, FaTags, FaCoins, FaCalendarCheck],
   vetWeb: [FaFolderOpen, FaSyringe, FaCalendarAlt, FaVideo],
 };
 
