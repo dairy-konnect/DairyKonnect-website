@@ -16,6 +16,7 @@ import { NAVIGATION_ROUTES } from '../routes/config';
 import UserTypeModal from './UserTypeModal';
 import LanguageSwitcher from './ui/LanguageSwitcher';
 import LOGO from '../assets/logo.png';
+import { PORTAL_PATHS } from '../constants/portalEntryLinks';
 
 const navLinkBase =
   'inline-flex items-center rounded-[11px] px-[16px] py-[11px] text-[15px] font-medium leading-none text-dk-ink-2 transition-all duration-200 hover:bg-dk-green-100 hover:text-dk-green-800';
@@ -32,21 +33,21 @@ type MegaLink = {
 
 const dashboardLinks: MegaLink[] = [
   {
-    path: '/dairy',
+    path: PORTAL_PATHS.dairy,
     titleKey: 'nav.dairyDashTitle',
     descKey: 'nav.dairyDashDesc',
     icon: FaBuilding,
     iconShell: 'bg-[#e0eef9] text-[#345d80]',
   },
   {
-    path: '/vendor',
+    path: PORTAL_PATHS.vendor,
     titleKey: 'nav.vendorDashTitle',
     descKey: 'nav.vendorDashDesc',
     icon: FaWarehouse,
     iconShell: 'bg-[#eefbf2] text-[#155e3f]',
   },
   {
-    path: '/farmer',
+    path: PORTAL_PATHS.farmer,
     titleKey: 'nav.farmerDashTitle',
     descKey: 'nav.farmerDashDesc',
     icon: FaTractor,

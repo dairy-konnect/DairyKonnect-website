@@ -1,33 +1,15 @@
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { GET_STARTED_PORTAL_ENTRIES } from '../constants/portalEntryLinks';
 
 interface UserTypeModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
-  const { t } = useTranslation()
-  const [showComingSoon, setShowComingSoon] = useState(false)
-  if (!isOpen) return null
-
-  const userTypes = [
-    {
-      name: t('userTypeModal.farmer.name'),
-      description: t('userTypeModal.farmer.description'),
-      icon: '🐄'
-    },
-    {
-      name: t('userTypeModal.vendor.name'),
-      description: t('userTypeModal.vendor.description'),
-      icon: '🚚'
-    },
-    {
-      name: t('userTypeModal.dairy.name'),
-      description: t('userTypeModal.dairy.description'),
-      icon: '🏭'
-    }
-  ]
+  const { t } = useTranslation();
+  if (!isOpen) return null;
 
   return (
     <div
@@ -35,14 +17,15 @@ export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl p-8 max-w-2xl w-full mx-4"
+        className="mx-4 w-full max-w-2xl rounded-lg bg-white p-8 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-semibold text-gray-900">{t('userTypeModal.title')}</h2>
           <button
+            type="button"
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition"
+            className="text-gray-400 transition hover:text-gray-600"
             aria-label={t('common.close')}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -51,33 +34,30 @@ export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
           </button>
         </div>
 
-        <p className="text-gray-600 mb-6">{t('userTypeModal.description')}</p>
+        <p className="mb-6 text-gray-600">{t('userTypeModal.description')}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {userTypes.map((type) => (
-            <button
-              key={type.name}
-              type="button"
-              onClick={() => setShowComingSoon(true)}
-              className="flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all group w-full"
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {GET_STARTED_PORTAL_ENTRIES.map((entry) => (
+            <Link
+              key={entry.role}
+              to={entry.path}
+              onClick={onClose}
+              className="group flex w-full flex-col items-center rounded-lg border-2 border-gray-200 p-6 transition-all hover:border-green-500 hover:bg-green-50"
             >
-              <span className="text-4xl mb-3">{type.icon}</span>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition">
-                {type.name}
+              <span className="mb-3 text-4xl" aria-hidden>
+                {entry.icon}
+              </span>
+              <h3 className="mb-2 text-lg font-semibold text-gray-900 transition group-hover:text-green-600">
+                {t(entry.nameKey)}
               </h3>
-              <p className="text-sm text-gray-600 text-center">{type.description}</p>
-            </button>
+              <p className="text-center text-sm text-gray-600">{t(entry.descriptionKey)}</p>
+              <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-green-700 opacity-0 transition group-hover:opacity-100">
+                {t('userTypeModal.openPage')}
+              </span>
+            </Link>
           ))}
         </div>
-
-        {showComingSoon && (
-          <div className="mt-6 rounded-lg border border-yellow-200 bg-yellow-50 px-4 py-3 text-sm text-yellow-800">
-            <p className="font-medium">{t('banner.launchingSoon')}</p>
-            <p className="mt-1">{t('banner.stayTuned')}</p>
-          </div>
-        )}
       </div>
     </div>
-  )
+  );
 }
-

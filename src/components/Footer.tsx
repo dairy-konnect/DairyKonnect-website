@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import LOGO from '../assets/logo.png';
+import { PORTAL_PATHS } from '../constants/portalEntryLinks';
 
 const FOOTER_BG = '#0f3a2e';
 
@@ -80,9 +81,9 @@ export default function Footer() {
           </div>
 
           <FootCol title={t('nav.dashboards')}>
-            <FootLink to="/dairy">{t('nav.dairyDashTitle')}</FootLink>
-            <FootLink to="/vendor">{t('nav.vendorDashTitle')}</FootLink>
-            <FootLink to="/farmer">{t('nav.farmerDashTitle')}</FootLink>
+            <FootLink to={PORTAL_PATHS.dairy}>{t('nav.dairyDashTitle')}</FootLink>
+            <FootLink to={PORTAL_PATHS.vendor}>{t('nav.vendorDashTitle')}</FootLink>
+            <FootLink to={PORTAL_PATHS.farmer}>{t('nav.farmerDashTitle')}</FootLink>
           </FootCol>
 
           <FootCol title={t('footer.appsAndTools')}>
@@ -94,9 +95,9 @@ export default function Footer() {
           </FootCol>
 
           <FootCol title={t('footer.byRole')}>
-            <FootLink to="/dairy">{t('footer.forDairies')}</FootLink>
-            <FootLink to="/vendor">{t('footer.forVendors')}</FootLink>
-            <FootLink to="/farmer">{t('footer.forFarmers')}</FootLink>
+            <FootLink to={PORTAL_PATHS.dairy}>{t('footer.forDairies')}</FootLink>
+            <FootLink to={PORTAL_PATHS.vendor}>{t('footer.forVendors')}</FootLink>
+            <FootLink to={PORTAL_PATHS.farmer}>{t('footer.forFarmers')}</FootLink>
             <FootLink to="/vet">{t('footer.forVets')}</FootLink>
           </FootCol>
 

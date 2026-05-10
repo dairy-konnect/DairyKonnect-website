@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import type { ReactElement } from 'react';
+import { Navigate } from 'react-router-dom';
 
 // Lazy loaded views
 const Home = lazy(() => import('../views/home/Home'));
@@ -16,7 +17,6 @@ const Farmer = lazy(() => import('../views/farmer/Farmer'));
 const FarmerApp = lazy(() => import('../views/farmer/FarmerApp'));
 const Vendor = lazy(() => import('../views/vendor/Vendor'));
 const Dairy = lazy(() => import('../views/dairy/Dairy'));
-const Dashboard = lazy(() => import('../views/dashboard/Dashboard'));
 const Reports = lazy(() => import('../views/reports/Reports'));
 const TransactionEntry = lazy(() => import('../views/transactions/TransactionEntry'));
 const TransactionHistory = lazy(() => import('../views/transactions/TransactionHistory'));
@@ -48,7 +48,7 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/farmer', element: <Farmer /> },
   { path: '/vendor', element: <Vendor /> },
   { path: '/dairy', element: <Dairy /> },
-  { path: '/dashboard', element: <Dashboard /> },
+  { path: '/dashboard', element: <Navigate to="/farmer" replace /> },
   { path: '/reports', element: <Reports /> },
   { path: '/transactions/entry', element: <TransactionEntry /> },
   { path: '/transactions/history', element: <TransactionHistory /> },

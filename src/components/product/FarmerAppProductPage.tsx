@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
 import { useTranslation } from 'react-i18next';
-import { FaArrowRight, FaDownload, FaMicrophone, FaPlay, FaQrcode, FaBell, FaUsers } from 'react-icons/fa';
+import { FaArrowRight, FaDownload, FaPlay, FaChartLine, FaCalendarDay, FaPercentage, FaMoneyCheckAlt } from 'react-icons/fa';
 import AppStoreBadges from './AppStoreBadges';
 import FeatureHighlightGrid from './FeatureHighlightGrid';
 import { FARMER_DASHBOARD_DEMO } from '../../constants/farmerDashboardDemo';
 
-const featureIcons: IconType[] = [FaMicrophone, FaQrcode, FaBell, FaUsers];
+const featureIcons: IconType[] = [FaChartLine, FaCalendarDay, FaPercentage, FaMoneyCheckAlt];
 
 function FarmerHeroBento({
   items,
@@ -80,7 +80,7 @@ export default function FarmerAppProductPage() {
   const raw = t('farmerAppPage.features', { returnObjects: true }) as { title: string; body: string }[];
   const featureItems = raw.map((item, i) => ({
     ...item,
-    Icon: featureIcons[i] ?? FaMicrophone,
+    Icon: featureIcons[i] ?? FaChartLine,
   }));
 
   return (

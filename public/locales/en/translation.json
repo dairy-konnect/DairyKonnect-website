@@ -174,7 +174,8 @@
   },
   "userTypeModal": {
     "title": "Choose Your Role",
-    "description": "Select how you want to access the platform:",
+    "description": "Open the overview for your role on this website — the same destinations as Dashboards in the menu.",
+    "openPage": "View overview →",
     "farmer": {
       "name": "Farmer",
       "description": "Manage your milk production and track transactions"
@@ -221,10 +222,10 @@
   },
   "farmer": {
     "title": "Farmer Portal",
-    "subtitle": "Your comprehensive platform for milk supply management and payment tracking",
-    "description": "A specialized platform designed to help farmers supply milk, track daily quantities, view transparent rate calculations, and monitor payment status. Login to access your farmer dashboard and manage your milk supply effectively.",
+    "subtitle": "See what your vendor logged: milk collections, quality readings, rates, and payouts",
+    "description": "See exactly what your vendor entered for each pour — litres, shift, fat, SNF, amount, and status — plus quick totals, your rate card, vendors you can work with, notices, and payout periods. Sign in on the Farmer web portal or app to view your own records.",
     "keyFeatures": "Key Features",
-    "keyFeaturesDesc": "Everything you need to manage your milk supply and track payments transparently",
+    "keyFeaturesDesc": "Dashboard, daily supply, rate card, vendors, payments, and notices — what farmers already use in Dairy Konnect",
     "howItWorks": "How It Works",
     "whyChoose": "Why Choose Farmer Portal",
     "whyChooseDesc": "Get fair payments and complete transparency in your milk supply chain",
@@ -234,15 +235,15 @@
     "features": {
       "dailySupply": {
         "title": "Daily Supply Details",
-        "description": "Record and track your daily milk supply with accurate quantity measurements and quality parameters."
+        "description": "Browse every milk line your vendor entered: date, morning/evening shift, type, fat, SNF, litres, rate, amount, and status — with date-range filters like the Farmer app."
       },
       "rateCard": {
         "title": "Rate Card Visibility",
-        "description": "View transparent rate calculations based on fat, SNF, and CLR readings. Know exactly what you're earning per liter."
+        "description": "Open the published fat/SNF ladder from your dairy partner so you can sanity-check every litre the vendor priced."
       },
       "paymentHistory": {
         "title": "Payment History",
-        "description": "Track all your payments with detailed history. Monitor daily, weekly, and monthly payment status."
+        "description": "Review payout periods, litres settled, amounts, paid/pending/processing status, and reference IDs — the same layout farmers use to reconcile with their bank."
       },
       "notifications": {
         "title": "Notifications & Announcements",
@@ -253,17 +254,17 @@
         "description": "Monitor your milk supply history, quality trends, and performance metrics over time."
       },
       "vendorManagement": {
-        "title": "Vendor Management",
-        "description": "View your assigned vendor details, contact information, and maintain clear communication channels."
+        "title": "Explore Vendors",
+        "description": "Discover collection centres and vendors in the Dairy Konnect network from the Farmer app sidebar."
       }
     },
     "steps": {
       "step1Title": "Login to Your Account",
       "step1Desc": "Access your farmer dashboard by logging in with your credentials.",
       "step2Title": "Supply Milk to Your Vendor",
-      "step2Desc": "Deliver your milk to your assigned vendor. The vendor will record quantity, quality readings (fat, SNF, CLR), and timing.",
+      "step2Desc": "Deliver milk at your collection slot. Your vendor records each line in Dairy Konnect (litres, shift, fat, SNF, milk type, status).",
       "step3Title": "View Daily Supply Details",
-      "step3Desc": "Check your daily milk supply records, quality results, and rate per liter calculated based on fat/SNF content.",
+      "step3Desc": "Open Daily Supply to page through half-month windows, filter by morning or evening, and export-friendly tables of everything on file.",
       "step4Title": "Track Payment Status",
       "step4Desc": "Monitor your payment history and status. View daily, weekly, and monthly payment records for complete transparency."
     },
@@ -276,14 +277,14 @@
     }
   },
   "farmerAppPage": {
-    "eyebrow": "Mobile App · Same data as Farmer Dashboard",
+    "eyebrow": "Mobile app · same account as the farmer website",
     "titleBefore": "The ",
     "titleEm": "Farmer App",
     "titleAfter": " that fits in one hand and one shed.",
-    "lead": "The mobile mirror of the Farmer Dashboard. Designed with farmers, in farmer's fields. Same login, same data — log milk in the morning on your phone, review earnings in the evening on the laptop. Works offline first.",
-    "demoRecordNote": "The website dashboard demo shows the same sample row: {{quantityLiters}} L of {{milkType}} milk to {{dairyName}} on {{dateDisplayEn}}.",
+    "lead": "Same login as the Farmer website — on your phone you open what you already trust: today’s litres, fat and SNF, what you should earn, every pour your vendor logged, your rate card, collection centres near you, and where each payout stands.",
+    "demoRecordNote": "Pages like this use sample numbers from {{vendorName}} (for example {{quantityLiters}} L {{milkType}} on {{dateDisplayEn}} and sample payouts). After you sign in, you only see your real vendor data.",
     "webDashLink": "Open the Farmer web dashboard",
-    "heroPanelBlurb": "Log milk, track cattle, and see payouts on your phone — the same records as the Farmer web dashboard, syncing when you are back online.",
+    "heroPanelBlurb": "Glance at today’s milk and money, scroll the pours your vendor recorded, check the rate chart, find collection centres, and follow payout periods — all sized for your pocket, with nothing extra to type if you already use the website.",
     "ctaPrimary": "Get the app",
     "ctaSecondary": "See live demo",
     "storeAppleLabel": "Download on the",
@@ -292,20 +293,20 @@
     "storeGoogleTitle": "Google Play",
     "features": [
       {
-        "title": "Voice-first logging",
-        "body": "\"Lakshmi morning seven litres\" — done. The app understands 11 Indian languages."
+        "title": "Live dashboard tiles",
+        "body": "Today’s total litres, average fat and SNF, rupees on the table, and the newest pours from your vendor — the home screen updates on its own, just like on the website."
       },
       {
-        "title": "QR cow tags",
-        "body": "Each cow gets a tag. Scan it to instantly log yield, vaccinate, or call the vet."
+        "title": "Daily supply history",
+        "body": "Move through half-month stretches, show only morning or evening, and open every line your vendor saved — date, shift, litres, fat, SNF, amount, and whether it is accepted."
       },
       {
-        "title": "Smart alerts",
-        "body": "Yield drop? Vaccination due? Heat cycle? Notifications you actually want."
+        "title": "Rate card on the go",
+        "body": "See how fat and SNF turn into rupees per litre for your dairy — no folded paper chart in your pocket."
       },
       {
-        "title": "Family access",
-        "body": "Add your spouse or son to log when you can't. One farm, multiple hands."
+        "title": "Payments & references",
+        "body": "Each payout cycle shows litres, rupees, Paid or Pending, and a reference you can quote if your bank or society needs to trace a transfer."
       }
     ]
   },
@@ -314,38 +315,38 @@
     "titleBefore": "Your farm's ",
     "titleEm": "command centre",
     "titleAfter": ", on the bigger screen.",
-    "lead": "Same login, same data, and the same features as the Farmer App — with a layout built for laptops and desktops. Review earnings, cattle tables and reports without squinting at a phone.",
-    "ctaPrimary": "Open my dashboard",
+    "lead": "Same farmer login as the mobile app. On a computer you get wider tables and calmer reading: full pour history, quick totals, rate tables, vendors, dairy notices, and payout periods — so you can print, share with family, or sit with your society officer without squinting at a phone.",
+    "ctaPrimary": "Farmer web portal",
     "ctaMobile": "Use the mobile app",
     "syncTitle": "One account · two surfaces",
     "syncBody": "Log in once. Phone for the field, web for the desk. Everything stays in sync, including offline entries that upload when you're back online.",
     "previewWelcome": "Welcome back",
     "previewUser": "Sunita Kale · Farmer",
-    "previewLinkedDairy": "Receiving dairy: {{dairyName}}",
-    "previewCattle": "My cattle",
-    "previewCattleVal": "3 cows",
-    "previewMonth": "This month",
-    "previewMonthVal": "₹ 18,420",
-    "previewToday": "Today's collection",
-    "previewTodayVal": "{{quantityLiters}} L · {{milkType}} — ₹ {{demoPayoutInr}}",
+    "previewVendorLine": "Vendor / collection centre: {{vendorName}}",
+    "previewStatSupplyLabel": "Today's supply",
+    "previewStatSupplyMeta": "{{count}} vendor entries",
+    "previewStatQualityLabel": "Avg fat · SNF",
+    "previewStatQualityMeta": "Fat and SNF at a glance",
+    "previewAmountLabel": "Today's amount",
+    "previewLatestLine": "Latest line · {{dateDisplayEn}} · {{shift}} · {{quantityLiters}} L {{milkType}} · ₹{{lineInr}}",
     "featuresTitle": "Built for the desk",
-    "featuresLead": "Everything you track on mobile — with full-width tables, charts and exports for home and office.",
+    "featuresLead": "Milk and quality first, payouts second — with room on a large screen for every column your vendor saves for you.",
     "features": [
       {
-        "title": "Full cattle grid",
-        "body": "Compare every cow's yield, quality grade and health status side by side."
+        "title": "Dashboard & summaries",
+        "body": "Pick a date range and see totals for litres, fat, SNF, and rupees, with the newest pours listed first so today’s delivery is never buried."
       },
       {
-        "title": "Earnings & payouts",
-        "body": "Weekly and monthly charts, UPI trails and export-friendly summaries for your accountant."
+        "title": "Daily supply explorer",
+        "body": "Page through vendor-recorded pours, filter shifts, and reconcile morning vs evening cans without horizontal scrolling on a phone."
       },
       {
-        "title": "Health & vaccines",
-        "body": "Plan boosters, read visit notes, and coordinate follow-ups when you're not in the shed."
+        "title": "Transparent rate cards",
+        "body": "Fat/SNF ladders published by your dairy partner so you always know how each can was priced."
       },
       {
-        "title": "Reports & sharing",
-        "body": "Download PDF summaries or share read-only views with co-op managers and family."
+        "title": "Vendors & payment ledger",
+        "body": "Browse Explore Vendors for nearby collection centres, then jump to Payment History for period totals, statuses, and payout references."
       }
     ]
   },
@@ -898,14 +899,14 @@
         "path": "/farmer/app",
         "featured": true,
         "title": "Farmer App",
-        "desc": "The mobile mirror of the Farmer Dashboard. Track every cow, log every drop, get vet help, order feed — all from your phone, even offline.",
+        "desc": "Your pocket copy of the farmer website: check today’s litres and rupees, scroll what your vendor logged, open your rate card, browse collection centres, and follow payout periods on the bus home.",
         "chips": [
-          "Cattle profiles",
-          "Daily yield",
-          "Earnings",
-          "Vet booking",
-          "Feed orders",
-          "Offline-first"
+          "Today's milk",
+          "Pour history",
+          "Fat & SNF",
+          "Rate card",
+          "Vendors",
+          "Payout status"
         ],
         "link": "Explore Farmer App",
         "visualLine1": "One login, two surfaces",
