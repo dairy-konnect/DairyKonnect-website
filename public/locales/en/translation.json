@@ -174,19 +174,20 @@
   },
   "userTypeModal": {
     "title": "Choose Your Role",
-    "description": "Open the overview for your role on this website — the same destinations as Dashboards in the menu.",
+    "description": "Sign-in opens soon — tap a role for a quick update.",
     "openPage": "View overview →",
+    "openAppSoon": "Launching soon",
     "farmer": {
       "name": "Farmer",
-      "description": "Manage your milk production and track transactions"
+      "description": "Milk lines, payouts and records in one view."
     },
     "vendor": {
       "name": "Milk collection vendor",
-      "description": "Run routes between farmers and the dairy: log pours, capture fat/SNF, hand off bulk milk, and keep farmer payout ledgers transparent."
+      "description": "Routes, pours and payouts up to the dairy."
     },
     "dairy": {
       "name": "Dairy",
-      "description": "Manage dairy operations and milk collection"
+      "description": "Vendors, rate cards and daily collections."
     }
   },
   "footer": {
@@ -277,14 +278,14 @@
     }
   },
   "farmerAppPage": {
-    "eyebrow": "Mobile app · same account as the farmer website",
+    "eyebrow": "Farmer mobile app",
     "titleBefore": "The ",
     "titleEm": "Farmer App",
-    "titleAfter": " that fits in one hand and one shed.",
-    "lead": "Same login as the Farmer website — on your phone you open what you already trust: today’s litres, fat and SNF, what you should earn, every pour your vendor logged, your rate card, collection centres near you, and where each payout stands.",
-    "demoRecordNote": "Pages like this use sample numbers from {{vendorName}} (for example {{quantityLiters}} L {{milkType}} on {{dateDisplayEn}} and sample payouts). After you sign in, you only see your real vendor data.",
-    "webDashLink": "Open the Farmer web dashboard",
-    "heroPanelBlurb": "Glance at today’s milk and money, scroll the pours your vendor recorded, check the rate chart, find collection centres, and follow payout periods — all sized for your pocket, with nothing extra to type if you already use the website.",
+    "titleAfter": " for the field.",
+    "lead": "Same login as the web dashboard. On your phone: today’s supply, fat/SNF, earnings, vendor lines, rate card, nearby centres, and payout status.",
+    "demoRecordNote": "Sample data from {{vendorName}} (e.g. {{quantityLiters}} L {{milkType}}, {{dateDisplayEn}}). Signed-in users see their own records.",
+    "webDashLink": "Farmer web dashboard",
+    "heroPanelBlurb": "Today’s milk and money, vendor-recorded lines, rate chart, collection centres, and payouts — pocket-sized, synced with the website.",
     "ctaPrimary": "Get the app",
     "ctaSecondary": "See live demo",
     "storeAppleLabel": "Download on the",
@@ -293,20 +294,20 @@
     "storeGoogleTitle": "Google Play",
     "features": [
       {
-        "title": "Live dashboard tiles",
-        "body": "Today’s total litres, average fat and SNF, rupees on the table, and the newest pours from your vendor — the home screen updates on its own, just like on the website."
+        "title": "Live dashboard",
+        "body": "Litres, fat/SNF, amounts, and latest vendor lines — same idea as the web home screen."
       },
       {
-        "title": "Daily supply history",
-        "body": "Move through half-month stretches, show only morning or evening, and open every line your vendor saved — date, shift, litres, fat, SNF, amount, and whether it is accepted."
+        "title": "Supply history",
+        "body": "Browse windows, filter shifts, and open each saved line: date, litres, quality, amount, status."
       },
       {
-        "title": "Rate card on the go",
-        "body": "See how fat and SNF turn into rupees per litre for your dairy — no folded paper chart in your pocket."
+        "title": "Rate card",
+        "body": "Fat/SNF to ₹/L for your dairy, on the phone."
       },
       {
-        "title": "Payments & references",
-        "body": "Each payout cycle shows litres, rupees, Paid or Pending, and a reference you can quote if your bank or society needs to trace a transfer."
+        "title": "Payments",
+        "body": "Cycles with litres, rupees, Paid/Pending, and payout references."
       }
     ]
   },

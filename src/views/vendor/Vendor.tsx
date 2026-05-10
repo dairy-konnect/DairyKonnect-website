@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
 import { FaUsers, FaTint, FaTruck, FaMoneyBillWave, FaMapMarkerAlt, FaClipboardCheck } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import LaunchSoonModal from '../../components/home/LaunchSoonModal';
+import { PORTAL_LINKS_LIVE, useLaunchSoonModal } from '../../hooks/useLaunchSoonModal';
 
 const featureIconShells: string[] = [
   'bg-[#fef0d4] text-[#a8761c]',
@@ -13,6 +16,7 @@ const featureIconShells: string[] = [
 
 export default function Vendor() {
   const { t } = useTranslation();
+  const { isOpen: launchSoonOpen, openLaunchSoon, closeLaunchSoon } = useLaunchSoonModal();
   const features: { icon: IconType; title: string; description: string; shell: string }[] = [
     {
       icon: FaUsers,
@@ -162,16 +166,29 @@ export default function Vendor() {
           <div className="mx-auto max-w-3xl rounded-[28px] border border-dk-line bg-gradient-to-br from-white to-dk-cream-2 px-8 py-10 text-center shadow-dk-lg ring-1 ring-black/5 sm:px-12 sm:py-12">
             <h2 className="font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('vendor.readyToStart')}</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-dk-muted">{t('vendor.readyToStartDesc')}</p>
-            <button
-              type="button"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
-            >
-              {t('vendor.loginButton')}
-              <FaTruck className="h-5 w-5 opacity-90" aria-hidden />
-            </button>
+            {PORTAL_LINKS_LIVE ? (
+              <Link
+                to="/contact"
+                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+              >
+                {t('vendor.loginButton')}
+                <FaTruck className="h-5 w-5 opacity-90" aria-hidden />
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={openLaunchSoon}
+                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+              >
+                {t('vendor.loginButton')}
+                <FaTruck className="h-5 w-5 opacity-90" aria-hidden />
+              </button>
+            )}
           </div>
         </div>
       </section>
+
+      <LaunchSoonModal isOpen={launchSoonOpen} onClose={closeLaunchSoon} />
     </div>
   );
 }

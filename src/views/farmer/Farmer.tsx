@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
+import LaunchSoonModal from '../../components/home/LaunchSoonModal';
+import { PORTAL_LINKS_LIVE, useLaunchSoonModal } from '../../hooks/useLaunchSoonModal';
 import {
   FaBell,
   FaCalendarDay,
@@ -24,6 +26,7 @@ const featureIconShells: string[] = [
 
 export default function Farmer() {
   const { t } = useTranslation();
+  const { isOpen: launchSoonOpen, openLaunchSoon, closeLaunchSoon } = useLaunchSoonModal();
   const features: { icon: IconType; title: string; description: string; shell: string }[] = [
     {
       icon: FaCalendarDay,
@@ -93,13 +96,24 @@ export default function Farmer() {
             <p className="mt-4 text-lg font-medium text-dk-ink-2 sm:text-xl">{t('farmer.subtitle')}</p>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-dk-muted">{t('farmer.description')}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                to="/farmer/app"
-                className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
-              >
-                <FaMobileAlt className="h-4 w-4 text-dk-green-700" aria-hidden />
-                {t('nav.farmerAppTitle')}
-              </Link>
+              {PORTAL_LINKS_LIVE ? (
+                <Link
+                  to="/farmer/app"
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaMobileAlt className="h-4 w-4 text-dk-green-700" aria-hidden />
+                  {t('nav.farmerAppTitle')}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openLaunchSoon}
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaMobileAlt className="h-4 w-4 text-dk-green-700" aria-hidden />
+                  {t('nav.farmerAppTitle')}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -183,24 +197,48 @@ export default function Farmer() {
             <h2 className="font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('farmer.readyToStart')}</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-dk-muted">{t('farmer.readyToStartDesc')}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
-              >
-                {t('farmer.loginButton')}
-                <FaTractor className="h-5 w-5 opacity-90" aria-hidden />
-              </button>
-              <Link
-                to="/farmer/app"
-                className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-8 py-3.5 text-base font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
-              >
-                <FaMobileAlt className="h-5 w-5 text-dk-green-700" aria-hidden />
-                {t('nav.farmerAppTitle')}
-              </Link>
+              {PORTAL_LINKS_LIVE ? (
+                <Link
+                  to="/farmer/app"
+                  className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+                >
+                  {t('farmer.loginButton')}
+                  <FaTractor className="h-5 w-5 opacity-90" aria-hidden />
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openLaunchSoon}
+                  className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+                >
+                  {t('farmer.loginButton')}
+                  <FaTractor className="h-5 w-5 opacity-90" aria-hidden />
+                </button>
+              )}
+              {PORTAL_LINKS_LIVE ? (
+                <Link
+                  to="/farmer/app"
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-8 py-3.5 text-base font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaMobileAlt className="h-5 w-5 text-dk-green-700" aria-hidden />
+                  {t('nav.farmerAppTitle')}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openLaunchSoon}
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-8 py-3.5 text-base font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaMobileAlt className="h-5 w-5 text-dk-green-700" aria-hidden />
+                  {t('nav.farmerAppTitle')}
+                </button>
+              )}
             </div>
           </div>
         </div>
       </section>
+
+      <LaunchSoonModal isOpen={launchSoonOpen} onClose={closeLaunchSoon} />
     </div>
   );
 }

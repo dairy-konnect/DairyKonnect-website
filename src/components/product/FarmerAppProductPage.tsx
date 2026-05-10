@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
 import { useTranslation } from 'react-i18next';
 import { FaArrowRight, FaDownload, FaPlay, FaChartLine, FaCalendarDay, FaPercentage, FaMoneyCheckAlt } from 'react-icons/fa';
+import LaunchSoonModal from '../home/LaunchSoonModal';
 import AppStoreBadges from './AppStoreBadges';
 import FeatureHighlightGrid from './FeatureHighlightGrid';
 import { FARMER_DASHBOARD_DEMO } from '../../constants/farmerDashboardDemo';
+import { PORTAL_LINKS_LIVE, useLaunchSoonModal } from '../../hooks/useLaunchSoonModal';
 
 const featureIcons: IconType[] = [FaChartLine, FaCalendarDay, FaPercentage, FaMoneyCheckAlt];
 
@@ -76,6 +78,7 @@ function FarmerHeroBento({
 
 export default function FarmerAppProductPage() {
   const { t } = useTranslation();
+  const { isOpen: launchSoonOpen, openLaunchSoon, closeLaunchSoon } = useLaunchSoonModal();
   const demo = { ...FARMER_DASHBOARD_DEMO };
   const raw = t('farmerAppPage.features', { returnObjects: true }) as { title: string; body: string }[];
   const featureItems = raw.map((item, i) => ({
@@ -104,26 +107,49 @@ export default function FarmerAppProductPage() {
               </Link>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-5 py-3 text-sm font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
-              >
-                <FaDownload className="h-4 w-4" aria-hidden />
-                {t('farmerAppPage.ctaPrimary')}
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
-              >
-                <FaPlay className="h-3.5 w-3.5" aria-hidden />
-                {t('farmerAppPage.ctaSecondary')}
-              </button>
+              {PORTAL_LINKS_LIVE ? (
+                <Link
+                  to="/farmer/app"
+                  className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-5 py-3 text-sm font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+                >
+                  <FaDownload className="h-4 w-4" aria-hidden />
+                  {t('farmerAppPage.ctaPrimary')}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openLaunchSoon}
+                  className="inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-5 py-3 text-sm font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+                >
+                  <FaDownload className="h-4 w-4" aria-hidden />
+                  {t('farmerAppPage.ctaPrimary')}
+                </button>
+              )}
+              {PORTAL_LINKS_LIVE ? (
+                <Link
+                  to="/farmer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaPlay className="h-3.5 w-3.5" aria-hidden />
+                  {t('farmerAppPage.ctaSecondary')}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openLaunchSoon}
+                  className="inline-flex items-center gap-2 rounded-xl border border-dk-line bg-white px-5 py-3 text-sm font-semibold text-dk-green-900 shadow-dk-sm transition hover:border-dk-green-300"
+                >
+                  <FaPlay className="h-3.5 w-3.5" aria-hidden />
+                  {t('farmerAppPage.ctaSecondary')}
+                </button>
+              )}
             </div>
             <AppStoreBadges
               appleLabel={t('farmerAppPage.storeAppleLabel')}
               appleTitle={t('farmerAppPage.storeAppleTitle')}
               googleLabel={t('farmerAppPage.storeGoogleLabel')}
               googleTitle={t('farmerAppPage.storeGoogleTitle')}
+              onPress={PORTAL_LINKS_LIVE ? undefined : openLaunchSoon}
             />
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-dk-muted">
               {t('farmerAppPage.demoRecordNote', { ...demo })}
@@ -135,6 +161,8 @@ export default function FarmerAppProductPage() {
 
         <FeatureHighlightGrid items={featureItems} />
       </section>
+
+      <LaunchSoonModal isOpen={launchSoonOpen} onClose={closeLaunchSoon} />
     </div>
   );
 }
