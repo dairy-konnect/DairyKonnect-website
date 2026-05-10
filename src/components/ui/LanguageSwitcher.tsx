@@ -48,20 +48,20 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 z-30 mt-2 w-44 rounded-[14px] border border-dk-line bg-white py-2 shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:bg-dk-cream-2">
+        <div className="absolute top-full right-0 z-30 mt-2 w-44 rounded-[14px] border border-[#e3e9e2] bg-[#ffffff] py-2 text-[#0c1f17] shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:border-[#e3e9e2] dark:bg-[#ffffff] dark:text-[#0c1f17]">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className={`w-full px-4 py-2 text-left text-sm transition hover:bg-dk-green-100 ${
+              className={`w-full px-4 py-2 text-left text-sm transition hover:bg-[#eefbf2] ${
                 i18n.language === lang.code
-                  ? 'bg-dk-green-100 font-medium text-dk-green-800'
-                  : 'text-dk-ink-2'
+                  ? 'bg-[#eefbf2] font-medium text-[#155e3f]'
+                  : 'text-[#234334]'
               }`}
             >
               <div className="flex flex-col">
                 <span>{lang.nativeName}</span>
-                <span className="text-xs text-dk-muted">{lang.name}</span>
+                <span className="text-xs text-[#5a6b62]">{lang.name}</span>
               </div>
             </button>
           ))}

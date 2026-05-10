@@ -435,11 +435,11 @@
   },
   "homePage": {
     "ecosystem": {
-      "eyebrow": "4 user roles · 3 dashboards · 2 apps",
+      "eyebrow": "4 user roles · 4 browser surfaces · 2 mobile apps",
       "titleBefore": "One platform. ",
       "titleEm": "Every role in your dairy chain.",
       "description": "From the farmer with one cow to the cooperative running twelve routes — DairyKonnect gives every user the exact interface they need, on the device they actually use.",
-      "dashboardEyebrow": "3 Web Dashboards",
+      "dashboardEyebrow": "4 browser surfaces",
       "dashboardTitle": "Built for desks, browsers & big screens",
       "appsEyebrow": "2 Mobile Apps",
       "appsTitle": "Designed for the people in the field"
@@ -478,7 +478,7 @@
           "Batches",
           "Dispatch"
         ],
-        "link": "Open Dairy →"
+        "link": "Open Dairy"
       },
       {
         "id": "vendor",
@@ -490,7 +490,7 @@
           "Routes",
           "Auto-pricing"
         ],
-        "link": "Open Vendor →"
+        "link": "Open Vendor"
       },
       {
         "id": "farmer",
@@ -503,13 +503,26 @@
           "Earnings",
           "Reports"
         ],
-        "link": "Open Farmer Web →"
+        "link": "Open Farmer Web"
+      },
+      {
+        "id": "vetWeb",
+        "path": "/vet",
+        "title": "Vet App",
+        "desc": "Explore VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics.",
+        "chips": [
+          "Health records",
+          "Vaccinations",
+          "Appointments",
+          "Tele-consults"
+        ],
+        "link": "Open Vet App"
       }
     ],
     "mobileApps": [
       {
         "id": "farmerApp",
-        "path": "/farmer",
+        "path": "/farmer/app",
         "featured": true,
         "title": "Farmer App",
         "desc": "The mobile mirror of the Farmer Dashboard. Track every cow, log every drop, get vet help, order feed — all from your phone, even offline.",
@@ -521,7 +534,7 @@
           "Feed orders",
           "Offline-first"
         ],
-        "link": "Explore Farmer App →",
+        "link": "Explore Farmer App",
         "visualLine1": "One login, two surfaces",
         "visualLine2": "Mobile-first for farmers in the field. Web for review and reporting at home."
       },
@@ -539,7 +552,7 @@
           "Marketplace",
           "SOS"
         ],
-        "link": "Explore VetKonnect →",
+        "link": "Explore VetKonnect",
         "visualLine1": "Farmer sign-in — Tele-consult, vaccines, marketplace",
         "visualLine2": "Doctor sign-in — Appointments, prescriptions, history"
       }

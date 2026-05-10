@@ -1,12 +1,39 @@
 import { Link } from 'react-router-dom';
 import type { IconType } from 'react-icons';
 import {
+  FaArrowDown,
   FaBuilding,
+  FaCalendarAlt,
+  FaCalendarCheck,
+  FaChartLine,
   FaChevronRight,
+  FaClipboardList,
+  FaCloudDownloadAlt,
+  FaCoins,
   FaDesktop,
+  FaExclamationCircle,
+  FaFileAlt,
+  FaFlask,
+  FaFolderOpen,
+  FaLayerGroup,
+  FaLaptop,
+  FaMobileAlt,
+  FaPlus,
+  FaQrcode,
+  FaRobot,
+  FaRoute,
+  FaShoppingBag,
   FaStethoscope,
+  FaStore,
+  FaSyringe,
   FaTachometerAlt,
+  FaTags,
+  FaTint,
   FaTractor,
+  FaTruck,
+  FaUserMd,
+  FaUsers,
+  FaVideo,
   FaWarehouse,
 } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
@@ -50,12 +77,27 @@ const dashIcon: Record<string, IconType> = {
   dairy: FaBuilding,
   vendor: FaWarehouse,
   farmer: FaTractor,
+  vetWeb: FaStethoscope,
 };
 
 const dashIconStyle: Record<string, string> = {
   dairy: 'bg-[#e0eef9] text-[#345d80]',
   vendor: 'bg-dk-green-100 text-dk-green-800',
   farmer: 'bg-[#fef0d4] text-[#a8761c]',
+  vetWeb: 'bg-[#fee9d6] text-[#c4521a]',
+};
+
+/** Chip icons by dashboard id, same order as translation `chips` */
+const dashChipIcons: Record<string, IconType[]> = {
+  dairy: [FaArrowDown, FaFlask, FaLayerGroup, FaTruck],
+  vendor: [FaQrcode, FaRoute, FaTags],
+  farmer: [FaClipboardList, FaChartLine, FaCoins, FaFileAlt],
+  vetWeb: [FaFolderOpen, FaSyringe, FaCalendarAlt, FaVideo],
+};
+
+const appChipIcons: Record<string, IconType[]> = {
+  farmerApp: [FaClipboardList, FaTint, FaCoins, FaCalendarCheck, FaShoppingBag, FaCloudDownloadAlt],
+  vetApp: [FaUsers, FaVideo, FaRobot, FaSyringe, FaStore, FaExclamationCircle],
 };
 
 const rolePath: Record<string, string> = {
@@ -65,15 +107,88 @@ const rolePath: Record<string, string> = {
   vet: '/vet',
 };
 
-function Chip({ children, featured }: { children: string; featured?: boolean }) {
+function Chip({
+  children,
+  featured,
+  icon: Icon,
+}: {
+  children: string;
+  featured?: boolean;
+  icon?: IconType;
+}) {
   return (
     <span
-      className={`rounded-full px-2.5 py-1 text-[11.5px] font-medium ${
+      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-medium ${
         featured ? 'bg-white/15 text-white' : 'bg-dk-green-100 text-dk-green-800'
       }`}
     >
+      {Icon ? <Icon className="h-3 w-3 shrink-0 opacity-90" aria-hidden /> : null}
       {children}
     </span>
+  );
+}
+
+function VetKonnectFlowFooter({
+  line1,
+  line2,
+  mutedFeatured,
+}: {
+  line1: string;
+  line2: string;
+  mutedFeatured: boolean;
+}) {
+  const splitLine = (s: string) => {
+    const idx = s.indexOf(' — ');
+    if (idx === -1) return { title: s, detail: '' };
+    return { title: s.slice(0, idx).trim(), detail: s.slice(idx + 3).trim() };
+  };
+  const a = splitLine(line1);
+  const b = splitLine(line2);
+  const itemsA = a.detail ? a.detail.split(',').map((x) => x.trim()).filter(Boolean) : [];
+  const itemsB = b.detail ? b.detail.split(',').map((x) => x.trim()).filter(Boolean) : [];
+
+  const box = (title: string, items: string[], Icon: IconType) => (
+    <div className="flex gap-2.5">
+      <div
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
+          mutedFeatured ? 'bg-white/15 text-white' : 'bg-dk-green-200/80 text-dk-green-900'
+        }`}
+      >
+        <Icon className="h-4 w-4" aria-hidden />
+      </div>
+      <div className="min-w-0">
+        <div className="font-semibold leading-tight">{title}</div>
+        {items.length > 0 ? (
+          <ul
+            className={`mt-1.5 list-inside list-disc space-y-0.5 text-[11.5px] leading-snug ${
+              mutedFeatured ? 'text-white/80' : 'text-dk-green-900/90'
+            }`}
+          >
+            {items.map((it) => (
+              <li key={it} className="marker:text-current">
+                {it}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
+    </div>
+  );
+
+  if (!itemsA.length && !itemsB.length) {
+    return (
+      <>
+        <div className="font-medium leading-snug">{line1}</div>
+        <div className={`mt-2 font-medium leading-snug ${mutedFeatured ? 'text-white/90' : 'text-dk-green-900'}`}>{line2}</div>
+      </>
+    );
+  }
+
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 sm:gap-3">
+      {box(a.title || line1, itemsA, FaTractor)}
+      {box(b.title || line2, itemsB, FaUserMd)}
+    </div>
   );
 }
 
@@ -149,9 +264,14 @@ export default function HomeEcosystemSection() {
                 <h3 className="font-serif text-xl font-semibold text-dk-green-900 sm:text-2xl">{card.title}</h3>
                 <p className="mt-2 flex-1 text-[15px] leading-relaxed text-dk-ink-2">{card.desc}</p>
                 <div className="mb-5 mt-4 flex flex-wrap gap-1.5">
-                  {card.chips.map((c) => (
-                    <Chip key={c}>{c}</Chip>
-                  ))}
+                  {card.chips.map((c, i) => {
+                    const ChipIcon = dashChipIcons[card.id]?.[i];
+                    return (
+                      <Chip key={c} icon={ChipIcon}>
+                        {c}
+                      </Chip>
+                    );
+                  })}
                 </div>
                 <Link
                   to={card.path}
@@ -167,9 +287,7 @@ export default function HomeEcosystemSection() {
 
         <div className="mb-8 mt-16 text-center sm:mb-10 sm:mt-20">
           <span className="inline-flex items-center gap-2 rounded-full bg-dk-cream-2 px-3 py-1.5 text-xs font-semibold text-dk-ink-2">
-            <span className="text-sm" aria-hidden>
-              📱
-            </span>
+            <FaMobileAlt className="h-3.5 w-3.5 text-dk-green-800" aria-hidden />
             {ecosystem.appsEyebrow}
           </span>
           <h3 className="font-serif mt-3.5 text-2xl font-semibold leading-tight text-dk-green-900 sm:text-3xl">
@@ -203,11 +321,14 @@ export default function HomeEcosystemSection() {
               </h3>
               <p className={`mt-2 flex-1 text-[15px] leading-relaxed ${app.featured ? 'text-white/85' : 'text-dk-ink-2'}`}>{app.desc}</p>
               <div className="mb-5 mt-4 flex flex-wrap gap-1.5">
-                {app.chips.map((c) => (
-                  <Chip key={c} featured={app.featured}>
-                    {c}
-                  </Chip>
-                ))}
+                {app.chips.map((c, i) => {
+                  const ChipIcon = appChipIcons[app.id]?.[i];
+                  return (
+                    <Chip key={c} featured={app.featured} icon={ChipIcon}>
+                      {c}
+                    </Chip>
+                  );
+                })}
               </div>
               <Link
                 to={app.path}
@@ -227,19 +348,18 @@ export default function HomeEcosystemSection() {
               >
                 {app.id === 'farmerApp' ? (
                   <>
-                    <div className="flex flex-wrap justify-between gap-2 font-medium">
+                    <div className="flex flex-wrap items-center justify-between gap-2 font-medium">
                       <span>{app.visualLine1}</span>
-                      <strong>📱 + 💻</strong>
+                      <span className="inline-flex items-center gap-1.5 opacity-95" aria-hidden>
+                        <FaMobileAlt className="h-4 w-4" />
+                        <FaPlus className="h-2.5 w-2.5 opacity-80" />
+                        <FaLaptop className="h-4 w-4" />
+                      </span>
                     </div>
                     <p className={`mt-2 text-xs ${app.featured ? 'text-white/80' : 'text-dk-ink-2'}`}>{app.visualLine2}</p>
                   </>
                 ) : (
-                  <>
-                    <div className="font-medium leading-snug">{app.visualLine1}</div>
-                    <div className={`mt-2 font-medium leading-snug ${app.featured ? 'text-white/90' : 'text-dk-green-900'}`}>
-                      {app.visualLine2}
-                    </div>
-                  </>
+                  <VetKonnectFlowFooter line1={app.visualLine1} line2={app.visualLine2} mutedFeatured={app.featured} />
                 )}
               </div>
             </article>

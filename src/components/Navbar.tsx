@@ -43,7 +43,7 @@ const dashboardLinks: MegaLink[] = [
     titleKey: 'nav.vendorDashTitle',
     descKey: 'nav.vendorDashDesc',
     icon: FaWarehouse,
-    iconShell: 'bg-dk-green-100 text-dk-green-800',
+    iconShell: 'bg-[#eefbf2] text-[#155e3f]',
   },
   {
     path: '/farmer',
@@ -56,7 +56,7 @@ const dashboardLinks: MegaLink[] = [
 
 const mobileAppLinks: MegaLink[] = [
   {
-    path: '/farmer',
+    path: '/farmer/app',
     titleKey: 'nav.farmerAppTitle',
     descKey: 'nav.farmerAppDesc',
     icon: FaMobileScreenButton,
@@ -85,7 +85,7 @@ function MegaMenuPanel({
 }) {
   const { t } = useTranslation();
   return (
-    <div className="min-w-[280px] rounded-[14px] border border-dk-line bg-white p-2 shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:bg-dk-cream-2">
+    <div className="min-w-[280px] rounded-[14px] border border-[#e3e9e2] bg-[#ffffff] p-2 text-[#0c1f17] shadow-[0_20px_50px_rgba(15,58,46,0.15)] dark:border-[#e3e9e2] dark:bg-[#ffffff] dark:text-[#0c1f17]">
       {links.map((link) => {
         const active = isActive(link.path);
         const Icon = link.icon;
@@ -94,8 +94,8 @@ function MegaMenuPanel({
             key={`${link.path}-${link.titleKey}`}
             to={link.path}
             onClick={() => onNavigate?.()}
-            className={`flex cursor-pointer gap-3 rounded-[10px] p-3 transition-colors hover:bg-dk-green-100 ${
-              active ? 'bg-dk-green-100/80' : ''
+            className={`flex cursor-pointer gap-3 rounded-[10px] p-3 transition-colors hover:bg-[#eefbf2] ${
+              active ? 'bg-[#e8f4ee]' : ''
             }`}
           >
             <span
@@ -104,12 +104,8 @@ function MegaMenuPanel({
               <Icon className="h-[18px] w-[18px]" aria-hidden />
             </span>
             <span className="min-w-0 text-left">
-              <span className="block text-sm font-semibold text-dk-green-900">
-                {t(link.titleKey)}
-              </span>
-              <span className="mt-0.5 block text-xs leading-snug text-dk-muted">
-                {t(link.descKey)}
-              </span>
+              <span className="block text-sm font-semibold text-[#0f3a2e]">{t(link.titleKey)}</span>
+              <span className="mt-0.5 block text-xs leading-snug text-[#5a6b62]">{t(link.descKey)}</span>
             </span>
           </Link>
         );

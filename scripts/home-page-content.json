@@ -1,10 +1,10 @@
 {
   "ecosystem": {
-    "eyebrow": "4 user roles · 3 dashboards · 2 apps",
+    "eyebrow": "4 user roles · 4 browser surfaces · 2 mobile apps",
     "titleBefore": "One platform. ",
     "titleEm": "Every role in your dairy chain.",
     "description": "From the farmer with one cow to the cooperative running twelve routes — DairyKonnect gives every user the exact interface they need, on the device they actually use.",
-    "dashboardEyebrow": "3 Web Dashboards",
+    "dashboardEyebrow": "4 browser surfaces",
     "dashboardTitle": "Built for desks, browsers & big screens",
     "appsEyebrow": "2 Mobile Apps",
     "appsTitle": "Designed for the people in the field"
@@ -22,7 +22,7 @@
       "title": "Dairy Dashboard",
       "desc": "For processing plants and cooperatives — track inbound milk, lab tests, processing batches, packaging and dispatch in one flow.",
       "chips": ["Inbound", "Lab QC", "Batches", "Dispatch"],
-      "link": "Open Dairy →"
+      "link": "Open Dairy"
     },
     {
       "id": "vendor",
@@ -30,7 +30,7 @@
       "title": "Vendor Dashboard",
       "desc": "For collection agents — manage routes, scan farmer QRs, log volumes with auto-quality, calculate payments instantly.",
       "chips": ["QR collection", "Routes", "Auto-pricing"],
-      "link": "Open Vendor →"
+      "link": "Open Vendor"
     },
     {
       "id": "farmer",
@@ -38,18 +38,26 @@
       "title": "Farmer Dashboard",
       "desc": "The web counterpart to the Farmer App. Same data, larger screen — perfect for reviewing earnings, cattle records and reports.",
       "chips": ["Cattle records", "Yield trends", "Earnings", "Reports"],
-      "link": "Open Farmer Web →"
+      "link": "Open Farmer Web"
+    },
+    {
+      "id": "vetWeb",
+      "path": "/vet",
+      "title": "Vet App",
+      "desc": "Explore VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics.",
+      "chips": ["Health records", "Vaccinations", "Appointments", "Tele-consults"],
+      "link": "Open Vet App"
     }
   ],
   "mobileApps": [
     {
       "id": "farmerApp",
-      "path": "/farmer",
+      "path": "/farmer/app",
       "featured": true,
       "title": "Farmer App",
       "desc": "The mobile mirror of the Farmer Dashboard. Track every cow, log every drop, get vet help, order feed — all from your phone, even offline.",
       "chips": ["Cattle profiles", "Daily yield", "Earnings", "Vet booking", "Feed orders", "Offline-first"],
-      "link": "Explore Farmer App →",
+      "link": "Explore Farmer App",
       "visualLine1": "One login, two surfaces",
       "visualLine2": "Mobile-first for farmers in the field. Web for review and reporting at home."
     },
@@ -60,7 +68,7 @@
       "title": "VetKonnect App",
       "desc": "One app, two sign-in modes — farmers get vet consults, vaccination calendars, symptom AI & livestock marketplace; vets get appointments, case history, prescriptions.",
       "chips": ["Dual login", "Tele-consults", "Symptom AI", "Vaccinations", "Marketplace", "SOS"],
-      "link": "Explore VetKonnect →",
+      "link": "Explore VetKonnect",
       "visualLine1": "Farmer sign-in — Tele-consult, vaccines, marketplace",
       "visualLine2": "Doctor sign-in — Appointments, prescriptions, history"
     }

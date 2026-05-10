@@ -275,6 +275,78 @@
       "directComm": "Direct communication with vendors"
     }
   },
+  "farmerAppPage": {
+    "eyebrow": "Mobile App · Same data as Farmer Dashboard",
+    "titleBefore": "The ",
+    "titleEm": "Farmer App",
+    "titleAfter": " that fits in one hand and one shed.",
+    "lead": "The mobile mirror of the Farmer Dashboard. Designed with farmers, in farmer's fields. Same login, same data — log milk in the morning on your phone, review earnings in the evening on the laptop. Works offline first.",
+    "webDashLink": "Open the Farmer web dashboard",
+    "heroPanelBlurb": "Log milk, track cattle, and see payouts on your phone — the same records as the Farmer web dashboard, syncing when you are back online.",
+    "ctaPrimary": "Get the app",
+    "ctaSecondary": "See live demo",
+    "storeAppleLabel": "Download on the",
+    "storeAppleTitle": "App Store",
+    "storeGoogleLabel": "Get it on",
+    "storeGoogleTitle": "Google Play",
+    "features": [
+      {
+        "title": "Voice-first logging",
+        "body": "\"Lakshmi morning seven litres\" — done. The app understands 11 Indian languages."
+      },
+      {
+        "title": "QR cow tags",
+        "body": "Each cow gets a tag. Scan it to instantly log yield, vaccinate, or call the vet."
+      },
+      {
+        "title": "Smart alerts",
+        "body": "Yield drop? Vaccination due? Heat cycle? Notifications you actually want."
+      },
+      {
+        "title": "Family access",
+        "body": "Add your spouse or son to log when you can't. One farm, multiple hands."
+      }
+    ]
+  },
+  "farmerWebPage": {
+    "eyebrow": "Web Dashboard · For Farmers",
+    "titleBefore": "Your farm's ",
+    "titleEm": "command centre",
+    "titleAfter": ", on the bigger screen.",
+    "lead": "Same login, same data, and the same features as the Farmer App — with a layout built for laptops and desktops. Review earnings, cattle tables and reports without squinting at a phone.",
+    "ctaPrimary": "Open my dashboard",
+    "ctaMobile": "Use the mobile app",
+    "syncTitle": "One account · two surfaces",
+    "syncBody": "Log in once. Phone for the field, web for the desk. Everything stays in sync, including offline entries that upload when you're back online.",
+    "previewWelcome": "Welcome back",
+    "previewUser": "Sunita Kale · Farmer",
+    "previewCattle": "My cattle",
+    "previewCattleVal": "3 cows",
+    "previewMonth": "This month",
+    "previewMonthVal": "₹ 18,420",
+    "previewToday": "Today's collection",
+    "previewTodayVal": "14.6 L · ₹ 612",
+    "featuresTitle": "Built for the desk",
+    "featuresLead": "Everything you track on mobile — with full-width tables, charts and exports for home and office.",
+    "features": [
+      {
+        "title": "Full cattle grid",
+        "body": "Compare every cow's yield, quality grade and health status side by side."
+      },
+      {
+        "title": "Earnings & payouts",
+        "body": "Weekly and monthly charts, UPI trails and export-friendly summaries for your accountant."
+      },
+      {
+        "title": "Health & vaccines",
+        "body": "Plan boosters, read visit notes, and coordinate follow-ups when you're not in the shed."
+      },
+      {
+        "title": "Reports & sharing",
+        "body": "Download PDF summaries or share read-only views with co-op managers and family."
+      }
+    ]
+  },
   "vendor": {
     "title": "Milk Vendor Portal",
     "subtitle": "Your operational hub for milk collection and supply management",
@@ -445,6 +517,80 @@
       "poultry": "Poultry"
     }
   },
+  "vetAppPage": {
+    "eyebrow": "Mobile App · One app, two sign-ins",
+    "titleBefore": "The vet in your pocket — ",
+    "titleEm": "for both sides",
+    "titleAfter": " of the call.",
+    "intro": "VetKonnect ships with two sign-in modes built into the same app. Farmers get tele-consults, vaccination reminders, AI symptom checker, SOS, and the livestock marketplace. Veterinarians get an appointment queue, case histories, e-prescriptions and earnings.",
+    "pillFarmer": "Farmer login",
+    "pillDoctor": "Doctor login",
+    "toggleAria": "Preview sign-in mode",
+    "toggleHintFarmer": "Preview above: farmer home, vet directory, and Symptom AI — the screens a cattle owner sees after signing in.",
+    "toggleHintDoctor": "Preview above: appointment queue, live consult, and earnings — the screens a veterinarian sees after signing in.",
+    "storeAppleLabel": "Download on the",
+    "storeAppleTitle": "App Store",
+    "storeGoogleLabel": "Get it on",
+    "storeGoogleTitle": "Google Play",
+    "dualEyebrow": "Two sign-ins · One ecosystem",
+    "dualTitleBefore": "The same app, ",
+    "dualTitleEm": "two completely different worlds.",
+    "dualLead": "When a farmer signs in, they see a marketplace and a vet directory. When a doctor signs in, they see appointments, case files and earnings.",
+    "farmerRole": "Sign-in as",
+    "farmerCardTitle": "Farmer",
+    "farmerCardBody": "Get instant access to vets, manage your cattle's health, browse the livestock marketplace, and never miss a vaccination.",
+    "farmerBullets": [
+      "Video tele-consults with vets",
+      "AI symptom checker",
+      "Vaccination calendar & alerts",
+      "Livestock marketplace · buy/sell",
+      "24×7 SOS emergency call",
+      "Health records per cow"
+    ],
+    "doctorRole": "Sign-in as",
+    "doctorCardTitle": "Veterinary Doctor",
+    "doctorCardBody": "Run your practice from your phone. Manage appointments, see full case histories, write digital prescriptions, get paid instantly.",
+    "doctorBullets": [
+      "Today's appointment queue",
+      "Patient cattle case histories",
+      "Digital prescriptions & SMS",
+      "Verify marketplace cattle listings",
+      "Earnings dashboard · UPI payouts",
+      "Set service radius & availability"
+    ],
+    "sharedEyebrow": "Shared core",
+    "sharedTitle": "Common features across both sign-ins.",
+    "sharedFeatures": [
+      {
+        "title": "Video tele-consults",
+        "body": "Show the vet what you're seeing. Most consults wrap in under 10 minutes."
+      },
+      {
+        "title": "Symptom-checker AI",
+        "body": "Trained on 50,000+ cattle case histories. Tells you when it's urgent and when it's not."
+      },
+      {
+        "title": "Vaccination scheduler",
+        "body": "Auto-tracks every cow's calendar. Never miss a booster, never double-vaccinate."
+      },
+      {
+        "title": "SOS one-tap call",
+        "body": "The nearest available vet picks up. Average response time: under 4 minutes."
+      }
+    ],
+    "marketEyebrow": "NEW · Inside VetKonnect",
+    "marketTitle": "Livestock Marketplace · ",
+    "marketTitleEm": "trade vet-verified cattle.",
+    "marketBody": "Buy or sell cows, buffalo and calves with full health records and a 7-day return guarantee. India's first vet-backed cattle marketplace, built right into the app you already use.",
+    "marketCtaOpen": "Open Marketplace",
+    "marketCtaLearn": "Learn more",
+    "marketStats": [
+      { "value": "8,400+", "label": "Live listings" },
+      { "value": "11 days", "label": "Avg sale time" },
+      { "value": "98.4%", "label": "Vet-verified" },
+      { "value": "7 days", "label": "Return policy" }
+    ]
+  },
   "pricingPage": {
     "heroEyebrow": "Auto-Pricing Engine · Live",
     "heroTitle": "Milk pricing that updates",
@@ -580,11 +726,11 @@
   },
   "homePage": {
     "ecosystem": {
-      "eyebrow": "4 user roles · 3 dashboards · 2 apps",
+      "eyebrow": "4 user roles · 4 browser surfaces · 2 mobile apps",
       "titleBefore": "One platform. ",
       "titleEm": "Every role in your dairy chain.",
       "description": "From the farmer with one cow to the cooperative running twelve routes — DairyKonnect gives every user the exact interface they need, on the device they actually use.",
-      "dashboardEyebrow": "3 Web Dashboards",
+      "dashboardEyebrow": "4 browser surfaces",
       "dashboardTitle": "Built for desks, browsers & big screens",
       "appsEyebrow": "2 Mobile Apps",
       "appsTitle": "Designed for the people in the field"
@@ -623,7 +769,7 @@
           "Batches",
           "Dispatch"
         ],
-        "link": "Open Dairy →"
+        "link": "Open Dairy"
       },
       {
         "id": "vendor",
@@ -635,7 +781,7 @@
           "Routes",
           "Auto-pricing"
         ],
-        "link": "Open Vendor →"
+        "link": "Open Vendor"
       },
       {
         "id": "farmer",
@@ -648,13 +794,26 @@
           "Earnings",
           "Reports"
         ],
-        "link": "Open Farmer Web →"
+        "link": "Open Farmer Web"
+      },
+      {
+        "id": "vetWeb",
+        "path": "/vet",
+        "title": "Vet App",
+        "desc": "Explore VetKonnect — tele-consults, vaccination programs and marketplace care for farmers; appointments, e-prescriptions and case history for clinics.",
+        "chips": [
+          "Health records",
+          "Vaccinations",
+          "Appointments",
+          "Tele-consults"
+        ],
+        "link": "Open Vet App"
       }
     ],
     "mobileApps": [
       {
         "id": "farmerApp",
-        "path": "/farmer",
+        "path": "/farmer/app",
         "featured": true,
         "title": "Farmer App",
         "desc": "The mobile mirror of the Farmer Dashboard. Track every cow, log every drop, get vet help, order feed — all from your phone, even offline.",
@@ -666,7 +825,7 @@
           "Feed orders",
           "Offline-first"
         ],
-        "link": "Explore Farmer App →",
+        "link": "Explore Farmer App",
         "visualLine1": "One login, two surfaces",
         "visualLine2": "Mobile-first for farmers in the field. Web for review and reporting at home."
       },
@@ -684,7 +843,7 @@
           "Marketplace",
           "SOS"
         ],
-        "link": "Explore VetKonnect →",
+        "link": "Explore VetKonnect",
         "visualLine1": "Farmer sign-in — Tele-consult, vaccines, marketplace",
         "visualLine2": "Doctor sign-in — Appointments, prescriptions, history"
       }

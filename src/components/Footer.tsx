@@ -86,7 +86,7 @@ export default function Footer() {
           </FootCol>
 
           <FootCol title={t('footer.appsAndTools')}>
-            <FootLink to="/farmer">{t('nav.farmerAppTitle')}</FootLink>
+            <FootLink to="/farmer/app">{t('nav.farmerAppTitle')}</FootLink>
             <FootLink to="/vet">{t('nav.vetAppTitle')}</FootLink>
             <FootLink to="/market">{t('footer.marketplace')}</FootLink>
             <FootLink to="/milk-prices">{t('footer.milkPrices')}</FootLink>

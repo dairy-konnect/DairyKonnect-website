@@ -13,6 +13,7 @@ const TermsAndConditions = lazy(() => import('../views/legal/TermsAndConditions'
 const Contact = lazy(() => import('../views/contact/Contact'));
 const Vet = lazy(() => import('../views/vet/Vet'));
 const Farmer = lazy(() => import('../views/farmer/Farmer'));
+const FarmerApp = lazy(() => import('../views/farmer/FarmerApp'));
 const Vendor = lazy(() => import('../views/vendor/Vendor'));
 const Dairy = lazy(() => import('../views/dairy/Dairy'));
 const Dashboard = lazy(() => import('../views/dashboard/Dashboard'));
@@ -43,6 +44,7 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/terms', element: <TermsAndConditions />, nav: false, name: 'Terms & Conditions' },
   { path: '/contact', element: <Contact />, nav: false, name: 'Contact' },
   { path: '/vet', element: <Vet /> },
+  { path: '/farmer/app', element: <FarmerApp /> },
   { path: '/farmer', element: <Farmer /> },
   { path: '/vendor', element: <Vendor /> },
   { path: '/dairy', element: <Dairy /> },

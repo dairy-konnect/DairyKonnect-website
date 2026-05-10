@@ -1,225 +1,179 @@
-import { FaIndustry, FaUsers, FaChartBar, FaMoneyBillWave, FaClipboardList, FaTachometerAlt } from 'react-icons/fa'
-import { useTranslation } from 'react-i18next'
+import type { IconType } from 'react-icons';
+import { FaIndustry, FaUsers, FaChartBar, FaMoneyBillWave, FaClipboardList, FaTachometerAlt } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+
+/** Icon tile shells aligned with `Navbar` dashboard mega-menu */
+const featureIconShells: string[] = [
+  'bg-[#e0eef9] text-[#345d80]',
+  'bg-[#fef0d4] text-[#a8761c]',
+  'bg-[#e7e0ff] text-[#5a3da6]',
+  'bg-[#fff3d6] text-[#a8761c]',
+  'bg-dk-green-100 text-dk-green-800',
+  'bg-[#fee9d6] text-[#c4521a]',
+];
 
 export default function Dairy() {
-  const { t } = useTranslation()
-  const features = [
+  const { t } = useTranslation();
+  const features: { icon: IconType; title: string; description: string; shell: string }[] = [
     {
       icon: FaUsers,
       title: t('dairy.features.vendorManagement.title'),
       description: t('dairy.features.vendorManagement.description'),
-      color: 'bg-blue-50 border-blue-200 text-blue-600'
+      shell: featureIconShells[0] ?? 'bg-dk-green-100 text-dk-green-800',
     },
     {
       icon: FaIndustry,
       title: t('dairy.features.farmerNetwork.title'),
       description: t('dairy.features.farmerNetwork.description'),
-      color: 'bg-green-50 border-green-200 text-green-600'
+      shell: featureIconShells[1] ?? 'bg-dk-green-100 text-dk-green-800',
     },
     {
       icon: FaClipboardList,
       title: t('dairy.features.collectionReports.title'),
       description: t('dairy.features.collectionReports.description'),
-      color: 'bg-purple-50 border-purple-200 text-purple-600'
+      shell: featureIconShells[2] ?? 'bg-dk-green-100 text-dk-green-800',
     },
     {
       icon: FaMoneyBillWave,
       title: t('dairy.features.paymentManagement.title'),
       description: t('dairy.features.paymentManagement.description'),
-      color: 'bg-orange-50 border-orange-200 text-orange-600'
+      shell: featureIconShells[3] ?? 'bg-dk-green-100 text-dk-green-800',
     },
     {
       icon: FaChartBar,
       title: t('dairy.features.analytics.title'),
       description: t('dairy.features.analytics.description'),
-      color: 'bg-red-50 border-red-200 text-red-600'
+      shell: featureIconShells[4] ?? 'bg-dk-green-100 text-dk-green-800',
     },
     {
       icon: FaTachometerAlt,
       title: t('dairy.features.qualityMonitoring.title'),
       description: t('dairy.features.qualityMonitoring.description'),
-      color: 'bg-indigo-50 border-indigo-200 text-indigo-600'
-    }
-  ]
+      shell: featureIconShells[5] ?? 'bg-dk-green-100 text-dk-green-800',
+    },
+  ];
 
   const capabilities = [
     t('dairy.capabilities.central'),
     t('dairy.capabilities.oversight'),
     t('dairy.capabilities.quality'),
     t('dairy.capabilities.analytics'),
-    t('dairy.capabilities.payment')
-  ]
+    t('dairy.capabilities.payment'),
+  ];
+
+  const steps = [
+    { title: t('dairy.steps.step1Title'), desc: t('dairy.steps.step1Desc') },
+    { title: t('dairy.steps.step2Title'), desc: t('dairy.steps.step2Desc') },
+    { title: t('dairy.steps.step3Title'), desc: t('dairy.steps.step3Desc') },
+    { title: t('dairy.steps.step4Title'), desc: t('dairy.steps.step4Desc') },
+    { title: t('dairy.steps.step5Title'), desc: t('dairy.steps.step5Desc') },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f7f9ff] via-green-50 to-[#f7f9ff]">
-      {/* Hero Section */}
-      <section className="pt-20 pb-16">
+    <div className="min-h-full bg-dk-cream pb-24 pt-[72px] text-dk-ink md:pt-[76px]">
+      <section className="pb-14 pt-4 sm:pb-16">
         <div className="dk-page-inner">
-          <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t('dairy.title')}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-6">
-            {t('dairy.subtitle')}
-          </p>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto">
-            {t('dairy.description')}
-          </p>
-        </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-dk-green-800 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#345d80]" aria-hidden />
+              {t('nav.dairyDashTitle')}
+            </div>
+            <h1 className="font-serif mt-5 text-4xl font-semibold tracking-tight text-dk-green-900 sm:text-5xl md:text-[3.15rem]">
+              {t('dairy.title')}
+            </h1>
+            <p className="mt-4 text-lg font-medium text-dk-ink-2 sm:text-xl">{t('dairy.subtitle')}</p>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-dk-muted">{t('dairy.description')}</p>
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-12">
+      <section className="pb-16">
         <div className="dk-page-inner">
-          <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            {t('dairy.keyFeatures')}
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            {t('dairy.keyFeaturesDesc')}
-          </p>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h2 className="font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('dairy.keyFeatures')}</h2>
+            <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('dairy.keyFeaturesDesc')}</p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {features.map((feature, index) => {
-              const IconComponent = feature.icon
+              const IconComponent = feature.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300"
+                  className="rounded-2xl border border-dk-line bg-white p-6 shadow-dk-sm transition hover:-translate-y-0.5 hover:border-dk-green-200 hover:shadow-md"
                 >
-                  <div className={`w-14 h-14 rounded-lg ${feature.color} flex items-center justify-center mb-4`}>
-                    <IconComponent className="text-2xl" />
+                  <div
+                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] ring-1 ring-black/5 ${feature.shell}`}
+                  >
+                    <IconComponent className="text-xl" aria-hidden />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h3 className="font-serif text-lg font-semibold text-dk-green-900">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-dk-muted">{feature.description}</p>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-12 bg-white">
+      <section className="border-y border-dk-line/80 bg-white py-16">
         <div className="dk-page-inner">
-          <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            {t('dairy.howItWorks')}
-          </h2>
-          <div className="space-y-6 mt-8">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                1
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step1Title')}</h3>
-                <p className="text-gray-600">
-                  {t('dairy.steps.step1Desc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                2
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step2Title')}</h3>
-                <p className="text-gray-600">
-                  {t('dairy.steps.step2Desc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                3
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step3Title')}</h3>
-                <p className="text-gray-600">
-                  {t('dairy.steps.step3Desc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                4
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step4Title')}</h3>
-                <p className="text-gray-600">
-                  {t('dairy.steps.step4Desc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                5
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step5Title')}</h3>
-                <p className="text-gray-600">
-                  {t('dairy.steps.step5Desc')}
-                </p>
-              </div>
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-center font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('dairy.howItWorks')}</h2>
+            <div className="mt-10 space-y-6">
+              {steps.map((step, i) => (
+                <div
+                  key={step.title}
+                  className="flex gap-4 rounded-2xl border border-dk-line/70 bg-dk-cream/40 p-5 transition hover:border-dk-green-200 hover:bg-dk-cream/60 sm:gap-5 sm:p-6"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-dk-green-100 text-sm font-bold text-dk-green-800 ring-1 ring-dk-green-200/80">
+                    {i + 1}
+                  </div>
+                  <div className="min-w-0 pt-0.5">
+                    <h3 className="font-serif text-lg font-semibold text-dk-green-900">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-dk-muted">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="py-12">
-        <div className="dk-page-inner">
-          <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            {t('dairy.capabilitiesTitle')}
-          </h2>
-          <p className="text-gray-600 mb-8">
-            {t('dairy.capabilitiesDesc')}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {capabilities.map((capability, index) => (
-              <div
-                key={index}
-                className="px-6 py-3 bg-white border border-green-200 rounded-full text-gray-700 font-medium hover:bg-green-50 hover:border-green-400 transition"
-              >
-                {capability}
-              </div>
-            ))}
-          </div>
-        </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <section className="py-16">
         <div className="dk-page-inner">
-          <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            {t('dairy.readyToStart')}
-          </h2>
-          <p className="text-gray-600 mb-8">
-            {t('dairy.readyToStartDesc')}
-          </p>
-          <button className="relative bg-green-400 hover:bg-green-500 text-white py-3 px-8 rounded-full transition overflow-hidden group text-lg font-medium">
-            <span className="relative z-10 flex items-center gap-2">
-              {t('dairy.loginButton')}
-              <FaIndustry className="w-5 h-5" />
-            </span>
-            <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-          </button>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('dairy.capabilitiesTitle')}</h2>
+            <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('dairy.capabilitiesDesc')}</p>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              {capabilities.map((capability, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center rounded-full border border-dk-green-200 bg-dk-green-100 px-5 py-2.5 text-sm font-medium text-dk-green-900 shadow-sm transition hover:border-dk-green-300 hover:bg-white"
+                >
+                  {capability}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="pb-8">
+        <div className="dk-page-inner">
+          <div className="mx-auto max-w-3xl rounded-[28px] border border-dk-line bg-gradient-to-br from-white to-dk-cream-2 px-8 py-10 text-center shadow-dk-lg ring-1 ring-black/5 sm:px-12 sm:py-12">
+            <h2 className="font-serif text-3xl font-semibold text-dk-green-900 sm:text-[2.1rem]">{t('dairy.readyToStart')}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-dk-muted">{t('dairy.readyToStartDesc')}</p>
+            <button
+              type="button"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-dk-green-800 px-8 py-3.5 text-base font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900"
+            >
+              {t('dairy.loginButton')}
+              <FaIndustry className="h-5 w-5 opacity-90" aria-hidden />
+            </button>
+          </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
-

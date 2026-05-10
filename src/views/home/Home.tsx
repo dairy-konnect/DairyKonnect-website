@@ -4,7 +4,7 @@ import HomeEcosystemSection from '../../components/home/HomeEcosystemSection';
 import HomeWhyStrip from '../../components/home/HomeWhyStrip';
 import HomeHowItWorks from '../../components/home/HomeHowItWorks';
 import HomeAiSection from '../../components/home/HomeAiSection';
-import HomeTestimonialsSection from '../../components/home/HomeTestimonialsSection';
+// import HomeTestimonialsSection from '../../components/home/HomeTestimonialsSection';
 import HomeRewardsSection from '../../components/home/HomeRewardsSection';
 import HomePricingSection from '../../components/home/HomePricingSection';
 import HomeFaqSection from '../../components/home/HomeFaqSection';
@@ -28,7 +28,7 @@ export default function Home() {
       <HomeWhyStrip />
       <HomeHowItWorks />
       <HomeAiSection />
-      <HomeTestimonialsSection />
+      {/* <HomeTestimonialsSection /> */}
       <HomeRewardsSection />
       <HomePricingSection onStartFree={openUserTypeModal} onStartTrial={openUserTypeModal} />
       <HomeFaqSection />
