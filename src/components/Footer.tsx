@@ -105,15 +105,12 @@ export default function Footer() {
             <FootLink to="/about">{t('footer.aboutUs')}</FootLink>
             <FootLink to="/news">{t('footer.newsArticles')}</FootLink>
             <FootLink to="/contact?topic=careers">{t('footer.careers')}</FootLink>
-            <FootLink to="/contact?topic=press">{t('footer.press')}</FootLink>
             <FootLink to="/contact">{t('common.contactUs')}</FootLink>
           </FootCol>
 
           <FootCol title={t('footer.legal')}>
             <FootLink to="/privacy-policy">{t('footer.privacy')}</FootLink>
             <FootLink to="/terms">{t('footer.termsShort')}</FootLink>
-            <FootLink to="/privacy-policy">{t('footer.cookies')}</FootLink>
-            <FootLink to="/privacy-policy">{t('footer.security')}</FootLink>
           </FootCol>
         </div>
 

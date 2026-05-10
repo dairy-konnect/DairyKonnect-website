@@ -143,22 +143,121 @@
   "about": {
     "title": "के बारे में",
     "subtitle": "हमारा डेयरी",
-    "description1": "हमारा डेयरी एक अंत-से-अंत प्लेटफॉर्म है जिसे पूरे दूध आपूर्ति श्रृंखला को डिजिटलाइज करने और सुव्यवस्थित करने के लिए डिज़ाइन किया गया है। यह एडमिन, डेयरी, दूध विक्रेताओं और किसानों को भूमिका-आधारित पहुंच और अत्यधिक पारदर्शी वर्कफ़्लो के साथ एक एकीकृत पारिस्थितिकी तंत्र में जोड़ता है।",
-    "description2": "सिस्टम सभी हितधारकों के बीच कुशल दूध संग्रह, आपूर्ति ट्रैकिंग, भुगतान हैंडलिंग और संबंध प्रबंधन सुनिश्चित करता है, एक पारदर्शी, त्रुटि-मुक्त और ट्रेस करने योग्य दूध आपूर्ति श्रृंखला बनाता है।",
-    "latestFeatures": "हमारी नवीनतम सुविधाएं",
-    "latestFeaturesDescription": "जटिलता के बिना डेयरी संचालन को सुव्यवस्थित करें — अनुकूलन योग्य, स्केलेबल और उपयोगकर्ता-अनुकूल लेनदेन प्रबंधन प्लेटफॉर्म।",
+    "description1": "One stack for farmers, vendors and dairies. Farmers sign in once on web or the Farmer app—vendor lines, fat/SNF, rate card, centres and payouts in one place.",
+    "description2": "Vendors log pours and quality; dairies run rate cards and cycles. Paper trails become one shared, searchable ledger.",
+    "latestFeatures": "Web, app & ops",
+    "latestFeaturesDescription": "Demos match the product: daily lines, quality, rupees and status—same data on farmer web, farmer app, vendor and dairy views.",
     "lightningFast": {
-      "title": "बिजली की तरह तेज़ लेनदेन रिकॉर्डिंग",
-      "description": "न्यूनतम लोड समय और अनुकूलित प्रदर्शन के साथ दैनिक दूध लेनदेन को तुरंत रिकॉर्ड करें।"
+      "title": "Farmer web + app",
+      "description": "One login: full tables on the web, quick checks on the phone—litres, shifts, vendor lines, rates and payout status."
     },
     "automatedBillingSystem": {
-      "title": "स्वचालित बिलिंग सिस्टम",
-      "description": "विस्तृत लेनदेन सारांश के साथ सटीक 15-दिवसीय चक्र बिल स्वचालित रूप से उत्पन्न करें।"
+      "title": "Vendor & dairy",
+      "description": "Vendors save pours and QC; dairies see intake, publish rates and run payouts—everyone reads the same rows."
     },
     "securePayment": {
-      "title": "सुरक्षित भुगतान प्रबंधन",
-      "description": "भुगतान स्थितियों को सुरक्षित रूप से ट्रैक करें और सभी हितधारकों के लिए समय पर निपटान सुनिश्चित करें।"
-    }
+      "title": "Quality & payouts",
+      "description": "Farmers match vendor lines to rupees; fat/SNF ladders and Paid/Pending stay visible for each period."
+    },
+    "platformEyebrow": "Platform",
+    "platformModulesTitle": "Dashboards & apps",
+    "platformModulesDesc": "Admin, dairy, vendor and farmer UIs sit on one milk ledger—collection, quality, rupees and payouts stay linked.",
+    "workflowTitle": "How milk flows",
+    "workflowDesc": "From the farmer pour to dairy settlement—each step lives where the next role already works.",
+    "benefitsTitle": "Why it sticks",
+    "benefitsDesc": "Less paper, clearer quality, payouts farmers can follow on web or phone.",
+    "teamEyebrow": "Our team",
+    "teamTitle": "Meet our people",
+    "teamLead": "We build dairy software that stays practical in the field and at the desk.",
+    "visual": {
+      "ariaLabel": "Sample farmer web and app metrics.",
+      "webBadge": "Web",
+      "appBadge": "App",
+      "webTitle": "Farmer web",
+      "webSub": "Supply, quality, payouts",
+      "appTitle": "Farmer app",
+      "appSub": "Same data, mobile",
+      "row1Label": "Today",
+      "row1Value": "42 L",
+      "row2Label": "Fat · SNF",
+      "row2Value": "4.5 · 8.7",
+      "row3Label": "Period",
+      "row3Value": "₹ 4,280",
+      "vendorTag": "Vendor’s latest line",
+      "statusPaid": "Paid",
+      "statusPending": "Pending"
+    },
+    "modules": {
+      "admin": {
+        "title": "Admin",
+        "description": "Roles, regions, vendor–dairy and farmer–vendor links, plus network-wide analytics."
+      },
+      "dairy": {
+        "title": "Dairy",
+        "description": "Vendors, rate cards, reference prices, daily intake and payout batches—without spreadsheet chaos."
+      },
+      "vendor": {
+        "title": "Vendor",
+        "description": "Routes, shifts, farmer pours (litres, fat, SNF, status) and ledgers up to dairy settlement."
+      },
+      "farmer": {
+        "title": "Farmer web & app",
+        "description": "Supply, history, rate chart, centres, notices and payouts—synced to what your vendor saved."
+      }
+    },
+    "workflowSteps": [
+      {
+        "title": "Farmer at vendor",
+        "description": "Pour mapped to your vendor; quantity and quality ready to log on the vendor side."
+      },
+      {
+        "title": "Vendor saves lines",
+        "description": "Shift, litres, fat, SNF and status stored—visible to farmers on web and app."
+      },
+      {
+        "title": "Vendor to dairy",
+        "description": "Bulk supply rolls up so dairy totals match what vendors reported."
+      },
+      {
+        "title": "Dairy rates & pay",
+        "description": "Fat/SNF ladders become rupees; periods go from pending to paid with references."
+      },
+      {
+        "title": "Admin oversight",
+        "description": "Cross-vendor visibility and controls as the network grows."
+      }
+    ],
+    "benefitsCards": [
+      {
+        "title": "Digital ledgers",
+        "body": "Web and app replace paper books—easy to show at home or the society office."
+      },
+      {
+        "title": "Fewer QC fights",
+        "body": "Vendor-saved fat, SNF and status sit on every line before arguments escalate."
+      },
+      {
+        "title": "One source of truth",
+        "body": "Farmers, vendors and dairies share the same pours and totals—not three notebooks."
+      },
+      {
+        "title": "Clear rate ladders",
+        "body": "Published charts show how each can becomes rupees—clear on the farmer dashboard."
+      },
+      {
+        "title": "Faster ops",
+        "body": "Less copy–paste between tally sheets, chats and billing."
+      },
+      {
+        "title": "Scales with you",
+        "body": "Add routes and members without a new pile of manual files."
+      }
+    ]
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Get in touch with Dairy Konnect",
+    "lead": "Questions about the platform, partnerships or early access? Message us—we’ll reply as soon as we can."
   },
   "userTypeModal": {
     "title": "अपनी भूमिका चुनें",

@@ -1,48 +1,60 @@
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+const fieldWrap =
+  'flex items-center mt-2 mb-4 min-h-11 pl-3 border border-dk-line rounded-xl bg-white focus-within:border-dk-green-400 focus-within:ring-2 focus-within:ring-dk-green-200/80 transition-all';
 
 export default function ContactForm() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
-  })
+    message: '',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // You can add API call here
-    alert(t('common.thankYouMessage'))
-    setFormData({ name: '', email: '', message: '' })
-  }
+    e.preventDefault();
+    alert(t('common.thankYouMessage'));
+    setFormData({ name: '', email: '', message: '' });
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-slate-800 py-12 px-4">
-      <p className="text-xs bg-green-200 text-green-600 font-medium px-3 py-1 rounded-full">{t('common.contactUs')}</p>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center px-4 py-10 text-sm text-dk-ink sm:py-12"
+    >
+      <span className="inline-flex rounded-full bg-dk-green-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-dk-green-800">
+        {t('common.contactUs')}
+      </span>
 
-      <h1 className="text-4xl font-bold py-4 text-center">{t('common.letsGetInTouch')}</h1>
+      <h2 className="font-serif py-4 text-center text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl">
+        {t('common.letsGetInTouch')}
+      </h2>
 
-      <p className="max-md:text-sm text-gray-500 pb-10 text-center">
+      <p className="max-w-lg pb-8 text-center text-dk-muted sm:pb-10">
         {t('common.orReachOut')}{' '}
-        <a href="mailto:info@dairykonnect.com" className="text-green-500 hover:underline">
+        <a href="mailto:info@dairykonnect.com" className="font-semibold text-dk-green-700 underline-offset-2 hover:underline">
           info@dairykonnect.com
         </a>
       </p>
 
-      <div className="max-w-96 w-full px-4">
-        <label htmlFor="name" className="font-medium">{t('common.fullName')}</label>
-        <div className="flex items-center mt-2 mb-4 h-10 pl-3 border border-slate-300 rounded-full focus-within:ring-2 focus-within:ring-green-400 transition-all overflow-hidden">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.311 16.406a9.64 9.64 0 0 0-4.748-4.158 5.938 5.938 0 1 0-7.125 0 9.64 9.64 0 0 0-4.749 4.158.937.937 0 1 0 1.623.938c1.416-2.447 3.916-3.906 6.688-3.906 2.773 0 5.273 1.46 6.689 3.906a.938.938 0 0 0 1.622-.938M5.938 7.5a4.063 4.063 0 1 1 8.125 0 4.063 4.063 0 0 1-8.125 0" fill="#475569" />
+      <div className="w-full max-w-md px-1 sm:px-2">
+        <label htmlFor="name" className="font-medium text-dk-ink-2">
+          {t('common.fullName')}
+        </label>
+        <div className={fieldWrap}>
+          <svg className="h-5 w-5 shrink-0 text-dk-muted" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
+            <path
+              d="M18.311 16.406a9.64 9.64 0 0 0-4.748-4.158 5.938 5.938 0 1 0-7.125 0 9.64 9.64 0 0 0-4.749 4.158.937.937 0 1 0 1.623.938c1.416-2.447 3.916-3.906 6.688-3.906 2.773 0 5.273 1.46 6.689 3.906a.938.938 0 0 0 1.622-.938M5.938 7.5a4.063 4.063 0 1 1 8.125 0 4.063 4.063 0 0 1-8.125 0"
+              fill="currentColor"
+            />
           </svg>
           <input
             type="text"
@@ -50,16 +62,21 @@ export default function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="h-full px-2 w-full outline-none bg-transparent"
+            className="h-11 min-w-0 flex-1 bg-transparent px-2 text-dk-ink outline-none placeholder:text-dk-muted/80"
             placeholder={t('common.enterFullName')}
             required
           />
         </div>
 
-        <label htmlFor="email-address" className="font-medium mt-4">{t('common.emailAddress')}</label>
-        <div className="flex items-center mt-2 mb-4 h-10 pl-3 border border-slate-300 rounded-full focus-within:ring-2 focus-within:ring-green-400 transition-all overflow-hidden">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.5 3.438h-15a.937.937 0 0 0-.937.937V15a1.563 1.563 0 0 0 1.562 1.563h13.75A1.563 1.563 0 0 0 18.438 15V4.375a.94.94 0 0 0-.938-.937m-2.41 1.874L10 9.979 4.91 5.313zM3.438 14.688v-8.18l5.928 5.434a.937.937 0 0 0 1.268 0l5.929-5.435v8.182z" fill="#475569" />
+        <label htmlFor="email-address" className="mt-2 block font-medium text-dk-ink-2">
+          {t('common.emailAddress')}
+        </label>
+        <div className={fieldWrap}>
+          <svg className="h-5 w-5 shrink-0 text-dk-muted" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
+            <path
+              d="M17.5 3.438h-15a.937.937 0 0 0-.937.937V15a1.563 1.563 0 0 0 1.562 1.563h13.75A1.563 1.563 0 0 0 18.438 15V4.375a.94.94 0 0 0-.938-.937m-2.41 1.874L10 9.979 4.91 5.313zM3.438 14.688v-8.18l5.928 5.434a.937.937 0 0 0 1.268 0l5.929-5.435v8.182z"
+              fill="currentColor"
+            />
           </svg>
           <input
             type="email"
@@ -67,38 +84,39 @@ export default function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="h-full px-2 w-full outline-none bg-transparent"
+            className="h-11 min-w-0 flex-1 bg-transparent px-2 text-dk-ink outline-none placeholder:text-dk-muted/80"
             placeholder={t('common.enterEmailAddress')}
             required
           />
         </div>
 
-        <label htmlFor="message" className="font-medium mt-4">{t('common.message')}</label>
+        <label htmlFor="message" className="mt-2 block font-medium text-dk-ink-2">
+          {t('common.message')}
+        </label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full mt-2 p-2 bg-transparent border border-slate-300 rounded-lg resize-none outline-none focus:ring-2 focus:ring-green-400 transition-all"
+          className="mt-2 w-full resize-none rounded-xl border border-dk-line bg-white p-3 text-dk-ink outline-none transition placeholder:text-dk-muted/80 focus:border-dk-green-400 focus:ring-2 focus:ring-dk-green-200/80"
           placeholder={t('common.enterMessage')}
           required
-        ></textarea>
+        />
 
         <button
           type="submit"
-          className="relative flex items-center justify-center gap-1 mt-5 bg-green-400 hover:bg-green-500 text-white py-2.5 w-full rounded-full transition overflow-hidden group"
+          className="mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-dk-green-800 px-5 text-sm font-semibold text-white shadow-dk-sm transition hover:bg-dk-green-900 hover:brightness-[1.02] active:scale-[0.98]"
         >
-          <span className="relative z-10 flex items-center gap-1">
-            {t('common.submitForm')}
-            <svg className="mt-0.5" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="m18.038 10.663-5.625 5.625a.94.94 0 0 1-1.328-1.328l4.024-4.023H3.625a.938.938 0 0 1 0-1.875h11.484l-4.022-4.025a.94.94 0 0 1 1.328-1.328l5.625 5.625a.935.935 0 0 1-.002 1.33" fill="#fff" />
-            </svg>
-          </span>
-          <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          {t('common.submitForm')}
+          <svg className="h-4 w-4 shrink-0" width="21" height="20" viewBox="0 0 21 20" fill="none" aria-hidden>
+            <path
+              d="m18.038 10.663-5.625 5.625a.94.94 0 0 1-1.328-1.328l4.024-4.023H3.625a.938.938 0 0 1 0-1.875h11.484l-4.022-4.025a.94.94 0 0 1 1.328-1.328l5.625 5.625a.935.935 0 0 1-.002 1.33"
+              fill="currentColor"
+            />
+          </svg>
         </button>
       </div>
     </form>
-  )
+  );
 }
-

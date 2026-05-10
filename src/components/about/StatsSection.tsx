@@ -70,13 +70,16 @@ function StatItem({ icon, value, suffix, label, color }: StatItemProps) {
 
   return (
     <div className="text-center" ref={ref}>
-      <div className={`w-14 h-14 ${color} rounded-xl flex items-center justify-center mx-auto mb-3`}>
+      <div
+        className={`mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl ring-1 ring-dk-line ${color}`}
+      >
         {icon}
       </div>
-      <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
-        {count.toLocaleString()}{suffix}
+      <div className="font-serif text-3xl font-semibold tracking-tight text-dk-green-900 md:text-4xl">
+        {count.toLocaleString()}
+        {suffix}
       </div>
-      <div className="text-sm text-gray-600">{label}</div>
+      <div className="mt-1 text-sm font-medium text-dk-muted">{label}</div>
     </div>
   );
 }
@@ -86,62 +89,60 @@ export default function StatsSection() {
 
   const stats = [
     {
-      icon: <FaDownload className="w-6 h-6 text-green-600" />,
+      icon: <FaDownload className="h-6 w-6 text-dk-green-700" />,
       value: 50,
       suffix: 'K+',
       label: t('stats.totalDownloads'),
-      color: 'bg-green-100',
+      color: 'bg-dk-green-100 text-dk-green-800',
     },
     {
-      icon: <FaUsers className="w-6 h-6 text-blue-600" />,
+      icon: <FaUsers className="h-6 w-6 text-dk-green-800" />,
       value: 10,
       suffix: 'K+',
       label: t('stats.activeUsers'),
-      color: 'bg-blue-100',
+      color: 'bg-dk-sky/30 text-dk-green-900',
     },
     {
-      icon: <FaMobile className="w-6 h-6 text-purple-600" />,
+      icon: <FaMobile className="h-6 w-6 text-dk-green-800" />,
       value: 4,
       suffix: '',
       label: t('stats.mobileApps'),
-      color: 'bg-purple-100',
+      color: 'bg-dk-gold/25 text-dk-green-900',
     },
     {
-      icon: <FaGlobe className="w-6 h-6 text-indigo-600" />,
+      icon: <FaGlobe className="h-6 w-6 text-dk-green-800" />,
       value: 5,
       suffix: '',
       label: t('stats.webApps'),
-      color: 'bg-indigo-100',
+      color: 'bg-dk-green-200/60 text-dk-green-900',
     },
     {
-      icon: <FaHandshake className="w-6 h-6 text-orange-600" />,
+      icon: <FaHandshake className="h-6 w-6 text-dk-green-800" />,
       value: 500,
       suffix: '+',
       label: t('stats.dairiesConnected'),
-      color: 'bg-orange-100',
+      color: 'bg-dk-gold/20 text-dk-green-900',
     },
     {
-      icon: <FaChartLine className="w-6 h-6 text-red-600" />,
+      icon: <FaChartLine className="h-6 w-6 text-dk-green-800" />,
       value: 1,
       suffix: 'M+',
       label: t('stats.transactionsProcessed'),
-      color: 'bg-red-100',
+      color: 'bg-dk-coral/15 text-dk-green-900',
     },
   ];
 
   return (
-    <section aria-labelledby="stats-heading" className="mb-16">
-      <div className="text-center mb-10">
-        <h2 id="stats-heading" className="text-3xl font-semibold text-gray-900 mb-4">
+    <section aria-labelledby="stats-heading" className="mb-16 md:mb-20">
+      <header className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+        <h2 id="stats-heading" className="font-serif text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl">
           {t('stats.title')}
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          {t('stats.description')}
-        </p>
-      </div>
+        <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('stats.description')}</p>
+      </header>
 
-      <div className="border border-gray-200 rounded-lg bg-white shadow-[0px_4px_15px_0px] shadow-black/5 p-8 sm:p-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <div className="rounded-[28px] border border-dk-line bg-white p-8 shadow-dk-lg ring-1 ring-dk-line sm:p-10">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
           {stats.map((stat, index) => (
             <StatItem key={index} {...stat} />
           ))}

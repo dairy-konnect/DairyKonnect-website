@@ -1,188 +1,163 @@
-import AboutHero from '../../components/about/AboutHero'
-import StatsSection from '../../components/about/StatsSection'
-import Team from '../../components/about/Team'
-import ContactForm from '../../components/about/ContactForm'
-import { 
-  FaUserShield, 
-  FaIndustry, 
-  FaTruck, 
+import { useTranslation } from 'react-i18next';
+import AboutHero from '../../components/about/AboutHero';
+// import StatsSection from '../../components/about/StatsSection';
+import Team from '../../components/about/Team';
+import {
+  FaUserShield,
+  FaIndustry,
+  FaTruck,
   FaUserTie,
   FaClipboardList,
   FaShieldAlt,
   FaEye,
   FaMoneyBillWave,
   FaTachometerAlt,
-  FaExpandArrowsAlt
-} from 'react-icons/fa'
+  FaExpandArrowsAlt,
+} from 'react-icons/fa';
+
+const moduleIconShells = [
+  'bg-dk-sky/25 text-dk-green-900 ring-1 ring-dk-line',
+  'bg-dk-green-100 text-dk-green-800 ring-1 ring-dk-green-200/60',
+  'bg-dk-gold/20 text-dk-green-900 ring-1 ring-dk-line',
+  'bg-dk-cream-2 text-dk-green-800 ring-1 ring-dk-line',
+];
+
+const moduleRoleKeys = ['admin', 'dairy', 'vendor', 'farmer'] as const;
+const moduleIcons = [FaUserShield, FaIndustry, FaTruck, FaUserTie] as const;
+
+const benefitIcons = [FaClipboardList, FaShieldAlt, FaEye, FaMoneyBillWave, FaTachometerAlt, FaExpandArrowsAlt] as const;
+
+const benefitShells = [
+  'bg-dk-green-100 text-dk-green-800',
+  'bg-dk-coral/15 text-dk-green-900',
+  'bg-dk-green-100 text-dk-green-800',
+  'bg-dk-gold/20 text-dk-green-900',
+  'bg-dk-sky/25 text-dk-green-900',
+  'bg-dk-cream-2 text-dk-green-900 ring-1 ring-dk-line',
+];
 
 export default function About() {
-  const modules = [
-    { 
-      icon: FaUserShield,
-      title: 'Admin Module', 
-      description: 'Complete system control with role management, vendor-dairy assignments, farmer-vendor mapping, and comprehensive analytics dashboard.',
-      color: 'bg-blue-50 border-blue-200 text-blue-600'
-    },
-    { 
-      icon: FaIndustry,
-      title: 'Dairy Module', 
-      description: 'Central hub for managing vendors, monitoring milk collection, maintaining quality records, and handling payment cycles.',
-      color: 'bg-green-50 border-green-200 text-green-600'
-    },
-    { 
-      icon: FaTruck,
-      title: 'Milk Vendor Module', 
-      description: 'Operational link between farmers and dairies. Collect milk, verify quality, record transactions, and manage farmer payments.',
-      color: 'bg-purple-50 border-purple-200 text-purple-600'
-    },
-    { 
-      icon: FaUserTie,
-      title: 'Farmer Module', 
-      description: 'Clear visibility into transactions, daily supply details, rate calculations, and payment tracking for transparent operations.',
-      color: 'bg-orange-50 border-orange-200 text-orange-600'
-    },
-  ]
+  const { t } = useTranslation();
 
-  const workflow = [
-    { step: 1, title: 'Farmer Supplies Milk', description: 'Farmers supply milk to their mapped vendor with quantity and quality details.' },
-    { step: 2, title: 'Vendor Collects & Verifies', description: 'Vendors collect milk, verify quality readings (fat, SNF, CLR), and record transactions.' },
-    { step: 3, title: 'Vendor Supplies to Dairy', description: 'Collected milk is supplied to the dairy with complete documentation.' },
-    { step: 4, title: 'Dairy Processes Records', description: 'Dairy processes milk, updates records, and manages payment cycles.' },
-    { step: 5, title: 'Admin Monitors Everything', description: 'Admin has complete visibility and control over the entire supply chain.' },
-  ]
+  const modules = moduleRoleKeys.map((key, index) => ({
+    icon: moduleIcons[index] ?? FaUserShield,
+    title: t(`about.modules.${key}.title`),
+    description: t(`about.modules.${key}.description`),
+    shell: moduleIconShells[index] ?? 'bg-dk-green-100 text-dk-green-800',
+  }));
+
+  const workflow = t('about.workflowSteps', { returnObjects: true }) as { title: string; description: string }[];
+
+  const benefitsCards = t('about.benefitsCards', { returnObjects: true }) as { title: string; body: string }[];
+  const benefits = benefitsCards.map((card, i) => ({
+    ...card,
+    icon: benefitIcons[i] ?? FaClipboardList,
+  }));
 
   return (
-    <div className="min-h-full">
+    <div className="min-h-full w-full overflow-x-hidden bg-dk-cream pt-[72px] text-dk-ink md:pt-[76px]">
       <AboutHero />
-      
-      <main className="dk-page-inner py-12">
-        <StatsSection />
 
-        <section aria-labelledby="modules-heading" className="mb-16">
-          <h2 id="modules-heading" className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            Platform Modules
-          </h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            Four integrated modules working together to create a transparent, efficient, and traceable milk supply chain.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {modules.map((module, index) => {
-              const IconComponent = module.icon
+      <main className="dk-page-inner pb-20 pt-10 sm:pt-14 md:pt-16">
+        {/* Our Impact in Numbers — temporarily hidden
+        <StatsSection />
+        */}
+
+        <section aria-labelledby="modules-heading" className="mb-16 md:mb-20">
+          <header className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+            <span className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-dk-green-800 shadow-dk-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-dk-green-600" aria-hidden />
+              {t('about.platformEyebrow')}
+            </span>
+            <h2 id="modules-heading" className="font-serif mt-4 text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl">
+              {t('about.platformModulesTitle')}
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('about.platformModulesDesc')}</p>
+          </header>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            {modules.map((module) => {
+              const IconComponent = module.icon;
               return (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-slate-200">
-                  <div className={`w-12 h-12 rounded-lg ${module.color} flex items-center justify-center mb-4`}>
-                    <IconComponent className="text-xl" />
+                <article
+                  key={module.title}
+                  className="rounded-2xl border border-dk-line bg-white p-6 shadow-dk-sm transition hover:-translate-y-0.5 hover:border-dk-green-200 hover:shadow-md sm:p-7"
+                >
+                  <div
+                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-[10px] ${module.shell}`}
+                  >
+                    <IconComponent className="text-xl" aria-hidden />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {module.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {module.description}
-                  </p>
-                </div>
-              )
+                  <h3 className="font-serif text-xl font-semibold text-dk-green-900">{module.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-dk-muted sm:text-[15px]">{module.description}</p>
+                </article>
+              );
             })}
           </div>
         </section>
 
-        <section aria-labelledby="workflow-heading" className="mb-16">
-          <h2 id="workflow-heading" className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            System Workflow
-          </h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            A seamless flow from farmer to dairy, ensuring transparency and efficiency at every step.
-          </p>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {workflow.map((item, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm border border-slate-200 w-full">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-semibold">
-                      {item.step}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600">
-                        {item.description}
-                      </p>
-                    </div>
+        <section
+          aria-labelledby="workflow-heading"
+          className="mb-16 rounded-[28px] border border-dk-line bg-white py-12 shadow-dk-sm ring-1 ring-dk-line md:mb-20 md:py-16"
+        >
+          <header className="mx-auto mb-10 max-w-2xl px-2 text-center sm:mb-12">
+            <h2 id="workflow-heading" className="font-serif text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl">
+              {t('about.workflowTitle')}
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('about.workflowDesc')}</p>
+          </header>
+          <div className="mx-auto max-w-3xl space-y-3 px-1 sm:px-2">
+            {workflow.map((item, index) => (
+              <div key={item.title}>
+                <div className="flex gap-4 rounded-2xl border border-dk-line/70 bg-dk-cream/40 p-5 transition hover:border-dk-green-200 hover:bg-dk-cream/60 sm:gap-5 sm:p-6">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-dk-green-100 text-sm font-bold text-dk-green-800 ring-1 ring-dk-green-200/80">
+                    {index + 1}
                   </div>
-                  {index < workflow.length - 1 && (
-                    <div className="flex items-center justify-center my-2">
-                      <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </div>
-                  )}
+                  <div className="min-w-0 pt-0.5">
+                    <h3 className="font-serif text-lg font-semibold text-dk-green-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-dk-muted sm:text-[15px]">{item.description}</p>
+                  </div>
                 </div>
-              ))}
-            </div>
+                {index < workflow.length - 1 && (
+                  <div className="flex justify-center py-1" aria-hidden>
+                    <div className="h-6 w-px bg-gradient-to-b from-dk-green-300 to-dk-line" />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
-        <section aria-labelledby="benefits-heading" className="mb-16">
-          <h2 id="benefits-heading" className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            Key Benefits
-          </h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover how our platform transforms dairy operations with digital solutions that benefit everyone in the supply chain.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                <FaClipboardList className="text-2xl text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Eliminates Manual Records</h3>
-              <p className="text-gray-600 leading-relaxed">Digital tracking replaces error-prone paper records with accurate, real-time data accessible anytime, anywhere.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-red-50 border border-red-200 flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
-                <FaShieldAlt className="text-2xl text-red-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Reduces Fraud & Errors</h3>
-              <p className="text-gray-600 leading-relaxed">Automated calculations and transparent workflows prevent miscalculations, disputes, and fraudulent activities.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-green-50 border border-green-200 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
-                <FaEye className="text-2xl text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Complete Transparency</h3>
-              <p className="text-gray-600 leading-relaxed">All stakeholders have clear visibility into transactions, payments, and supply flow for trust and accountability.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-yellow-50 border border-yellow-200 flex items-center justify-center mb-4 group-hover:bg-yellow-100 transition-colors">
-                <FaMoneyBillWave className="text-2xl text-yellow-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Fair Payments for Farmers</h3>
-              <p className="text-gray-600 leading-relaxed">Accurate rate calculations based on quality parameters ensure farmers receive fair and timely compensation.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
-                <FaTachometerAlt className="text-2xl text-purple-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Operational Efficiency</h3>
-              <p className="text-gray-600 leading-relaxed">Streamlined processes help dairies improve productivity, reduce operational costs, and optimize resource utilization.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
-                <FaExpandArrowsAlt className="text-2xl text-indigo-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Scalable Solution</h3>
-              <p className="text-gray-600 leading-relaxed">Designed to scale seamlessly from small local operations to large dairy networks without compromising performance.</p>
-            </div>
+        <section aria-labelledby="benefits-heading" className="py-16 md:py-20">
+          <header className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+            <h2 id="benefits-heading" className="font-serif text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl">
+              {t('about.benefitsTitle')}
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-dk-muted">{t('about.benefitsDesc')}</p>
+          </header>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {benefits.map((b, i) => {
+              const Icon = b.icon;
+              const shell = benefitShells[i] ?? 'bg-dk-green-100 text-dk-green-800';
+              return (
+                <article
+                  key={b.title}
+                  className="rounded-[20px] border border-dk-line bg-white p-6 shadow-dk-sm transition hover:-translate-y-0.5 hover:border-dk-green-300 sm:p-7"
+                >
+                  <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ring-1 ring-dk-line ${shell}`}>
+                    <Icon className="text-xl" aria-hidden />
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-dk-green-900 sm:text-xl">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-dk-ink-2 sm:text-[15px]">{b.body}</p>
+                </article>
+              );
+            })}
           </div>
         </section>
 
-        <section aria-labelledby="team-heading" className="mb-16">
+        <section aria-labelledby="team-heading" className="mb-16 md:mb-20">
           <Team />
-        </section>
-
-        <section id="contact" aria-labelledby="contact-heading" className="mb-16">
-          <ContactForm />
         </section>
       </main>
     </div>
-  )
+  );
 }

@@ -1,27 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import ContactForm from '../../components/about/ContactForm';
 
 export default function Contact() {
-  return (
-    <div className="min-h-full bg-white">
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 lg:px-10">
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
-          <p className="text-xs font-semibold uppercase tracking-wider text-green-600 mb-2">
-            Contact
-          </p>
-          <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-3">
-            Get in touch with Dairy Konnect
-          </h1>
-          <p className="text-sm sm:text-base text-slate-600">
-            Have questions about the platform, partnerships, or early access? Send us a message and we&apos;ll
-            get back to you as soon as possible.
-          </p>
-        </div>
+  const { t } = useTranslation();
 
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200">
+  return (
+    <div className="min-h-full bg-dk-cream pt-[72px] text-dk-ink md:pt-[76px]">
+      <div className="dk-page-inner pb-20 pt-8 sm:pt-12 md:pt-14">
+        <header className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-dk-green-800 shadow-dk-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-dk-green-500 shadow-[0_0_0_4px_var(--green-200)]" aria-hidden />
+            {t('contactPage.eyebrow')}
+          </div>
+          <h1 className="font-serif mt-5 text-3xl font-semibold tracking-tight text-dk-green-900 sm:text-4xl md:text-[2.65rem]">
+            {t('contactPage.title')}
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-dk-muted sm:text-lg">{t('contactPage.lead')}</p>
+        </header>
+
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-dk-line bg-white shadow-dk-lg ring-1 ring-dk-line">
           <ContactForm />
         </div>
       </div>
     </div>
   );
 }
-
