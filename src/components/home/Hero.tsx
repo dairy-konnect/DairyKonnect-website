@@ -12,7 +12,7 @@ export default function Hero({ onGetStarted, onWatchDemo }: HeroProps) {
 
   return (
     <section className="home-hero w-full" aria-labelledby="hero-heading">
-      <div className="home-section-inner relative pb-14 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-28">
+      <div className="home-section-inner relative pb-14 pt-8 sm:pb-16 sm:pt-12 md:pb-20 md:pt-16">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14 xl:gap-16">
           <div className="flex max-w-[560px] flex-col items-center text-center md:items-start md:text-left">
             <div className="inline-flex items-center gap-2 rounded-full border border-dk-line bg-white px-3.5 py-1.5 text-xs font-semibold text-dk-green-800 shadow-dk-sm sm:text-[13px]">
